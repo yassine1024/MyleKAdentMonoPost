@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="649.0" prefWidth="819.0" style="-fx-background-color: transparent;" stylesheets="@/css/styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.login.SignInController">
+   <children>
+      <StackPane fx:id="stackPane" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox style="-fx-background-color: #fe4451;" HBox.hgrow="ALWAYS" />
+                  <VBox style="-fx-background-color: white;" HBox.hgrow="ALWAYS">
+                  <children>
+                        <HBox alignment="TOP_RIGHT" prefHeight="75.0" prefWidth="15.0">
+                           <children>
+                        <fx:include source="/application/views/login/LoginBar.fxml" />
+                           </children>
+                        </HBox>
+                  </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" StackPane.alignment="CENTER">
+               <StackPane.margin>
+                  <Insets bottom="45.0" left="45.0" right="45.0" top="45.0" />
+               </StackPane.margin>
+               <children>
+                  <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="470.0" prefWidth="502.0" style="-fx-background-color: white;">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 2em; -fx-font-family: arial; -fx-font-weight: bold; -fx-fill: #fe4451;" text="S'inscrire" />
+                        <HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="250.0" style="-fx-background-color: white; -fx-border-color: #a2a2a2; -fx-border-width: 0px 0px 2px 0px;">
+                           <VBox.margin>
+                              <Insets top="9.0" />
+                           </VBox.margin>
+                           <children>
+                              <TextField fx:id="user" onKeyPressed="#changerPositionUser" prefHeight="26.0" prefWidth="234.0" promptText="Nom &amp; prénom(latin)" />
+                              <FontAwesomeIcon fill="#888888" iconName="USER">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </FontAwesomeIcon>
+                           </children>
+                           <padding>
+                              <Insets top="8.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" layoutX="136.0" layoutY="77.0" maxWidth="-Infinity" prefWidth="250.0" style="-fx-background-color: white; -fx-border-color: #a2a2a2; -fx-border-width: 0px 0px 2px 0px;">
+                           <children>
+                              <TextField fx:id="userAR" onKeyPressed="#changerPositionUserAR" prefHeight="26.0" prefWidth="234.0" promptText="الإسم و اللقب(العربية)" />
+                              <FontAwesomeIcon fill="#888888" iconName="USER">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </FontAwesomeIcon>
+                           </children>
+                           <padding>
+                              <Insets top="17.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" layoutX="136.0" layoutY="163.0" maxWidth="-Infinity" prefWidth="250.0" style="-fx-background-color: white; -fx-border-color: #a2a2a2; -fx-border-width: 0px 0px 2px 0px;">
+                           <children>
+                              <TextField fx:id="specialty" onKeyPressed="#changerPositionSpecialty" prefHeight="26.0" prefWidth="234.0" promptText="Spécialité" />
+                              <FontAwesomeIcon fill="#888888" iconName="BOOK">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </FontAwesomeIcon>
+                           </children>
+                           <padding>
+                              <Insets top="17.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" layoutX="136.0" layoutY="137.0" maxWidth="-Infinity" prefWidth="250.0" style="-fx-background-color: white; -fx-border-color: #a2a2a2; -fx-border-width: 0px 0px 2px 0px;">
+                           <children>
+                              <TextField fx:id="specialtyAR" onKeyPressed="#changerPositionSpecialtyAR" prefHeight="26.0" prefWidth="234.0" promptText="التخصص" />
+                              <FontAwesomeIcon fill="#888888" iconName="BOOK">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </FontAwesomeIcon>
+                           </children>
+                           <padding>
+                              <Insets top="17.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" layoutX="136.0" layoutY="191.0" maxWidth="-Infinity" prefWidth="250.0" style="-fx-background-color: white; -fx-border-color: #a2a2a2; -fx-border-width: 0px 0px 2px 0px;">
+                           <children>
+                              <TextField fx:id="adresse" onKeyPressed="#changerPositionAdresse" prefHeight="26.0" prefWidth="234.0" promptText="Adr Ex: Cité xx Bt xx N  xx" />
+                              <FontAwesomeIcon fill="#888888" iconName="LOCATION_ARROW">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </FontAwesomeIcon>
+                           </children>
+                           <padding>
+                              <Insets top="17.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" layoutX="136.0" layoutY="207.0" maxWidth="-Infinity" prefWidth="250.0" style="-fx-background-color: white; -fx-border-color: #a2a2a2; -fx-border-width: 0px 0px 2px 0px;">
+                           <children>
+                              <TextField fx:id="phone" onKeyPressed="#changerPositionPhone" prefHeight="26.0" prefWidth="234.0" promptText="Tél:" />
+                              <FontAwesomeIcon fill="#888888" iconName="PHONE">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </FontAwesomeIcon>
+                           </children>
+                           <padding>
+                              <Insets top="17.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="250.0" style="-fx-background-color: white; -fx-border-color: #a2a2a2; -fx-border-width: 0px 0px 2px 0px;">
+                           <children>
+                              <TextField fx:id="mail" onKeyPressed="#changerPositionMail" prefHeight="26.0" prefWidth="234.0" promptText="Mail Ex: mohamed@gmail.com" />
+                              <FontAwesomeIcon fill="#888888" iconName="ENVELOPE">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </FontAwesomeIcon>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets top="17.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="250.0" style="-fx-background-color: white; -fx-border-color: #a2a2a2; -fx-border-width: 0px 0px 2px 0px;">
+                           <children>
+                              <PasswordField fx:id="password" onKeyPressed="#changerPositionPassword" prefHeight="25.0" prefWidth="247.0" promptText="Mot de passe" />
+                              <FontAwesomeIcon fill="#888888" iconName="KEY">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </FontAwesomeIcon>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets top="17.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" layoutX="136.0" layoutY="193.0" maxWidth="-Infinity" prefWidth="250.0" style="-fx-background-color: white; -fx-border-color: #a2a2a2; -fx-border-width: 0px 0px 2px 0px;">
+                           <children>
+                              <PasswordField fx:id="passwordC" onKeyPressed="#changerPositionCPassword" prefHeight="25.0" prefWidth="247.0" promptText="Confirmer le mot de passe" />
+                              <FontAwesomeIcon fill="#888888" iconName="KEY">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </FontAwesomeIcon>
+                           </children>
+                           <padding>
+                              <Insets top="17.0" />
+                           </padding>
+                        </HBox>
+                        <Button fx:id="loginIcon" mnemonicParsing="false" onMouseClicked="#signIn" prefWidth="181.0" style="-fx-background-color: #fe4451; -fx-background-radius: 100px;" text="Enregistrer" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </VBox>
+         </children></StackPane>
+   </children>
+</AnchorPane>

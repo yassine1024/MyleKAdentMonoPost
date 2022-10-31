@@ -1,0 +1,18 @@
+.chart-pie-label-line {
+    -fx-stroke: white;
+    -fx-fill: white;
+}
+
+.chart-pie-label { /*this is what you need for labels*/
+    -fx-fill: white;
+    -fx-font-size: 1em;
+} 
+.chart-legend {
+   -fx-background-color:  #fafad2;
+   -fx-stroke: #daa520;
+}
+
+.data0.chart-bar { -fx-bar-fill: #59C9A5; }
+.data1.chart-bar { -fx-bar-fill: #56E39F; }
+.default-color1.chart-bar { -fx-bar-fill: red; }
+

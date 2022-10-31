@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="620.0" prefWidth="500.0" stylesheets="@/css/buttonSyle.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane style="-fx-background-color: #39293D; -fx-border-color: white;">
+         <children>
+            <Label layoutX="23.0" layoutY="9.0" prefHeight="52.0" prefWidth="297.0" styleClass="headerTitle" text="FICHE NAVETTE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Separator layoutX="31.0" layoutY="54.0" prefHeight="3.0" prefWidth="289.0" />
+            <VBox layoutX="82.0" layoutY="112.0" prefHeight="477.0" prefWidth="327.0" spacing="30.0">
+               <children>
+                  <JFXTextField fx:id="fullName" focusColor="#5da6ff" labelFloat="true" onKeyPressed="#changePositionFullName" promptText="Nom &amp; prénom" style="-fx-text-inner-color: white;" unFocusColor="#dff269" />
+                  <JFXTextField fx:id="type" focusColor="#5a9ada" labelFloat="true" onKeyPressed="#changePositionType" promptText="Type de travail" style="-fx-text-inner-color: white;" unFocusColor="#e1f55e" />
+                  <JFXTextField fx:id="color" focusColor="#5ca4f2" labelFloat="true" onKeyPressed="#changePositionTeinte" promptText="Teinte" style="-fx-text-inner-color: white;" unFocusColor="#dff54d">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin></JFXTextField>
+                  <JFXTextField fx:id="quantity" focusColor="#559af5" labelFloat="true" layoutX="10.0" layoutY="132.0" onKeyPressed="#changePositionQte" promptText="Quantitée" style="-fx-text-inner-color: white;" unFocusColor="#cbf24e" />
+                  <JFXTextArea fx:id="remarque" focusColor="#539aff" labelFloat="true" onKeyPressed="#changePositionRemarq" prefWidth="327.0" promptText="Remarque" style="-fx-text-inner-color: white;" unFocusColor="#cfee53">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin></JFXTextArea>
+                  <JFXButton fx:id="jfxButtonSaveRecordShuttles" buttonType="RAISED" contentDisplay="CENTER" ellipsisString="" onAction="#saveRecordShuttles" prefHeight="29.0" prefWidth="54.0" ripplerFill="#807272">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" iconName="SAVE" size="2em" />
+                     </graphic>
+                     <VBox.margin>
+                        <Insets left="270.0" top="30.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </VBox>
+            <HBox layoutX="427.0" layoutY="3.0" prefHeight="42.0" prefWidth="67.0">
+            <children>
+                  <fx:include source="/application/views/login/LoginBar.fxml" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

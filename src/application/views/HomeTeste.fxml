@@ -1,0 +1,1250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <StackPane fx:id="stackPane">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: transparent;" stylesheets="/css/buttonSyle.css">
+               <children>
+                  <AnchorPane fx:id="parameter" layoutY="72.0" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #84DCCF;" visible="false">
+                     <children>
+                        <Label layoutX="26.0" layoutY="12.0" prefHeight="52.0" prefWidth="297.0" text="PARAMETRE" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="26.0" layoutY="50.0" prefHeight="4.0" prefWidth="419.0" />
+                        <GridPane hgap="20.0" layoutX="224.0" layoutY="93.0" prefHeight="500.0" prefWidth="822.0" vgap="15.0" AnchorPane.leftAnchor="224.0" AnchorPane.rightAnchor="154.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0" minWidth="50.0" prefWidth="198.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="291.0" minWidth="10.0" prefWidth="207.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="202.0" minWidth="10.0" prefWidth="195.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="131.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="211.0" minHeight="0.0" prefHeight="49.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="263.0" minHeight="0.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="263.0" minHeight="0.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="263.0" minHeight="0.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="263.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="263.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="263.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="250.0">
+                                 <children>
+                                    <JFXTextField fx:id="nameL" focusTraversable="false" labelFloat="true" promptText="Nom &amp; prénom" />
+                                    <FontAwesomeIcon fill="#888888" iconName="USER">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                    </FontAwesomeIcon>
+                                 </children>
+                                 <padding>
+                                    <Insets top="8.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="250.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <JFXTextField fx:id="nameAR" focusTraversable="false" labelFloat="true" promptText="الإسم و اللقب" />
+                                    <FontAwesomeIcon fill="#888888" iconName="USER">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                    </FontAwesomeIcon>
+                                 </children>
+                                 <padding>
+                                    <Insets top="8.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="250.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <JFXTextField fx:id="specialityL" focusTraversable="false" labelFloat="true" promptText="Spécialité" />
+                                    <FontAwesomeIcon fill="#888888" iconName="BOOK">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                    </FontAwesomeIcon>
+                                 </children>
+                                 <padding>
+                                    <Insets top="17.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <JFXTextField fx:id="specialityAR" focusTraversable="false" labelFloat="true" promptText="التخصص" />
+                                    <FontAwesomeIcon fill="#888888" iconName="BOOK">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                    </FontAwesomeIcon>
+                                 </children>
+                                 <padding>
+                                    <Insets top="17.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="250.0" GridPane.rowIndex="2">
+                                 <children>
+                                    <JFXTextField fx:id="address" focusTraversable="false" labelFloat="true" promptText="Adresse" />
+                                    <FontAwesomeIcon fill="#888888" iconName="LOCATION_ARROW">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                    </FontAwesomeIcon>
+                                 </children>
+                                 <padding>
+                                    <Insets top="17.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="165.0" maxWidth="-Infinity" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <JFXTextField fx:id="municipality" focusTraversable="false" labelFloat="true" promptText="Daïra ou baladïa" />
+                                    <FontAwesomeIcon fill="#888888" iconName="LOCATION_ARROW">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                    </FontAwesomeIcon>
+                                 </children>
+                                 <padding>
+                                    <Insets top="17.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="165.0" maxWidth="-Infinity" prefWidth="250.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <children>
+                                    <JFXComboBox fx:id="town" focusTraversable="false" labelFloat="true" prefHeight="25.0" prefWidth="180.0" promptText="Wilaya" style="-fx-background-color: white;" />
+                                    <FontAwesomeIcon fill="#888888" iconName="LOCATION_ARROW">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                    </FontAwesomeIcon>
+                                 </children>
+                                 <padding>
+                                    <Insets top="17.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="250.0" GridPane.rowIndex="3">
+                                 <children>
+                                    <JFXTextField fx:id="phone" focusTraversable="false" labelFloat="true" promptText="Tél" />
+                                    <FontAwesomeIcon fill="#888888" iconName="PHONE">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                    </FontAwesomeIcon>
+                                 </children>
+                                 <padding>
+                                    <Insets top="17.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="250.0" GridPane.rowIndex="4">
+                                 <children>
+                                    <JFXTextField fx:id="mail" focusTraversable="false" labelFloat="true" promptText="E-mail" />
+                                    <FontAwesomeIcon fill="#888888" iconName="ENVELOPE">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                    </FontAwesomeIcon>
+                                 </children>
+                                 <padding>
+                                    <Insets top="17.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="250.0" GridPane.rowIndex="5">
+                                 <children>
+                                    <JFXPasswordField fx:id="oldPassword" focusTraversable="false" labelFloat="true" promptText="Ancien mot de passe" />
+                                    <FontAwesomeIcon fill="#888888" iconName="KEY">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                    </FontAwesomeIcon>
+                                 </children>
+                                 <padding>
+                                    <Insets top="17.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="250.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                 <children>
+                                    <JFXPasswordField fx:id="passwordConfiramation" focusTraversable="false" labelFloat="true" promptText="Re-mot de passe" />
+                                    <FontAwesomeIcon fill="#888888" iconName="KEY">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                    </FontAwesomeIcon>
+                                 </children>
+                                 <padding>
+                                    <Insets top="17.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <children>
+                                    <JFXPasswordField fx:id="newPassword" focusTraversable="false" labelFloat="true" promptText="Nouveau mot de passe" />
+                                    <FontAwesomeIcon fill="#888888" iconName="KEY">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                    </FontAwesomeIcon>
+                                 </children>
+                                 <padding>
+                                    <Insets top="17.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="250.0" visible="false" GridPane.rowIndex="6">
+                                 <children>
+                                    <FontAwesomeIcon fill="#888888" iconName="KEY">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                    </FontAwesomeIcon>
+                                 </children>
+                                 <padding>
+                                    <Insets top="17.0" />
+                                 </padding>
+                              </HBox>
+                              <JFXButton onAction="#saveParameters" prefHeight="44.0" prefWidth="191.0" text="Enregistrer" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" iconName="SAVE" size="2em" />
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="10.0" />
+                           </padding>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+                  <HBox prefWidth="1200.0" style="-fx-background-color: #84DCCF;">
+                     <children>
+                        <Label fx:id="labeLogo" alignment="TOP_LEFT" prefHeight="50.0" prefWidth="141.0" styleClass="logo" text="TExt">
+                           <graphic>
+                              <FontAwesomeIcon fill="#2f1be1" iconName="CIRCLE" />
+                           </graphic>
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets right="40.0" />
+                           </padding>
+                        </Label>
+                        <Button fx:id="tacheMenu" alignment="TOP_LEFT" layoutX="370.0" layoutY="10.0" mnemonicParsing="false" onMouseEntered="#afficherTaches" onMouseExited="#hideTaches" prefHeight="51.0" prefWidth="128.0" styleClass="logo" text="Tâches">
+                           <graphic>
+                              <FontAwesomeIcon id="fontAwesomeHover" fill="WHITE" iconName="SORT_DOWN" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button mnemonicParsing="false" onMouseClicked="#malade" prefHeight="51.0" prefWidth="125.0" text="Malade">
+                           <graphic>
+                              <FontAwesomeIcon id="fontAwesomeHover" fill="WHITE" iconName="USER" />
+                           </graphic>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button layoutX="82.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#afficherRedaction" prefHeight="51.0" prefWidth="142.0" text="Redaction">
+                           <graphic>
+                              <FontAwesomeIcon id="fontAwesomeHover" fill="WHITE" iconName="PENCIL" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button layoutX="82.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#afficherProthese" prefHeight="51.0" prefWidth="134.0" text="Prothèse">
+                           <graphic>
+                              <FontAwesomeIcon id="fontAwesomeHover" fill="WHITE" iconName="GROUP" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button layoutX="82.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#afficherAgenda" prefHeight="51.0" prefWidth="125.0" text="Agenda">
+                           <graphic>
+                              <FontAwesomeIcon id="fontAwesomeHover" fill="WHITE" iconName="CALENDAR" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button layoutX="82.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#afficherHistorique" prefHeight="51.0" prefWidth="145.0" text="Paramètre">
+                           <graphic>
+                              <FontAwesomeIcon id="fontAwesomeHover" fill="WHITE" iconName="HISTORY" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button layoutX="82.0" layoutY="10.0" mnemonicParsing="false" onAction="#afficherStatistique" prefHeight="51.0" prefWidth="161.0" text="Statistiques" visible="false">
+                           <graphic>
+                              <FontAwesomeIcon id="fontAwesomeHover" fill="WHITE" iconName="BAR_CHART" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button layoutX="82.0" layoutY="10.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="141.0" text="Dépenses" visible="false">
+                           <graphic>
+                              <FontAwesomeIcon id="fontAwesomeHover" fill="WHITE" iconName="SIGN_OUT" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="dec" layoutX="82.0" layoutY="10.0" mnemonicParsing="false" onAction="#deconnect" prefHeight="51.0" prefWidth="160.0" text="Déconnecter">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <FontAwesomeIcon id="fontAwesomeHover" fill="WHITE" iconName="BULLSEYE" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <AnchorPane fx:id="agenda" layoutY="72.0" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #84DCCF;" visible="false">
+                     <children>
+                        <Label layoutX="20.0" layoutY="7.0" prefHeight="52.0" prefWidth="297.0" text="AGENDA" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="17.0" layoutY="52.0" prefHeight="4.0" prefWidth="419.0" />
+                        <HBox layoutX="-8.0" layoutY="91.0" prefHeight="46.0" prefWidth="565.0">
+                           <children>
+                              <FontAwesomeIcon fill="WHITE" iconName="SEARCH" size="20">
+                                 <HBox.margin>
+                                    <Insets left="20.0" top="22.0" />
+                                 </HBox.margin>
+                              </FontAwesomeIcon>
+                              <JFXTextField fx:id="tJFAppointment" labelFloat="true" onKeyReleased="#filterAppointment" prefHeight="31.0" prefWidth="431.0" promptText="Entrer nom ou prénom ">
+                                 <HBox.margin>
+                                    <Insets left="7.0" top="12.0" />
+                                 </HBox.margin>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                        <TableView fx:id="tabAppointment" layoutX="32.0" layoutY="174.0" prefHeight="383.0" prefWidth="1121.0" stylesheets="@/css/tableView.css">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </TableView>
+                        <Label layoutX="578.0" layoutY="78.0" onMousePressed="#addAppointment" prefHeight="83.0" prefWidth="59.0" styleClass="addPatient" text="+" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="53.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Text fill="WHITE" layoutX="643.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter un rendez-vous" wrappingWidth="172.00000715255737">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <JFXDatePicker fx:id="dLAppointment" layoutX="913.0" layoutY="109.0" onAction="#selectDateAppointment" prefHeight="31.0" prefWidth="240.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="depense" layoutY="72.0" prefHeight="500.0" prefWidth="1200.0" style="-fx-background-color: #3D4956;" visible="false" />
+                  <AnchorPane fx:id="redaction" layoutY="72.0" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: white;" visible="false">
+                     <children>
+                        <VBox layoutX="1.0" prefHeight="603.0" prefWidth="270.0" style="-fx-background-color: #84DCCF;">
+                           <children>
+                              <Pane prefHeight="114.0" prefWidth="270.0">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <children>
+                                    <FontAwesomeIcon fill="WHITE" iconName="XING" layoutX="45.0" layoutY="79.0" size="35">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </FontAwesomeIcon>
+                                    <Label layoutX="86.0" layoutY="47.0" prefHeight="17.0" prefWidth="126.0" text="Redaction ">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Button fx:id="btnOrdonnance" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#handleRedactionDashboard" prefHeight="48.0" prefWidth="270.0" text="Ordonnance">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" iconName="CARET_RIGHT" size="1.2em">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </FontAwesomeIcon>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets left="50.0" />
+                                 </padding>
+                              </Button>
+                              <Button fx:id="btnJustification" alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleRedactionDashboard" prefHeight="48.0" prefWidth="270.0" text="Justification">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" iconName="CARET_RIGHT" size="1.2em">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </FontAwesomeIcon>
+                                 </graphic>
+                                 <padding>
+                                    <Insets left="50.0" />
+                                 </padding>
+                              </Button>
+                              <Button fx:id="btnStopJob" alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutX="10.0" layoutY="58.0" mnemonicParsing="false" onAction="#handleRedactionDashboard" prefHeight="48.0" prefWidth="270.0" text="Arrêt de travail">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" iconName="CARET_RIGHT" size="1.2em">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </FontAwesomeIcon>
+                                 </graphic>
+                                 <padding>
+                                    <Insets left="50.0" />
+                                 </padding>
+                              </Button>
+                              <Button fx:id="btnFreeRedaction" alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutX="10.0" layoutY="106.0" mnemonicParsing="false" onAction="#handleRedactionDashboard" prefHeight="48.0" prefWidth="270.0" text="Rédaction libre">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" iconName="CARET_RIGHT" size="1.2em">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </FontAwesomeIcon>
+                                 </graphic>
+                                 <padding>
+                                    <Insets left="50.0" />
+                                 </padding>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <AnchorPane fx:id="apFreeRedaction" layoutX="271.0" layoutY="193.0" prefHeight="409.0" prefWidth="929.0" visible="false">
+                           <children>
+                              <JFXTextArea fx:id="jftTAFreeRedaction" layoutX="59.0" layoutY="95.0" prefHeight="218.0" prefWidth="723.0" />
+                              <Button graphicTextGap="20.0" layoutX="71.0" mnemonicParsing="false" onAction="#printFreeRedaction" prefHeight="37.0" prefWidth="213.0" text="Imprimer ">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" iconName="PRINT" size="20" />
+                                 </graphic>
+                              </Button>
+                              <Button graphicTextGap="20.0" layoutX="291.0" mnemonicParsing="false" onAction="#refreshFreeRedaction" prefHeight="37.0" prefWidth="213.0" text="Actualiser">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" iconName="REFRESH" size="20" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <Pane fx:id="pnlStatus" layoutX="271.0" layoutY="32.0" prefHeight="100.0" prefWidth="929.0" style="-fx-background-color: #F2ED6F;">
+                           <children>
+                              <Label fx:id="lblStatus" layoutX="60.0" layoutY="50.0" prefHeight="35.0" prefWidth="339.0" styleClass="redaction" text="Ordonnance" textFill="#84dccf">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblStatusMini" layoutX="61.0" layoutY="28.0" prefHeight="19.0" prefWidth="279.0" styleClass="redaction" text="/Redaction/Ordonnance" textFill="#84dccf">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <AnchorPane fx:id="aPOrdonnance" layoutX="271.0" layoutY="132.0" prefHeight="414.0" prefWidth="929.0">
+                           <children>
+                              <HBox layoutX="14.0" layoutY="14.0" prefHeight="46.0" prefWidth="883.0" spacing="12.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="15.0">
+                                 <children>
+                                    <JFXTextField fx:id="jfxTPatientRedaction" labelFloat="true" prefHeight="31.0" prefWidth="218.0" promptText="Le patient" />
+                                    <Button graphicTextGap="20.0" mnemonicParsing="false" onAction="#addMedication" prefHeight="37.0" prefWidth="239.0" text="Ajouter nouvelle ligne">
+                                       <graphic>
+                                          <FontAwesomeIcon fill="WHITE" iconName="PLUS" size="20" />
+                                       </graphic>
+                                    </Button>
+                                    <Button graphicTextGap="20.0" mnemonicParsing="false" onAction="#printOrder" prefHeight="37.0" prefWidth="213.0" text="Imprimer ">
+                                       <graphic>
+                                          <FontAwesomeIcon fill="WHITE" iconName="PRINT" size="20" />
+                                       </graphic>
+                                    </Button>
+                                    <Button graphicTextGap="20.0" mnemonicParsing="false" onAction="#refreshOrdonnanceRedaction" prefHeight="37.0" prefWidth="205.0" text="Actualiser">
+                                       <graphic>
+                                          <FontAwesomeIcon fill="WHITE" iconName="REFRESH" size="20" />
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <ScrollPane layoutY="83.0" prefHeight="383.0" prefWidth="929.0">
+                                 <content>
+                                    <VBox fx:id="vBoxPrincipaleBise" prefHeight="375.0" prefWidth="929.0" spacing="5.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="aPJustification" layoutX="271.0" layoutY="136.0" prefHeight="466.0" prefWidth="929.0" visible="false">
+                           <children>
+                              <Button layoutX="5.0" layoutY="5.0" mnemonicParsing="false" onAction="#printJustification" prefHeight="37.0" prefWidth="147.0" text="Imprimer">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" iconName="PRINT" size="20" />
+                                 </graphic>
+                              </Button>
+                              <VBox layoutY="50.0" prefHeight="417.0" prefWidth="914.0" style="-fx-background-color: #84DCCF;">
+                                 <children>
+                                    <HBox layoutX="40.0" layoutY="76.0" prefHeight="50.0" prefWidth="655.0">
+                                       <children>
+                                          <Text fill="#84dccf" strokeType="OUTSIDE" strokeWidth="0.0" text="Monsieur :" textAlignment="RIGHT" wrappingWidth="293.2734375">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField fx:id="tfPatientJustification1" prefHeight="25.0" prefWidth="233.0" promptText="................................................................................................................">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="50.0" prefWidth="532.0">
+                                       <children>
+                                          <Text fill="#84dccf" strokeType="OUTSIDE" strokeWidth="0.0" text="Je soussigné moi certifie avoir pris en charge " textAlignment="RIGHT" wrappingWidth="616.2734375">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="50.0" prefWidth="200.0">
+                                       <children>
+                                          <Text fill="#84dccf" strokeType="OUTSIDE" strokeWidth="0.0" text="le patient sus-nommé." textAlignment="RIGHT" wrappingWidth="369.2734375">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="tDateJustification1" layoutX="10.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="le patient sus-nommé le " textAlignment="RIGHT" visible="false" wrappingWidth="288.2734375">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="50.0" prefWidth="200.0">
+                                       <children>
+                                          <Text fill="#84dccf" strokeType="OUTSIDE" strokeWidth="0.0" text="pour" textAlignment="RIGHT" wrappingWidth="165.2734375">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Text>
+                                          <TextArea fx:id="taCausesJustification1" prefHeight="50.0" prefWidth="575.0" promptText="................................................................................................................................................................................................................................">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </TextArea>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="94.0" prefWidth="532.0">
+                                       <children>
+                                          <Text fill="#84dccf" strokeType="OUTSIDE" strokeWidth="0.0" text="Justification delivré à l'intéressé pour servir et valoir ce que de droit." wrappingWidth="522.2734375">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="40.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="30.0" right="30.0" top="16.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="apStopJob" layoutX="271.0" layoutY="136.0" prefHeight="466.0" prefWidth="929.0" visible="false">
+                           <children>
+                              <VBox layoutX="-7.0" layoutY="50.0" prefHeight="417.0" prefWidth="929.0" style="-fx-background-color: #84DCCF;">
+                                 <children>
+                                    <HBox layoutX="40.0" layoutY="76.0" prefHeight="50.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Monsieur :" wrappingWidth="116.2734375">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField fx:id="tfPatientStopJob1" prefHeight="25.0" prefWidth="233.0" promptText="................................................................................................................" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="50.0" prefWidth="532.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Je soussigné moi certifie avoir pris en charge " textAlignment="RIGHT" wrappingWidth="531.2734375">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="50.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="le patient sus-nommé. " wrappingWidth="279.2734375">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="tDateStopingJob1" layoutX="10.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="le patient sus-nommé le " textAlignment="RIGHT" visible="false" wrappingWidth="392.2734375">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="50.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="pour" wrappingWidth="57.2734375">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Text>
+                                          <TextArea fx:id="taCauses1" prefHeight="85.0" prefWidth="471.0" promptText="................................................................................................................................................................................................................................" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="50.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="L'état de santé du patient justifie un arrêt de travail" wrappingWidth="527.2734375">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="51.0" prefWidth="532.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="de " wrappingWidth="35.2734375">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField fx:id="tfPeriodePatientJob1" prefHeight="25.0" prefWidth="165.0" promptText="........................................................">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <Text layoutX="10.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="à compter à partir de ce jour même" wrappingWidth="339.2734375">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="71.0" prefWidth="940.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Arrêt de travail delivré à l'intéressé pour servir et valoir ce que de droit." wrappingWidth="522.2734375">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="30.0" right="30.0" top="16.0" />
+                                 </padding>
+                              </VBox>
+                              <Button layoutX="12.0" layoutY="4.0" mnemonicParsing="false" onAction="#printStopingJob" prefHeight="37.0" prefWidth="147.0" text="Imprimer">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" iconName="PRINT" size="20" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="malade" layoutY="72.0" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #84DCCF;">
+                     <children>
+                        <Label layoutX="19.0" layoutY="1.0" prefHeight="52.0" prefWidth="297.0" text="GESTION DES MALADES" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="14.0" layoutY="51.0" prefHeight="4.0" prefWidth="419.0" />
+                        <HBox layoutX="-8.0" layoutY="93.0" prefHeight="46.0" prefWidth="565.0">
+                           <children>
+                              <FontAwesomeIcon fill="WHITE" iconName="SEARCH" size="20">
+                                 <HBox.margin>
+                                    <Insets left="20.0" top="22.0" />
+                                 </HBox.margin>
+                              </FontAwesomeIcon>
+                              <TextField fx:id="tRecherche" onKeyReleased="#rechercher" prefHeight="36.0" prefWidth="436.0" promptText="Entrer nom ou prénom " styleClass="text-field">
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                 </HBox.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="TEXT" />
+                                 </cursor>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <TableView fx:id="tabPatient" layoutX="21.0" layoutY="187.0" onKeyPressed="#clickOK" onMousePressed="#selectionnerPatientDoubleClick" prefHeight="336.0" prefWidth="1153.0" stylesheets="@/css/tableView.css">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </TableView>
+                        <Label layoutX="578.0" layoutY="78.0" onMousePressed="#ajouterMalade" prefHeight="83.0" prefWidth="59.0" styleClass="addPatient" text="+" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="53.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <HBox layoutX="8.0" layoutY="531.0" spacing="2.0" styleClass="hbox-home" AnchorPane.bottomAnchor="32.0">
+                           <children>
+                              <Button mnemonicParsing="false" onMousePressed="#getMaladeFile" prefHeight="37.0" prefWidth="131.0" style="-fx-background-radius: 5em;" text="Détaillé" textAlignment="CENTER" textFill="#17cd11" wrapText="true">
+                                 <graphic>
+                                    <FontAwesomeIcon id="fontAwesomeHover" fill="WHITE" iconName="MEDKIT" />
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" onMousePressed="#deletePatient" prefHeight="37.0" prefWidth="181.0" style="-fx-background-radius: 5em;" text="Supprimer" textAlignment="CENTER" textFill="#17cd11" wrapText="true">
+                                 <graphic>
+                                    <FontAwesomeIcon id="fontAwesomeHover" fill="WHITE" iconName="REMOVE" />
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" onMousePressed="#addPatient" prefHeight="37.0" prefWidth="308.0" style="-fx-background-radius: 5em;" text="Ajouter à la liste d'aujourdhui" textAlignment="CENTER" textFill="#17cd11" wrapText="true">
+                                 <graphic>
+                                    <FontAwesomeIcon id="fontAwesomeHover" fill="WHITE" iconName="REFRESH" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <DatePicker fx:id="dateListe1" layoutX="913.0" layoutY="104.0" onAction="#slelectionnerDate" prefHeight="37.0" prefWidth="225.0" promptText="séléctionner la date de la liste" styleClass="text-field" visible="false" />
+                        <Text fill="WHITE" layoutX="643.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aouter un nouveau patient" wrappingWidth="172.00000715255737">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Label id="totale" fx:id="tfTotale" layoutX="908.0" layoutY="533.0" prefHeight="39.0" prefWidth="287.0" text="TOTALE:" textFill="#0372bc">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <JFXDatePicker fx:id="dateListe" layoutX="913.0" layoutY="109.0" onAction="#slelectionnerDate" prefHeight="31.0" prefWidth="240.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="prothese" layoutY="72.0" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #84DCCF;" visible="false">
+                     <children>
+                        <Label layoutX="30.0" prefHeight="52.0" prefWidth="297.0" text="PROTHESE" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="24.0" layoutY="51.0" prefHeight="4.0" prefWidth="419.0" />
+                        <HBox layoutX="14.0" layoutY="78.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="1168.0" spacing="50.0" style="-fx-border-color: white;">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Lab :">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom lab">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <JFXComboBox fx:id="cbLab" labelFloat="true" onAction="#changeLaboSelected" prefHeight="25.0" prefWidth="227.0" promptText="Séléctionner un labo" />
+                           </children>
+                           <padding>
+                              <Insets left="30.0" top="30.0" />
+                           </padding>
+                        </HBox>
+                        <Label layoutX="933.0" layoutY="88.0" onMousePressed="#addProthese" prefHeight="77.0" prefWidth="52.0" text="+ " textAlignment="CENTER" textFill="#29c30a">
+                           <font>
+                              <Font size="53.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                        <Text fill="WHITE" layoutX="974.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter un nouveau labo" wrappingWidth="172.00000715255737">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <TableView fx:id="tableLabInfo" layoutX="99.0" layoutY="267.0" prefHeight="286.0" prefWidth="995.0" stylesheets="@/css/tableView.css" />
+                        <HBox layoutX="24.0" layoutY="564.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="28.0" prefWidth="1153.0" spacing="10.0" style="-fx-border-color: white;">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Chercher par période de ">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Text>
+                              <DatePicker fx:id="dateDebutLab">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </DatePicker>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="à">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets top="8.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <DatePicker fx:id="dateFinLab">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </DatePicker>
+                              <Button mnemonicParsing="false" onMousePressed="#facturer" prefHeight="37.0" prefWidth="147.0" style="-fx-background-radius: 5em;" text="Facturer" textFill="#17cd11">
+                                 <HBox.margin>
+                                    <Insets left="280.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="98.0" layoutY="188.0" prefHeight="52.0" prefWidth="995.0" spacing="10.0">
+                           <children>
+                              <TextField fx:id="tType" onKeyPressed="#changePositionType" promptText="Type" />
+                              <TextField fx:id="tQte" onKeyPressed="#changePositionQte" promptText="Quantitée" />
+                              <TextField fx:id="tPrixUnitaire" onKeyPressed="#ChangePositionPrixUnitaire" promptText="Prix unitaire" />
+                              <Label onMousePressed="#addInLabo" prefHeight="77.0" prefWidth="52.0" text="+ " textAlignment="CENTER" textFill="#29c30a">
+                                 <font>
+                                    <Font size="53.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label layoutX="517.0" layoutY="10.0" onMousePressed="#removeInLabo" prefHeight="77.0" prefWidth="52.0" text="-" textAlignment="CENTER" textFill="#29c30a">
+                                 <font>
+                                    <Font size="53.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="historique" layoutY="72.0" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #84DCCF;" visible="false">
+                     <children>
+                        <Label layoutX="19.0" layoutY="1.0" prefHeight="52.0" prefWidth="297.0" text="HISTORIQUE DES ADMINS" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="14.0" layoutY="51.0" prefHeight="4.0" prefWidth="419.0" />
+                        <HBox layoutX="14.0" layoutY="90.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="1168.0" style="-fx-border-color: white;" AnchorPane.topAnchor="90.0">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Recherche par:">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Date ">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <DatePicker fx:id="dateSearch" onAction="#selectedDateHistoriqueUsers" promptText="selectionner la date" styleClass="text-field">
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin>
+                              </DatePicker>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="utilisateur">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <ComboBox fx:id="userSearch" onAction="#selectedUserHistoriqueUsers" prefHeight="25.0" prefWidth="200.0" promptText="Séléctionner un utilisateur" stylesheets="@/css/comboBox.css">
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin>
+                              </ComboBox>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Action">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <ComboBox fx:id="actionSearch" onAction="#selectedActionHistoriqueUsers" prefHeight="25.0" prefWidth="185.0" promptText="Séléctionner une action" stylesheets="@/css/comboBox.css">
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin>
+                              </ComboBox>
+                              <CheckBox fx:id="activeFilter" mnemonicParsing="false" onAction="#activerDesactiverFilter" prefHeight="20.0" prefWidth="179.0" selected="true" stylesheets="@/css/checkBox.css" text="Désactiver le filtrage" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="60.0" />
+                                 </HBox.margin>
+                              </CheckBox>
+                           </children>
+                           <padding>
+                              <Insets top="30.0" />
+                           </padding>
+                        </HBox>
+                        <TableView fx:id="tableHistorique" layoutX="77.0" layoutY="219.0" prefHeight="348.0" prefWidth="1032.0" stylesheets="@/css/tableView.css" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="statistique" layoutY="72.0" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #84DCCF;" visible="false">
+                     <children>
+                        <Label layoutX="34.0" layoutY="9.0" prefHeight="52.0" prefWidth="297.0" text="STATISTIQUES" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="18.0" layoutY="48.0" prefHeight="4.0" prefWidth="419.0" />
+                        <TabPane layoutX="100.0" layoutY="103.0" prefHeight="476.0" prefWidth="1000.0" style="-fx-background-color: white;" visible="false" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="103.0">
+                           <tabs>
+                              <Tab closable="false" text="Ordonance">
+                                 <content>
+                                    <ScrollPane onKeyPressed="#pressButton" style="-fx-background-color: #3c3c3c;">
+                                       <content>
+                                          <VBox fx:id="vBoxPrincipale" prefHeight="474.0" prefWidth="1000.0" spacing="10.0" style="-fx-background-color: #3c3c3c;">
+                                             <padding>
+                                                <Insets left="30.0" right="30.0" top="10.0" />
+                                             </padding>
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#addMedication" prefHeight="37.0" prefWidth="89.0" text="Button" />
+                                                <Button mnemonicParsing="false" onAction="#printView" prefHeight="37.0" prefWidth="85.0" text="Print" />
+                                             </children>
+                                          </VBox>
+                                       </content>
+                                    </ScrollPane>
+                                 </content>
+                              </Tab>
+                              <Tab closable="false" text="Justification">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #3c3c3c;">
+                                       <children>
+                                          <VBox prefHeight="619.0">
+                                             <children>
+                                                <HBox layoutX="40.0" layoutY="76.0" prefHeight="50.0" prefWidth="655.0">
+                                                   <children>
+                                                      <Text fill="#84dccf" strokeType="OUTSIDE" strokeWidth="0.0" text="Monsieur :" textAlignment="RIGHT" wrappingWidth="293.2734375">
+                                                         <font>
+                                                            <Font name="System Bold" size="20.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <TextField fx:id="tfPatientJustification" prefHeight="25.0" prefWidth="233.0" promptText="................................................................................................................" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="50.0" prefWidth="532.0">
+                                                   <children>
+                                                      <Text fill="#84dccf" strokeType="OUTSIDE" strokeWidth="0.0" text="Je soussigné DR Kachi certifie avoir pris en charge " textAlignment="RIGHT" wrappingWidth="616.2734375">
+                                                         <font>
+                                                            <Font name="System Bold" size="20.0" />
+                                                         </font>
+                                                      </Text>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="50.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Text fill="#84dccf" strokeType="OUTSIDE" strokeWidth="0.0" text="le patient sus-nommé le " textAlignment="RIGHT" wrappingWidth="369.2734375">
+                                                         <font>
+                                                            <Font name="System Bold" size="20.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Text fx:id="tDateJustification" layoutX="10.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="le patient sus-nommé le " textAlignment="RIGHT" wrappingWidth="288.2734375">
+                                                         <font>
+                                                            <Font name="System Bold" size="20.0" />
+                                                         </font>
+                                                      </Text>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="50.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Text fill="#84dccf" strokeType="OUTSIDE" strokeWidth="0.0" text="pour" textAlignment="RIGHT" wrappingWidth="165.2734375">
+                                                         <font>
+                                                            <Font name="System Bold" size="20.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <TextArea fx:id="taCausesJustification" prefHeight="50.0" prefWidth="575.0" promptText="................................................................................................................................................................................................................................" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="94.0" prefWidth="532.0">
+                                                   <children>
+                                                      <Text fill="#84dccf" strokeType="OUTSIDE" strokeWidth="0.0" text="Justification delivré à l'intéressé pour servir et valoir ce que de droit." wrappingWidth="522.2734375">
+                                                         <font>
+                                                            <Font name="System Bold" size="20.0" />
+                                                         </font>
+                                                      </Text>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets top="40.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <Button mnemonicParsing="false" onAction="#printJustification" text="Imprimer" />
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="30.0" right="30.0" top="16.0" />
+                                             </padding>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </Tab>
+                              <Tab closable="false" text="Arret de travail">
+                                 <content>
+                                    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="619.0" prefWidth="560.0">
+                                       <children>
+                                          <VBox layoutX="-9.0" layoutY="-2.0" prefHeight="474.0" prefWidth="1000.0" style="-fx-background-color: #3c3c3c;">
+                                             <children>
+                                                <HBox layoutX="40.0" layoutY="76.0" prefHeight="50.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Monsieur :" wrappingWidth="116.2734375">
+                                                         <font>
+                                                            <Font name="System Bold" size="20.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <TextField fx:id="tfPatientStopJob" prefHeight="25.0" prefWidth="233.0" promptText="................................................................................................................" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="50.0" prefWidth="532.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Je soussigné DR Kachi certifie avoir pris en charge " textAlignment="RIGHT" wrappingWidth="531.2734375">
+                                                         <font>
+                                                            <Font name="System Bold" size="20.0" />
+                                                         </font>
+                                                      </Text>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="50.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="le patient sus-nommé le " wrappingWidth="279.2734375">
+                                                         <font>
+                                                            <Font name="System Bold" size="20.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Text fx:id="tDateStopingJob" layoutX="10.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="le patient sus-nommé le " textAlignment="RIGHT" wrappingWidth="392.2734375">
+                                                         <font>
+                                                            <Font name="System Bold" size="20.0" />
+                                                         </font>
+                                                      </Text>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="50.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="pour" wrappingWidth="57.2734375">
+                                                         <font>
+                                                            <Font name="System Bold" size="20.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <TextArea fx:id="taCauses" prefHeight="85.0" prefWidth="471.0" promptText="................................................................................................................................................................................................................................" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="50.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="L'état de santé du patient justifie un arrêt de travail" wrappingWidth="527.2734375">
+                                                         <font>
+                                                            <Font name="System Bold" size="20.0" />
+                                                         </font>
+                                                      </Text>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="51.0" prefWidth="532.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="de " wrappingWidth="35.2734375">
+                                                         <font>
+                                                            <Font name="System Bold" size="20.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <TextField fx:id="tfPeriodePatientJob" prefHeight="25.0" prefWidth="165.0" promptText="........................................................" />
+                                                      <Text layoutX="10.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="à compter à partir de ce jour même" wrappingWidth="339.2734375">
+                                                         <font>
+                                                            <Font name="System Bold" size="20.0" />
+                                                         </font>
+                                                      </Text>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="71.0" prefWidth="940.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Arrêt de travail delivré à l'intéressé pour servir et valoir ce que de droit." wrappingWidth="522.2734375">
+                                                         <font>
+                                                            <Font name="System Bold" size="20.0" />
+                                                         </font>
+                                                      </Text>
+                                                   </children>
+                                                </HBox>
+                                                <Button mnemonicParsing="false" onAction="#printStopingJob" text="Imprimer">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="30.0" right="30.0" top="16.0" />
+                                             </padding>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </TabPane>
+                        <HBox layoutX="65.0" layoutY="210.0" prefHeight="200.0" prefWidth="1063.0" spacing="15.0">
+                           <children>
+                              <Pane onMouseClicked="#showAgeStatistics" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #38c6b1; -fx-opacity: 0.7;">
+                                 <children>
+                                    <FontAwesomeIcon fill="WHITE" iconName="BAR_CHART" layoutX="64.0" layoutY="67.0" size="5em" />
+                                    <Label alignment="TOP_CENTER" layoutX="50.0" layoutY="121.0" prefHeight="25.0" prefWidth="94.0" text="Age">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Text layoutX="14.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="statistique âge/malades de tous les stratégie" textAlignment="CENTER" wrappingWidth="177.55372524261475" />
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Pane>
+                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #38c6b1; -fx-opacity: 0.7;">
+                                 <children>
+                                    <FontAwesomeIcon fill="WHITE" iconName="BAR_CHART" layoutX="64.0" layoutY="67.0" size="5em" />
+                                    <Label alignment="TOP_CENTER" layoutX="50.0" layoutY="121.0" prefHeight="25.0" prefWidth="94.0" text="Age">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Text layoutX="14.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="statistique âge/malades de tous les stratégie" textAlignment="CENTER" wrappingWidth="177.55372524261475" />
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Pane>
+                              <Pane layoutX="225.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #38c6b1; -fx-opacity: 0.7;">
+                                 <children>
+                                    <FontAwesomeIcon fill="WHITE" iconName="BAR_CHART" layoutX="64.0" layoutY="67.0" size="5em" />
+                                    <Label alignment="TOP_CENTER" layoutX="50.0" layoutY="121.0" prefHeight="25.0" prefWidth="94.0" text="Age">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Text layoutX="14.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="statistique âge/malades de tous les stratégie" textAlignment="CENTER" wrappingWidth="177.55372524261475" />
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Pane>
+                              <Pane layoutX="440.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #38c6b1; -fx-opacity: 0.7;">
+                                 <children>
+                                    <FontAwesomeIcon fill="WHITE" iconName="BAR_CHART" layoutX="64.0" layoutY="67.0" size="5em" />
+                                    <Label alignment="TOP_CENTER" layoutX="50.0" layoutY="121.0" prefHeight="25.0" prefWidth="94.0" text="Age">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Text layoutX="14.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="statistique âge/malades de tous les stratégie" textAlignment="CENTER" wrappingWidth="177.55372524261475" />
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Pane>
+                              <Pane layoutX="655.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #38c6b1; -fx-opacity: 0.7;">
+                                 <children>
+                                    <FontAwesomeIcon fill="WHITE" iconName="BAR_CHART" layoutX="64.0" layoutY="67.0" size="5em" />
+                                    <Label alignment="TOP_CENTER" layoutX="50.0" layoutY="121.0" prefHeight="25.0" prefWidth="94.0" text="Age">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Text layoutX="14.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="statistique âge/malades de tous les stratégie" textAlignment="CENTER" wrappingWidth="177.55372524261475" />
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Pane>
+                           </children>
+                        </HBox>
+                        <JFXDatePicker layoutX="192.0" layoutY="75.0" />
+                     </children>
+                  </AnchorPane>
+                  <ScrollPane fx:id="tacheScrollPane" layoutX="23.0" layoutY="51.0" onMouseEntered="#afficherTaches" onMouseExited="#hideTaches" prefHeight="317.0" prefWidth="350.0" style="-fx-background-color: #84DCCF;" visible="false">
+                     <content>
+                        <VBox fx:id="tasksList" prefHeight="318.0" prefWidth="351.0" spacing="10.0" style="-fx-background-color: #38c6b1;">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

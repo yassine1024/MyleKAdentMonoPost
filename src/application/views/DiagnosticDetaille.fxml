@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stackPane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.DiagnosticDetailleController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="653.0" onKeyTyped="#closeDetaille" prefHeight="362.0" prefWidth="653.0" style="-fx-border-color: white; -fx-background-color: #39293D;" stylesheets="@/css/tableView.css">
+         <children>
+            <TableView fx:id="tableDiagnostiqueDetaille" layoutX="51.0" layoutY="99.0" prefHeight="204.0" prefWidth="594.0" stylesheets="@/css/tableView.css" />
+            <TextField fx:id="tActe" layoutX="53.0" layoutY="319.0" onKeyPressed="#changerPositionActe" prefHeight="25.0" prefWidth="194.0" promptText="Acte" />
+            <TextField fx:id="tPaye" layoutX="251.0" layoutY="319.0" onKeyPressed="#changerPositionPaye" prefHeight="25.0" prefWidth="187.0" promptText="Payé" />
+            <Label layoutX="41.0" layoutY="13.0" prefHeight="48.0" prefWidth="285.0" styleClass="headerTitle" text="DIAGNOSTIQUE DETAILLE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Separator layoutX="55.0" layoutY="58.0" prefHeight="4.0" prefWidth="419.0" />
+            <HBox layoutX="622.0" layoutY="5.0" prefHeight="30.0" prefWidth="63.0">
+               <children>
+                  <fx:include source="/application/views/login/LoginBar.fxml" />
+               </children>
+            </HBox>
+            <FontAwesomeIcon id="fa-add" iconName="PLUS_CIRCLE" layoutX="653.0" layoutY="129.0" onMousePressed="#ajouterDiagnostiqueDetaille" size="3em">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </FontAwesomeIcon>
+            <FontAwesomeIcon id="fa-delete" fill="#da1212" iconName="REMOVE" layoutX="655.0" layoutY="188.0" onMousePressed="#supprimerDiagnostiqueDetaille" size="3em" wrappingWidth="24.999997958540916">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </FontAwesomeIcon>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

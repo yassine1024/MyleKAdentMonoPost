@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="root" prefHeight="522.0" prefWidth="591.0" stylesheets="@/css/pieChart.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.statistics.NbrSexeController">
+   <children>
+      <AnchorPane style="-fx-background-color: #39293D; -fx-border-color: white;">
+         <children>
+            <BarChart fx:id="sexeBarChart" layoutX="38.0" layoutY="89.0" title="Nombre de patients par sexe">
+              <xAxis>
+                <CategoryAxis label="Sexe" side="BOTTOM" tickLabelFill="WHITE" fx:id="x" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="y" label="Nombre" side="LEFT" tickLabelFill="#fffbfb" />
+              </yAxis>
+            </BarChart>
+            <HBox layoutX="511.0" layoutY="6.0" prefHeight="33.0" prefWidth="65.0">
+               <children>
+                  <fx:include source="/application/views/login/LoginBar.fxml" />
+               </children>
+            </HBox>
+            <Label layoutX="14.0" layoutY="13.0" prefHeight="52.0" prefWidth="297.0" styleClass="headerTitle" text="Nombre de patient par age" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Separator layoutX="32.0" layoutY="59.0" prefHeight="0.0" prefWidth="262.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

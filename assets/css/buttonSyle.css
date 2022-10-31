@@ -1,0 +1,203 @@
+ Button {
+	-fx-font-weight: bold;
+	-fx-background-color:  #161032; /*#F2ED6F;*/
+	-fx-background-radius: 22.0;
+	-fx-font-size: 16.0;
+	-fx-text-fill: white;
+	
+	
+}
+Button:hover {
+	/*-fx-font-weight: bold;
+	-fx-background-color: #F2ED6F;
+	-fx-background-radius: 22.0;
+	-fx-font-size: 16.0;
+	-fx-text-fill:  #84DCCF;
+	
+	*/
+	-fx-cursor: hand;
+	-fx-opacity: 0.5;
+	
+	
+	/*-fx-border-color: #2196f3;
+	-fx-border-radius: 20;
+	-fx-border-width: 3;*/
+	
+}
+
+
+Button:pressed {
+	/*-fx-font-weight: bold;
+	-fx-background-color: white;
+	-fx-background-radius: 22;
+	-fx-font-size: 16;
+	-fx-text-fill: #2196f3;
+	-fx-border-color: #2196f3;
+	-fx-border-radius: 20;
+	-fx-border-width: 3;
+	* */
+	
+	-fx-rotate: 3.0;
+	-fx-opacity:0.6;
+	
+}
+.addPatient:hover{
+	-fx-opacity:0.5;
+	/*-fx-font-size: 60.0px;
+	-fx-text-fill: #84DCCF;
+	-fx-background-color: #F2ED6F;
+	-fx-background-radius: 32.0;
+	* */
+	
+}
+#fontAwesomeHover:hover{
+	/*-fx-fill: black;*/
+}
+.addPatient:pressed{
+	/*-fx-font-size: 60px;
+	-fx-text-fill: #2196f3;
+	-fx-background-color: white;
+	-fx-background-radius: 32;
+	* */
+	
+	-fx-rotate:10.0;
+}
+Label{
+	-fx-text-fill: white;
+}
+Text{
+	-fx-fill: #161032;
+}
+#deconnect{
+	-fx-font-size: 10.0;
+	-fx-font-weight:bold;
+}
+#deconnect:hover{
+	-fx-text-fill:#F2ED6F;
+	-fx-background-color: red;
+}
+
+
+/*add to tabpane  */
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0.0;
+}
+
+.tab-pane
+{
+    -fx-tab-min-width:90.0px;
+}
+
+.tab{
+    -fx-background-insets: 0.0 1.0 0.0 1.0,0.0,0.0;
+}
+.tab-pane .tab
+{
+    -fx-background-color: #e6e6e6;
+
+}
+
+.tab-pane .tab:selected
+{
+    -fx-background-color: #3c3c3c;
+}
+
+.tab .tab-label { 
+    -fx-alignment: CENTER;
+    -fx-text-fill: #828282;
+    -fx-font-size: 12.0px;
+    -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label { 
+    -fx-alignment: CENTER;
+    -fx-text-fill: #96b946;
+}
+.tab-pane:top *.tab-header-area {
+    -fx-background-insets: 0.0, 0.0 0.0 1.0 0.0;
+ /* -fx-padding: 0.416667em 0.166667em 0.0em 0.833em; /* 5 2 0 10 */
+    -fx-padding: 0.416667em 0.166667em 0.0em 0.0em; /* overridden as 5 2 0 0 */
+}
+.tab-pane Text{
+	-fx-text-fill: black;
+}
+
+/*add style to logo  */
+.logo{
+	/*-fx-font-weight: bold;
+	-fx-text-fill: #016FB9;
+	* */
+	
+	-fx-font-size: 12.0;
+}
+/*add style to textField */
+.text-field {
+    -fx-background-color: #a9a9a9 , white , white;
+    -fx-background-insets: 0.0 -1.0 -1.0 -1.0, 0.0 0.0 0.0 0.0, 0.0 -1.0 3.0 -1.0;
+    -fx-font-weight: bold;
+    -fx-font-size: 15.0;
+}
+
+.text-field:focused {
+    /*-fx-background-color: #a9a9a9 ,  blue ,  blue;*/
+    -fx-background-insets: 0.0 -1.0 -1.0 -1.0, 0.0 0.0 0.0 0.0, 0.0 -1.0 3.0 -1.0;
+    -fx-effect: dropshadow( gaussian , rgba(0.0,0.0,255.0,0.5) , 0.0,0.0,0.0,1.0 );
+   /*  -fx-text-fill: white;*/
+}
+/*data of fiche malade */
+.data-fiche{
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+}
+/*font awesome for delete */
+#fa-delete{
+	-fx-fill:#FF6347;
+	-fx-size:  5em;
+		}
+/*fontawesome for add */
+#fa-add{
+	-fx-fill: #026aab;
+}
+.hbox-home{
+	-fx-font-size: 7.0px;
+}
+#totale{
+	-fx-text-fill: white;
+	-fx-font-size: 20px;
+	-fx-font-weight: bold;
+}
+.redaction{
+	-fx-text-fill:  #84DCCF;
+}
+.anchorPR{
+	-fx-text-fill: black;
+}
+
+
+Label{
+	-fx-text-fill: #161032;
+}
+
+.headerTitle{
+	
+	-fx-font-size: 22px;
+	-fx-font-weight:bold;
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+	
+}
+.card-british{
+	-fx-border-radius: 30.0 0.0 30.0 0.0;
+	-fx-background-color:#B26700 ;
+  -fx-background-radius: 30.0 0.0 30.0 0.0;
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
+
+.card-France{
+	-fx-border-radius: 30.0 0.0 30.0 0.0;
+	-fx-background-color:#161032 ;
+  -fx-background-radius: 30.0 0.0 30.0 0.0;
+  -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+  
+	
+}
+

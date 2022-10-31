@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="465.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.statistics.ageStatisticController">
+   <children>
+      <AnchorPane prefHeight="461.0" prefWidth="700.0" style="-fx-background-color: #39293D; -fx-border-color: white;" stylesheets="@/css/pieChart.css">
+         <children>
+            <Label fx:id="caption" alignment="CENTER" contentDisplay="CENTER" layoutX="454.0" layoutY="30.0" prefHeight="45.0" prefWidth="73.0" textFill="#ff5e5e" />
+            <HBox layoutX="620.0" layoutY="7.0" prefHeight="33.0" prefWidth="65.0">
+             <children>
+      <fx:include source="/application/views/login/LoginBar.fxml" />
+   </children>
+            </HBox>
+            <StackPane fx:id="pieChartNbr" layoutX="28.0" layoutY="67.0" prefHeight="354.0" prefWidth="648.0" />
+            <Label layoutX="19.0" prefHeight="52.0" prefWidth="297.0" styleClass="headerTitle" text="Nombre de patient par age" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Separator layoutX="24.0" layoutY="46.0" prefHeight="3.0" prefWidth="262.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

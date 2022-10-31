@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jardesc>
+    <jar path="C:/Users/ACER-8.1/Desktop/exe/CabinetDentaireV3.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/cabinet_medicale/lib/create_jar.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="true" mainClassHandleIdentifier="=cabinet_medicale/src&lt;application{FakeMain.java[FakeMain" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="true">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+        <folder path="/cabinet_medicale/lib"/>
+        <javaElement handleIdentifier="=cabinet_medicale/src"/>
+        <javaElement handleIdentifier="=cabinet_medicale/assets"/>
+        <file path="/cabinet_medicale/.classpath"/>
+        <file path="/cabinet_medicale/.project"/>
+    </selectedElements>
+</jardesc>
