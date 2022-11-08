@@ -255,10 +255,11 @@ public class ActivationController implements Initializable {
 	/*
 	 * *********************Begin snapSound attributes
 	 *******************************/
-	/*String ssound = "assets//homeSound.mp3";
-	Media sound = new Media(new File(ssound).toURI().toString());
-	MediaPlayer mediaPlayer = new MediaPlayer(sound);
-	*/
+	/*
+	 * String ssound = "assets//homeSound.mp3"; Media sound = new Media(new
+	 * File(ssound).toURI().toString()); MediaPlayer mediaPlayer = new
+	 * MediaPlayer(sound);
+	 */
 
 	// add construct for a TimerTask
 	public Appointment appointment;
@@ -361,7 +362,8 @@ public class ActivationController implements Initializable {
 		this.userTitleText = userTitle;
 		this.userId = userId;
 
-		System.out.println("lllllllllllloooggggggggggggggggggggggooooooooooooooooo" + this.userTitleText+" ID: "+this.userId);
+		System.out.println(
+				"lllllllllllloooggggggggggggggggggggggooooooooooooooooo" + this.userTitleText + " ID: " + this.userId);
 	}
 
 	public static String logoName;
@@ -624,14 +626,13 @@ public class ActivationController implements Initializable {
 	private String dateOfToday;
 
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		
-		
-		//check If the user is logged Then Limit access to App
-		if(this.userId != 1) {  
-			
+
+		// check If the user is logged Then Limit access to App
+		if (this.userId != 1) {
+
 			this.comboBoxSelectUser.setVisible(false);
 			saveAuthToggleButton.setVisible(false);
-			
+
 		}
 
 		// scrollPaneParameter.setFitToWidth(true);
@@ -809,7 +810,6 @@ public class ActivationController implements Initializable {
 		// set sort type for last name
 		lastName.setSortType(TableColumn.SortType.DESCENDING);
 
-		
 		// remplier le tableau des malades de maniÃ¨re cacher
 		allMalade = fillTable();
 		// ObservableList<Malade> list2=FXCollections.observableArrayList(new
@@ -822,13 +822,13 @@ public class ActivationController implements Initializable {
 		String dateSelected = dateListe.getValue().toString();
 		float sumPaye = 0;
 
-		//This where we initailze combobox for users and is shown only for Admin
+		// This where we initailze combobox for users and is shown only for Admin
 		this.initializeComboBoxSelelctUser();
 
-		String [] userSplit = this.comboBoxSelectUser.getValue().split("_");
-		int userIdAfterParse= Integer.parseInt(userSplit[0]);
+		String[] userSplit = this.comboBoxSelectUser.getValue().split("_");
+		int userIdAfterParse = Integer.parseInt(userSplit[0]);
 		for (Malade malade : arrayRecherche) {
-			if (malade.getDateArriver().equals(dateSelected) && malade.getUser()==userIdAfterParse) {
+			if (malade.getDateArriver().equals(dateSelected) && malade.getUser() == userIdAfterParse) {
 				arrayR.add(malade);
 				sumPaye += malade.getPaye();
 
@@ -1068,11 +1068,11 @@ public class ActivationController implements Initializable {
 					layout.setActions(ok);
 					dialog.show();
 
-					/*String ssound = "assets//appointment2.mp3";
-					Media sound = new Media(new File(ssound).toURI().toString());
-					MediaPlayer mediaPlayer = new MediaPlayer(sound);
-					mediaPlayer.play();
-					*/
+					/*
+					 * String ssound = "assets//appointment2.mp3"; Media sound = new Media(new
+					 * File(ssound).toURI().toString()); MediaPlayer mediaPlayer = new
+					 * MediaPlayer(sound); mediaPlayer.play();
+					 */
 
 				}
 			}
@@ -1112,7 +1112,7 @@ public class ActivationController implements Initializable {
 		// this.tabAppointment.setItems(FXCollections.observableArrayList(this.arrayListAppointment));
 
 		this.initializeValidatorjfxTPatientRedaction();
-		
+
 	}
 
 	private void initializeValidatorjfxTPatientRedaction() {
@@ -1276,7 +1276,7 @@ public class ActivationController implements Initializable {
 	}
 
 	// the list of patient for autocomplete in redaction
-	 public static ArrayList<String> patientListComplete = new ArrayList<String>(); //044260552
+	public static ArrayList<String> patientListComplete = new ArrayList<String>(); // 044260552
 
 	public void InitializePatientList() {
 
@@ -1692,13 +1692,13 @@ public class ActivationController implements Initializable {
 					stm = sl.getConnection().createStatement();
 					;
 					String requette = "insert into historic_malades(malade_id, date_arriver, paye,user_id)" + "Values('"
-							+ m.getId() + "','" + myDate.format(myFormat) + "',0,'"+this.userId+"')";
+							+ m.getId() + "','" + myDate.format(myFormat) + "',0,'" + this.userId + "')";
 					stm.execute(requette);
 					// stm.cancel();
 					// ajouter le patient dans la liste d'aujourdhui
 					allMalade.add(new Malade(m.getId(), m.getNom(), m.getPrenom(), m.getAdresse(), m.getPhone(),
 							m.getSexe(), m.getAge(), m.getProfession(), null, m.getPaye(), myDate.format(myFormat),
-							m.getHmID(),m.getUser()));
+							m.getHmID(), m.getUser()));
 					dateListe.setValue(myDate);
 
 					refreshList();
@@ -1817,7 +1817,9 @@ public class ActivationController implements Initializable {
 							 */
 
 							refreshList();
-						} catch (IOException e) {
+						} catch (
+
+						IOException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
@@ -1902,7 +1904,8 @@ public class ActivationController implements Initializable {
 				al.add(new Malade(rs.getInt("malade_id1"), rs.getString("nom1"), rs.getString("prenom1"),
 						rs.getString("adresse1"), rs.getString("telephone1"), rs.getString("sexe1"),
 						Integer.parseInt(rs.getString("age1")), rs.getString("fonction1"), sexe,
-						Float.parseFloat(rs.getString("paye1")), rs.getString("date_arriver1"), rs.getInt("hm_id"),rs.getInt("user")));
+						Float.parseFloat(rs.getString("paye1")), rs.getString("date_arriver1"), rs.getInt("hm_id"),
+						rs.getInt("user")));
 
 			}
 
@@ -2072,15 +2075,15 @@ public class ActivationController implements Initializable {
 					if (ke.getCode() == KeyCode.ESCAPE) {
 						primaryStage.close();
 					}
-					
+
 					if (new KeyCodeCombination(KeyCode.M, KeyCombination.CONTROL_ANY).match(ke)) {
-					       System.out.println("Work for me");
-					       controller.setSelectCheckBoxMale(null);
-					    }
+						System.out.println("Work for me");
+						controller.setSelectCheckBoxMale(null);
+					}
 					if (new KeyCodeCombination(KeyCode.F, KeyCombination.CONTROL_ANY).match(ke)) {
-					       System.out.println("Work for me");
-					       controller.setSelectCheckBoxFemale(null);
-					    }
+						System.out.println("Work for me");
+						controller.setSelectCheckBoxFemale(null);
+					}
 				}
 			});
 			///////////////// End//////////////
@@ -2096,7 +2099,7 @@ public class ActivationController implements Initializable {
 
 				if (Main.ifStillFree) {
 					if (controller.numbPatient()) {
-						
+
 						Main.setIfStillFree(false);
 
 						Stage stage = (Stage) homeAnchor.getScene().getWindow();
@@ -2190,11 +2193,11 @@ public class ActivationController implements Initializable {
 
 		String dateSelected = dateListe.getValue().toString();
 
-		//00 ==> 11
-		String [] userSplit = this.comboBoxSelectUser.getValue().split("_");
-		int userIdAfterParse= Integer.parseInt(userSplit[0]);
+		// 00 ==> 11
+		String[] userSplit = this.comboBoxSelectUser.getValue().split("_");
+		int userIdAfterParse = Integer.parseInt(userSplit[0]);
 		for (Malade malade : arrayRecherche) {
-			if (malade.getDateArriver().equals(dateSelected) && malade.getUser()==userIdAfterParse) {
+			if (malade.getDateArriver().equals(dateSelected) && malade.getUser() == userIdAfterParse) {
 				arrayR.add(malade);
 				System.out.println("true");
 				sumPaye += malade.getPaye();
@@ -2344,7 +2347,6 @@ public class ActivationController implements Initializable {
 
 	}
 
-	
 	@FXML
 	void slelectionnerDate(ActionEvent event) {
 		ObservableList<Malade> arrayRecherche = allMalade;
@@ -2353,11 +2355,11 @@ public class ActivationController implements Initializable {
 		String dateSelected = dateListe.getValue().toString();
 		dateListeString = dateSelected;
 		float sumPaye = 0;
-		String [] userSplit = this.comboBoxSelectUser.getValue().split("_");
-		int userIdAfterParse= Integer.parseInt(userSplit[0]);
+		String[] userSplit = this.comboBoxSelectUser.getValue().split("_");
+		int userIdAfterParse = Integer.parseInt(userSplit[0]);
 		for (Malade malade : arrayRecherche) {
-			System.out.println("From select date Malade: "+malade.getUser()+" This user: "+userIdAfterParse);
-			if (malade.getDateArriver().equals(dateSelected) && malade.getUser()== userIdAfterParse) {
+			System.out.println("From select date Malade: " + malade.getUser() + " This user: " + userIdAfterParse);
+			if (malade.getDateArriver().equals(dateSelected) && malade.getUser() == userIdAfterParse) {
 				malade.initialiseActe();
 				arrayR.add(malade);
 				System.out.println("true");
@@ -2467,8 +2469,8 @@ public class ActivationController implements Initializable {
 				/*
 				 * Notifications notification =
 				 * Notifications.create().title("Ajout de nouveau labo")
-				 * .text("le labo Ã  été enrgistrer").graphic(null).hideAfter(Duration.seconds(2)
-				 * ) .position(Pos.BOTTOM_CENTER).onAction(new EventHandler<ActionEvent>() {
+				 * .text("le labo Ã  été enrgistrer").graphic(null).hideAfter(Duration.seconds(
+				 * 2) ) .position(Pos.BOTTOM_CENTER).onAction(new EventHandler<ActionEvent>() {
 				 * 
 				 * public void handle(ActionEvent arg0) { // TODO Auto-generated method stub
 				 * System.out.println("notification"); } }); notification.show();
@@ -2667,7 +2669,9 @@ public class ActivationController implements Initializable {
 				}
 
 			}
-		} catch (SQLException e) {
+		} catch (
+
+		SQLException e) {
 			// TODO Auto-generated catch block
 			// e.printStackTrace();
 		}
@@ -2843,12 +2847,13 @@ public class ActivationController implements Initializable {
 //413
 			/*
 			 * PdfPTable table = new PdfPTable(5); PdfPCell cell1 = new PdfPCell(new
-			 * Phrase("Ø§Ù„Ø²Ù…Ø§Ù†")); PdfPCell cell2 = new PdfPCell(new Phrase("Ø§Ù„Ù†ÙˆØ¹"));
-			 * PdfPCell cell3 = new PdfPCell(new
-			 * Phrase("Ù…Ø¨Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù„Øº Ø§Ù„Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€ÙˆØ­Ù€Ù€Ù€Ù€Ù€Ø¯Ø©")); PdfPCell cell4 = new
-			 * PdfPCell(new Phrase("Ø§Ù„Ù€Ù€Ù€Ù€Ù€Ù€ÙƒÙ€Ù€Ù…ÙŠØ©")); PdfPCell cell5 = new PdfPCell(new
-			 * Phrase("Ø§Ù„Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù…Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ø¨Ù€Ù€Ù€Ù€Ù€Ù„Øº Ø§Ù„Ù€Ù€Ù€Ù€Ù€Ù€Ù€ÙƒÙ€Ù€Ù€Ù€Ù„Ù€Ù€Ù€Ù€Ù€ÙŠ"));
-			 * table.addCell(cell1); table.addCell(cell2); table.addCell(cell3);
+			 * Phrase("Ø§Ù„Ø²Ù…Ø§Ù†")); PdfPCell cell2 = new PdfPCell(new
+			 * Phrase("Ø§Ù„Ù†ÙˆØ¹")); PdfPCell cell3 = new PdfPCell(new
+			 * Phrase("Ù…Ø¨Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù„Øº Ø§Ù„Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€ÙˆØ­Ù€Ù€Ù€Ù€Ù€Ø¯Ø©"));
+			 * PdfPCell cell4 = new PdfPCell(new Phrase("Ø§Ù„Ù€Ù€Ù€Ù€Ù€Ù€ÙƒÙ€Ù€Ù…ÙŠØ©"));
+			 * PdfPCell cell5 = new PdfPCell(new
+			 * Phrase("Ø§Ù„Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù…Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ø¨Ù€Ù€Ù€Ù€Ù€Ù„Øº Ø§Ù„Ù€Ù€Ù€Ù€Ù€Ù€Ù€ÙƒÙ€Ù€Ù€Ù€Ù„Ù€Ù€Ù€Ù€Ù€ÙŠ"
+			 * )); table.addCell(cell1); table.addCell(cell2); table.addCell(cell3);
 			 * table.addCell(cell4); table.addCell(cell5); table.setHeaderRows(1); for
 			 * (LabDetaille labDetaille : this.reduceLabDetailleArray) {
 			 * table.addCell(labDetaille.getDate()); table.addCell(labDetaille.getType());
@@ -3246,7 +3251,8 @@ public class ActivationController implements Initializable {
 
 		addEmptyLine(preface, 2);
 
-		// preface.add(new Paragraph("ArrÃªt de travail delivré Ã  l'intéressé pour servir
+		// preface.add(new Paragraph("ArrÃªt de travail delivré Ã  l'intéressé pour
+		// servir
 		// et valoir ce que de droit.",
 		// catFont));
 		document.add(preface);
@@ -4380,9 +4386,10 @@ public class ActivationController implements Initializable {
 			 * 
 			 * }
 			 * 
-			 * // document.addTitle("ÙˆØµÙ�Ø© Ø¯ÙˆØ§Ø¡"); // document.addHeader(arg0, arg1) //
-			 * document.addSubject("Ø§Ù„Ø£Ø¯ÙˆÙŠØ© Ø§Ù„Ù…Ø³ØªØ¹Ù…Ù„Ø© Ù�ÙŠ Ø§Ù„Ø¹Ù„Ø§Ø¬ "); for (Paragraph paragraph
-			 * : arrayParagraphes) { document.add(paragraph);
+			 * // document.addTitle("ÙˆØµÙ�Ø© Ø¯ÙˆØ§Ø¡"); // document.addHeader(arg0, arg1)
+			 * //
+			 * document.addSubject("Ø§Ù„Ø£Ø¯ÙˆÙŠØ© Ø§Ù„Ù…Ø³ØªØ¹Ù…Ù„Ø© Ù�ÙŠ Ø§Ù„Ø¹Ù„Ø§Ø¬ ");
+			 * for (Paragraph paragraph : arrayParagraphes) { document.add(paragraph);
 			 * 
 			 * } document.close();
 			 */
@@ -5162,15 +5169,15 @@ public class ActivationController implements Initializable {
 						if (ke.getCode() == KeyCode.ESCAPE) {
 							primaryStage.close();
 						}
-						
+
 						if (new KeyCodeCombination(KeyCode.M, KeyCombination.CONTROL_ANY).match(ke)) {
-						       System.out.println("Work for me");
-						       controller.setSelectCheckBoxMale(null);
-						    }
+							System.out.println("Work for me");
+							controller.setSelectCheckBoxMale(null);
+						}
 						if (new KeyCodeCombination(KeyCode.F, KeyCombination.CONTROL_ANY).match(ke)) {
-						       System.out.println("Work for me");
-						       controller.setSelectCheckBoxFemale(null);
-						    }
+							System.out.println("Work for me");
+							controller.setSelectCheckBoxFemale(null);
+						}
 					}
 				});
 				///////////////// End//////////////
@@ -5748,6 +5755,45 @@ public class ActivationController implements Initializable {
 	}
 
 	@FXML
+	public void showExpense(MouseEvent event) {
+
+		Stage primaryStage = new Stage();
+		primaryStage.initStyle(StageStyle.UNDECORATED);
+		// AddPatientController controller = new AddPatientController(this.userId);
+		FXMLLoader root;
+		Parent parent;
+
+		try {
+			root = new FXMLLoader(getClass().getResource("/application/views/expense/expense.fxml"));
+			System.out.println("atik");
+			// root.setController(controller);
+			parent = root.load();
+			Scene scene = new Scene(parent);
+
+			// Add listner for close the window
+
+			scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+				@Override
+				public void handle(KeyEvent ke) {
+					if (ke.getCode() == KeyCode.ESCAPE) {
+						AppointmentController.setSwitcher(0);
+						primaryStage.close();
+					}
+				}
+			});
+			///////////////// End//////////////
+
+//application.controllers.AddPatientController
+			// scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			primaryStage.setScene(scene);
+			primaryStage.showAndWait();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+	}
+
+	@FXML
 	public void showNegatoscope(MouseEvent event) {
 
 		Stage primaryStage = new Stage();
@@ -6071,6 +6117,33 @@ public class ActivationController implements Initializable {
 		this.negatoscopeAnchor.getTransforms().clear();
 	}
 
+	// for Expense
+
+	@FXML
+	private AnchorPane expanseAnchor;
+
+	@FXML
+	void expenseEntred(MouseEvent event) {
+
+		// creating a 2D scale
+		Scale scale = new Scale();
+
+		// setting the X-y factors for the scale
+		scale.setX(1.05);
+		scale.setY(1.05);
+
+		// setting the pivot points along which the scaling is done
+		// scale.setPivotX(550);
+		// scale.setPivotY(200);
+		this.expanseAnchor.getTransforms().add(scale);
+
+	}
+
+	@FXML
+	void expenseExited(MouseEvent event) {
+		this.expanseAnchor.getTransforms().clear();
+	}
+
 	@FXML
 	private Pane sliderTasks;
 
@@ -6349,57 +6422,47 @@ public class ActivationController implements Initializable {
 	void addAppointmentExited(MouseEvent event) {
 		this.showRDVAnchor.getTransforms().clear();
 	}
-	
+
 	private void initializeComboBoxSelelctUser() {
-		
-		
+
 		Statement stm = null;
 		ResultSet rs = null;
 		String request = null;
-String index="";
-		ArrayList<String> cBSU= new ArrayList<String>();
+		String index = "";
+		ArrayList<String> cBSU = new ArrayList<String>();
 		try {
 			stm = new SQLiteJDBC().getConnection().createStatement();
 			request = "SELECT user_id,nom_fr,specialty FROM users";
 			rs = stm.executeQuery(request);
-			int i=0;
+			int i = 0;
 			while (rs.next()) {
 				i++;
 
-				cBSU.add(rs.getInt(1)+"_"+rs.getString(2)+"_"+rs.getString(3));
-				if(rs.getInt(1)== this.userId) {
-					index = rs.getInt(1)+"_"+rs.getString(2)+"_"+rs.getString(3);
+				cBSU.add(rs.getInt(1) + "_" + rs.getString(2) + "_" + rs.getString(3));
+				if (rs.getInt(1) == this.userId) {
+					index = rs.getInt(1) + "_" + rs.getString(2) + "_" + rs.getString(3);
 				}
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		
+
 		this.comboBoxSelectUser.setItems(FXCollections.observableArrayList(cBSU));
 		this.comboBoxSelectUser.setValue(index);
 
-		
 	}
-	
-	//From this i begin code without scenebuilder
-	
+
+	// From this i begin code without scenebuilder
+
 	@FXML
 	private JFXComboBox<String> comboBoxSelectUser;
-	
+
 	@FXML
 	void slelectionnerUser(ActionEvent event) {
-	
-		
-		
+
 		this.slelectionnerDate(null);
-		
+
 	}
-	
-	
-	
-	
-	
+
 }

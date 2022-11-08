@@ -162,9 +162,9 @@ public class AppointmentController implements Initializable {
 			String dateS = this.date.getValue().toString();
 			String hourS = this.hour.getValue().toString();
 			JFXDialogLayout layout = new JFXDialogLayout();
-			layout.setHeading(new Text("Duplication des donnÃ©es"));
-			layout.setBody(new Text("Le rendez-vous dans" + dateS + " Ã  " + hourS + " de monsieur(madame) "
-					+ ActivationController.hashTableAppointment.get(dateS + " " + hourS) + " existe dÃ©ja"));
+			layout.setHeading(new Text("Duplication des données"));
+			layout.setBody(new Text("Le rendez-vous dans" + dateS + " à  " + hourS + " de monsieur(madame) "
+					+ ActivationController.hashTableAppointment.get(dateS + " " + hourS) + " existe déja"));
 
 			JFXAlert dialog = new JFXAlert();
 
