@@ -517,16 +517,16 @@
 								</TabPane>
 							</children>
 						</AnchorPane>
-						<AnchorPane fx:id="statisticsAnchor" prefHeight="637.0" prefWidth="870.0" style="-fx-background-color: #39293D;" visible="false">
+						<AnchorPane fx:id="statisticsAnchor" prefHeight="637.0" prefWidth="876.0" style="-fx-background-color: #39293D;">
 							<children>
 								<Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="40.0" prefHeight="49.0" prefWidth="193.0" text="Statistiques" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="45.0">
 									<font>
 										<Font name="System Bold" size="33.0" />
 									</font>
 								</Label>
-								<VBox layoutX="50.0" layoutY="107.0" prefHeight="417.0" prefWidth="716.0">
+								<VBox layoutX="50.0" layoutY="107.0" prefHeight="417.0" prefWidth="600.0">
 									<children>
-										<HBox prefHeight="156.0" prefWidth="716.0" spacing="35.0">
+										<HBox prefHeight="156.0" prefWidth="600.0" spacing="35.0">
 											<children>
 												<AnchorPane fx:id="showBenific" onMouseEntered="#showBenificEntred" onMouseExited="#showBenificExited" onMousePressed="#openBenefit" prefHeight="150.0" prefWidth="161.0" styleClass="pageIcone">
 													<children>
@@ -558,16 +558,19 @@
 														</Label>
 													</children>
 												</AnchorPane>
-												<AnchorPane fx:id="addPatientAnchor1111" layoutX="332.0" layoutY="10.0" onMouseEntered="#addPatientEvent" onMouseExited="#addPatientExited" onMousePressed="#ajouterMalade" prefHeight="150.0" prefWidth="161.0" styleClass="pageIcone" visible="false">
-													<children>
-														<FontAwesomeIcon fill="#fff7f7" iconName="PLUS" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
-														<Label alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="97.0" prefHeight="25.0" prefWidth="162.0" text="Nouveau patient" textAlignment="CENTER" textFill="WHITE">
-															<font>
-																<Font name="System Bold" size="15.0" />
-															</font>
-														</Label>
-													</children>
-												</AnchorPane>
+                                    <AnchorPane fx:id="showNbrPatientAgeAnchor1" onMouseEntered="#showNbrPatientAgeEntred" onMouseExited="#showNbrPatientAgeExited" onMousePressed="#displayNbrPatient" prefHeight="150.0" prefWidth="161.0" styleClass="pageIcone">
+                                       <children>
+                                          <FontAwesomeIcon fill="#fff7f7" iconName="LINE_CHART" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
+                                          <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="97.0" prefHeight="25.0" prefWidth="162.0" text="Dépense/Bénifice" textAlignment="CENTER" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </AnchorPane>
 											</children>
 										</HBox>
 									</children>
