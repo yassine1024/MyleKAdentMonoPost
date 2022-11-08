@@ -240,7 +240,7 @@
             </Button>
             <HBox layoutX="1258.0" layoutY="6.0" prefHeight="30.0" prefWidth="76.0">
             <children>
-            <fx:include source="/application/views/login/LoginBar.fxml" />
+            <fx:include source="login/LoginBar.fxml" />
             </children>
             </HBox>
             <JFXSpinner fx:id="spinerTiming" layoutX="695.0" layoutY="142.0" prefHeight="70.0" prefWidth="68.0" visible="false" />

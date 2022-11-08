@@ -31,6 +31,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 
 <StackPane fx:id="stackPane"
 	xmlns="http://javafx.com/javafx/10.0.1"
@@ -46,7 +48,7 @@
 						<HBox layoutX="916.0" layoutY="2.0" prefHeight="37.0"
 							prefWidth="86.0">
 							<children>
-								<fx:include source="/application/views/login/LoginBar.fxml" />
+								<fx:include source="LoginBar.fxml" />
 							</children>
 						</HBox>
 						<AnchorPane layoutX="709.0" layoutY="2.0"
@@ -386,7 +388,7 @@
 										<Font name="System Bold" size="33.0" />
 									</font>
 								</Label>
-								<JFXTabPane layoutX="48.0" layoutY="107.0"
+								<TabPane layoutX="48.0" layoutY="107.0"
 									prefHeight="459.0" prefWidth="748.0"
 									style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-tab-min-width: 300;">
 									<tabs>
@@ -760,7 +762,7 @@
 											</content>
 										</Tab>
 									</tabs>
-								</JFXTabPane>
+								</TabPane>
 							</children>
 						</AnchorPane>
 						<AnchorPane fx:id="statisticsAnchor" prefHeight="637.0"
