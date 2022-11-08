@@ -7,5 +7,6 @@ build
 # Ignore token file
 TokenGitHub.txt
 
-# Ignore bin directory
+# Ignore directories that eclipse updated automatically
  bin/
+ src/application/sqlite/
