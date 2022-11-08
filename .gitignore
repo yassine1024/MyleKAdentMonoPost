@@ -6,3 +6,6 @@ build
 
 # Ignore token file
 TokenGitHub.txt
+
+# Ignore bin directory
+ bin/
