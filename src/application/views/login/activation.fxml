@@ -171,10 +171,10 @@
 											<children>
 												<FontAwesomeIcon fill="WHITE" iconName="SEARCH" size="20">
 													<HBox.margin>
-														<Insets left="20.0" top="22.0" />
+														<Insets left="2.0" top="22.0" />
 													</HBox.margin>
 												</FontAwesomeIcon>
-												<TextField fx:id="tRecherche" focusTraversable="false" onKeyReleased="#rechercher" prefHeight="36.0" prefWidth="188.0" promptText="Entrer nom ou prénom " styleClass="text-field">
+												<TextField fx:id="tRecherche" focusTraversable="false" onKeyReleased="#rechercher" prefHeight="36.0" prefWidth="275.0" promptText="Entrer nom ou prénom " styleClass="text-field">
 													<HBox.margin>
 														<Insets left="10.0" top="10.0" />
 													</HBox.margin>
@@ -182,9 +182,9 @@
 														<Cursor fx:constant="TEXT" />
 													</cursor>
 												</TextField>
-												<JFXDatePicker fx:id="dateListe" focusTraversable="false" onAction="#slelectionnerDate" prefHeight="31.0" prefWidth="240.0" style="-fx-text-inner-color: white;">
+												<JFXDatePicker fx:id="dateListe" focusTraversable="false" onAction="#slelectionnerDate" prefHeight="31.0" prefWidth="166.0" style="-fx-text-inner-color: white;">
                                        <HBox.margin>
-                                          <Insets top="5.0" />
+                                          <Insets left="20.0" top="5.0" />
                                        </HBox.margin></JFXDatePicker>
 											</children>
                                  <padding>
@@ -226,6 +226,9 @@
             											<font>
             												<Font name="System Bold" size="17.0" />
             											</font>
+                                             <padding>
+                                                <Insets left="10.0" />
+                                             </padding>
             										</Label>
             									</children>
             								</StackPane>
