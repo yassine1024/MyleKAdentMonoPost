@@ -280,6 +280,15 @@ public class Main extends Application {
 				stm.execute(request);
 				System.out.println("tasks table created with succes ");
 				// end creation historic_users table
+				// begin creation the historic_users table
+				request = "CREATE TABLE IF NOT EXISTS expenses(expense_id INTEGER PRIMARY KEY AUTOINCREMENT,"
+						+ "expense FLOAT," + "date_heur TEXT," + "motif TEXT); ";
+						
+
+				stm.execute(request);
+				System.out.println("tasks table created with succes ");
+				// end creation historic_users table
+				
 		// begin creation table malade
 		request = "CREATE TABLE IF NOT EXISTS malades(" + "malade_id INTEGER PRIMARY KEY AUTOINCREMENT," + "nom TEXT,"
 				+ "prenom TEXT," + "age INTEGER," + "sexe TEXT," + "adresse TEXT," + "telephone TEXT,"
