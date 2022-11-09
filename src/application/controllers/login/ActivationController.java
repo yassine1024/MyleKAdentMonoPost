@@ -5217,6 +5217,43 @@ public class ActivationController implements Initializable {
 		}
 
 	}
+	//Open window that show us Expense/Profit graph
+	@FXML
+	public void displayExpenseProfit(MouseEvent event) {
+		
+
+		Stage primaryStage = new Stage();
+		primaryStage.initStyle(StageStyle.UNDECORATED);
+		FXMLLoader root;
+		Parent parent;
+
+		try {
+
+			root = new FXMLLoader(getClass().getResource("/application/views/statistics/expenseProfit.fxml"));
+
+			parent = root.load();
+			Scene scene = new Scene(parent);
+
+			scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+
+				@Override
+				public void handle(KeyEvent ke) {
+					// TODO Auto-generated method stub
+					if (ke.getCode() == KeyCode.ESCAPE) {
+						primaryStage.close();
+					}
+				}
+			});
+			// application.controllers.AddPatientController
+			// scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			primaryStage.setScene(scene);
+			primaryStage.show();
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+	}
 
 	@FXML
 	public void displayNbrPatient(MouseEvent event) {
@@ -6289,6 +6326,33 @@ public class ActivationController implements Initializable {
 	@FXML
 	void showNbrPatientAgeExited(MouseEvent event) {
 		this.showNbrPatientAgeAnchor.getTransforms().clear();
+	}
+	
+	
+	//Expense's statistic
+	@FXML
+	private AnchorPane  expenseProfitAnchor;
+	
+	@FXML
+	void expenseProfitEntred(MouseEvent event) {
+
+		// creating a 2D scale
+		Scale scale = new Scale();
+
+		// setting the X-y factors for the scale
+		scale.setX(1.05);
+		scale.setY(1.05);
+
+		// setting the pivot points along which the scaling is done
+		// scale.setPivotX(550);
+		// scale.setPivotY(200);
+		this.expenseProfitAnchor.getTransforms().add(scale);
+
+	}
+
+	@FXML
+	void expenseProfitExited(MouseEvent event) {
+		this.expenseProfitAnchor.getTransforms().clear();
 	}
 
 	// prothÃ¨se
