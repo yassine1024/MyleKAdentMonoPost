@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane prefHeight="555.0" prefWidth="852.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.statistics.ExpenseProftController">
+<StackPane prefHeight="555.0" prefWidth="852.0" stylesheets="@../../../css/pieChart.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.statistics.ExpenseProftController">
    <children>
       <AnchorPane prefHeight="461.0" prefWidth="700.0" style="-fx-background-color: #39293D; -fx-border-color: white;" stylesheets="@/css/pieChart.css">
          <children>

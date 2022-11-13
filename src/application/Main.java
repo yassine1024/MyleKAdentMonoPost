@@ -164,6 +164,8 @@ public class Main extends Application {
 			createDB_AndTables();
 			createDBProtheseAndTables();
 			createDBAppointmentAndTables();
+			
+			createViewsDB();
 			// new SQLiteJDBC().getConnectionProthese();
 
 		} catch (SQLException e) {
@@ -171,6 +173,28 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 		launch(args);
+	}
+	
+	private static void createViewsDB() throws SQLException {
+		
+		Statement stm = new SQLiteJDBC().getConnection().createStatement();
+		
+		// begin creation expenses_sum view
+		String request = "CREATE VIEW IF NOT EXISTS expenses_sum AS "
+				+ " SELECT date_heur, Sum(expense) "
+				+ " FROM expenses "
+				+ " GROUP BY date_heur "
+				;
+				
+
+		stm.execute(request);
+		System.out.println("expenses_sum view created with succes ");
+		// end creation historic_users table
+		
+		stm.close();
+		
+		
+		
 	}
 
 	private static void createDBProtheseAndTables() throws SQLException {
@@ -280,14 +304,14 @@ public class Main extends Application {
 				stm.execute(request);
 				System.out.println("tasks table created with succes ");
 				// end creation historic_users table
-				// begin creation the historic_users table
+				// begin creation the expenses table
 				request = "CREATE TABLE IF NOT EXISTS expenses(expense_id INTEGER PRIMARY KEY AUTOINCREMENT,"
 						+ "expense FLOAT," + "date_heur TEXT," + "motif TEXT); ";
 						
 
 				stm.execute(request);
-				System.out.println("tasks table created with succes ");
-				// end creation historic_users table
+				System.out.println("expenses table created with succes ");
+				// end creation expenses table
 				
 		// begin creation table malade
 		request = "CREATE TABLE IF NOT EXISTS malades(" + "malade_id INTEGER PRIMARY KEY AUTOINCREMENT," + "nom TEXT,"
