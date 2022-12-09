@@ -20,6 +20,7 @@ import com.jfoenix.controls.JFXDialogLayout;
 
 import application.DataBaseConnection;
 import application.SQLiteJDBC;
+import application.controllers.login.ActivationController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -74,8 +75,21 @@ public class AddPatientController implements Initializable {
 	private int userId;
 	private Malade updateData;
 
+	
+	public void setLightDarkMode() {
+		
+		if(!ActivationController.getMode()) {
+			this.stackPane.getStylesheets().clear();
+			
+			this.stackPane.getStylesheets().add("/css/light_mode/buttonSyle.css");
+			this.stackPane.getStylesheets().add("/css/light_mode/comboBox.css");
+			this.stackPane.getStylesheets().add("/css/light_mode/styles.css");
+		}
+	}
 	public void initialize(URL arg0, ResourceBundle arg1) {
 
+		//Set Light/Dark mode as user chosed
+		this.setLightDarkMode();
 		Tooltip ttDetailed = new Tooltip();
 		ttDetailed.setText("Pour ajouter le patient.");
 		ttDetailed.setStyle("-fx-font: normal bold 13 Langdon; " + "-fx-base: #AE3522; " + "-fx-text-fill: orange;");

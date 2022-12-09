@@ -17,9 +17,9 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="stackPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="stackPane" styleClass="center" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane maxHeight="700.0" maxWidth="500.0" prefHeight="650.0" prefWidth="500.0" style="-fx-background-color: #39293D; -fx-border-color: white;">
+      <AnchorPane maxHeight="700.0" maxWidth="500.0" prefHeight="650.0" prefWidth="500.0">
          <children>
             <Label layoutX="23.0" layoutY="16.0" prefHeight="48.0" prefWidth="292.0" styleClass="headerTitle" text="Ajout d'un nouveau patient" textFill="WHITE">
                <font>
@@ -86,7 +86,7 @@
                   <TextField fx:id="fonction" onKeyPressed="#changerPositionFonction" prefHeight="35.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                   <HBox alignment="CENTER" prefHeight="35.0" prefWidth="330.0" spacing="50.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <children>
-                        <JFXCheckBox fx:id="checkBoxMale" onAction="#setSelectCheckBoxMale" selected="true" text="Masculin" textFill="#67eafc">
+                        <JFXCheckBox fx:id="checkBoxMale" onAction="#setSelectCheckBoxMale" selected="true" text="Masculin" textFill="#16162c">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -94,7 +94,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </JFXCheckBox>
-                        <JFXCheckBox fx:id="checkBoxFemale" layoutX="133.0" layoutY="27.0" onAction="#setSelectCheckBoxFemale" text="Féminin" textFill="#fa66b2">
+                        <JFXCheckBox fx:id="checkBoxFemale" layoutX="133.0" layoutY="27.0" onAction="#setSelectCheckBoxFemale" text="Féminin" textFill="#8d2a23">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -108,20 +108,21 @@
             </GridPane>
             <Button fx:id="btnAjouter" layoutX="397.0" layoutY="552.0" mnemonicParsing="false" onMousePressed="#ajouter" prefHeight="40.0" prefWidth="44.0" style="-fx-background-radius: 5em;" textFill="#17cd11">
                <graphic>
-                  <FontAwesomeIcon fill="WHITE" iconName="SAVE" size="2em" />
+                  <FontAwesomeIcon fill="WHITE" iconName="SAVE" size="2em" styleClass="fa-big-icone" />
                </graphic>
             </Button>
             <HBox layoutX="424.0" layoutY="11.0" prefHeight="30.0" prefWidth="59.0">
             <children> 
-            <fx:include source="/application/views/login/LoginBar.fxml" />
+            <fx:include source="login/LoginBar.fxml" />
             </children>
             </HBox>
             <ComboBox fx:id="sexe" layoutX="38.0" layoutY="578.0" prefHeight="40.0" prefWidth="330.0" promptText="Choisit le sexe" stylesheets="@/css/comboBox.css" visible="false" />
          </children>
-         <stylesheets>
-            <URL value="@/css/buttonSyle.css" />
-            <URL value="@/css/comboBox.css" />
-         </stylesheets>
       </AnchorPane>
    </children>
+   <stylesheets>
+      <URL value="@../../css/buttonSyle.css" />
+      <URL value="@../../css/comboBox.css" />
+      <URL value="@../../css/styles.css" />
+   </stylesheets>
 </StackPane>
