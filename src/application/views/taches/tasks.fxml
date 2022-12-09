@@ -2,24 +2,28 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="135.0" maxWidth="339.0" prefHeight="135.0" prefWidth="339.0" style="-fx-background-color: #39293D; -fx-effect: dropshadow(three-pass-box, rgba(0.0,0.0,0.0,0.8), 10.0, 0.0, 0.0, 0.0);" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="149.0" maxWidth="339.0" prefHeight="149.0" prefWidth="339.0" styleClass="tasks" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="12.0" prefHeight="27.0" prefWidth="78.0" text="Tâche 1" textAlignment="CENTER" textFill="WHITE">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="63.0" layoutY="13.0" prefHeight="27.0" prefWidth="78.0" styleClass="tasks" text="Tâche 1" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label alignment="TOP_LEFT" contentDisplay="TOP" layoutX="25.0" layoutY="45.0" prefHeight="53.0" prefWidth="240.0" text="This is an example of tasks will be added in the future" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="37.0">
+      <Label alignment="TOP_LEFT" contentDisplay="TOP" layoutX="15.0" layoutY="47.0" prefHeight="91.0" prefWidth="307.0" styleClass="tasks-text" text="This is an example of tasks will be added in the future" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="8.0">
          <font>
             <Font size="13.0" />
          </font>
+         <padding>
+            <Insets bottom="2.0" left="4.0" right="4.0" top="2.0" />
+         </padding>
       </Label>
-      <JFXButton layoutX="27.0" layoutY="93.0" maxHeight="29.0" maxWidth="99.0" prefHeight="29.0" prefWidth="99.0" style="-fx-background-color: green;" text="Conclure" textFill="WHITE" AnchorPane.bottomAnchor="13.0">
+      <JFXButton layoutX="245.0" layoutY="14.0" maxHeight="29.0" maxWidth="99.0" prefHeight="29.0" prefWidth="78.0" styleClass="tasks-button" text="Conclure" textFill="WHITE" AnchorPane.bottomAnchor="106.0" AnchorPane.rightAnchor="20.0">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -27,6 +31,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <FontAwesomeIcon fill="WHITE" iconName="TASKS" layoutX="282.0" layoutY="59.0" size="2.5em" AnchorPane.rightAnchor="27.0" />
+      <FontAwesomeIcon fill="WHITE" iconName="TASKS" layoutX="17.0" layoutY="39.0" size="2.5em" styleClass="tasks-icone" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="292.0" />
    </children>
 </AnchorPane>

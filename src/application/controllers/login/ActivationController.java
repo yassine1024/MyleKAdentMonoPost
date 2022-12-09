@@ -511,11 +511,13 @@ public class ActivationController implements Initializable {
 					root = FXMLLoader.load(getClass().getResource("/application/views/taches/tasks.fxml"));
 					AnchorPane fff = root;
 					fff.setPrefWidth(339);
-					fff.setPrefHeight(135);
+					fff.setPrefHeight(149);
 					((Label) fff.getChildren().get(0)).setText("Tâche " + cmpt);
 
 					((Label) fff.getChildren().get(1)).setText(rs.getString("task"));
 
+					
+					
 					vboxTasksSlider.getChildren().add(fff);
 					int taskId = rs.getInt(1);
 
@@ -5217,10 +5219,10 @@ public class ActivationController implements Initializable {
 		}
 
 	}
-	//Open window that show us Expense/Profit graph
+
+	// Open window that show us Expense/Profit graph
 	@FXML
 	public void displayExpenseProfit(MouseEvent event) {
-		
 
 		Stage primaryStage = new Stage();
 		primaryStage.initStyle(StageStyle.UNDECORATED);
@@ -6327,12 +6329,11 @@ public class ActivationController implements Initializable {
 	void showNbrPatientAgeExited(MouseEvent event) {
 		this.showNbrPatientAgeAnchor.getTransforms().clear();
 	}
-	
-	
-	//Expense's statistic
+
+	// Expense's statistic
 	@FXML
-	private AnchorPane  expenseProfitAnchor;
-	
+	private AnchorPane expenseProfitAnchor;
+
 	@FXML
 	void expenseProfitEntred(MouseEvent event) {
 
@@ -6527,6 +6528,71 @@ public class ActivationController implements Initializable {
 
 		this.slelectionnerDate(null);
 
+	}
+
+	// add Light and dark mode
+
+	@FXML
+	private ImageView imageLightDarkMode;
+
+	private boolean isDarkMode = true;
+
+	public static boolean getMode = true;
+
+	@FXML
+	void switchModeDarkLight(MouseEvent event) {
+
+		System.out.println("switchMode : " + this.isDarkMode);
+		this.isDarkMode = !this.isDarkMode;
+		getMode = !getMode;
+		if (this.isDarkMode) {
+			setDarkMode();
+		} else {
+			setLightMode();
+		}
+
+	}
+
+	public static boolean getMode() {
+		return getMode;
+	}
+
+	private void setDarkMode() {
+
+		// Delete the light mode's css
+		this.stackPane.getStylesheets().clear();
+		// Add the dark mode's css
+		this.stackPane.getStylesheets().add("/css/buttonSyle.css");
+		this.stackPane.getStylesheets().add("/css/checkBox.css");
+		this.stackPane.getStylesheets().add("/css/comboBox.css");
+		this.stackPane.getStylesheets().add("/css/pieChart.css");
+		this.stackPane.getStylesheets().add("/css/styles.css");
+		this.stackPane.getStylesheets().add("/css/styles2.css");
+		this.stackPane.getStylesheets().add("/css/tableView.css");
+
+		// change the photo to the sun
+		javafx.scene.image.Image image = new javafx.scene.image.Image("/images/light-mode.png");
+		this.imageLightDarkMode.setImage(image);
+	}
+
+	// style colors https://coolors.co/c78283-e2a2a9-d7bea8-b49286-744253
+	private void setLightMode() {
+
+		// Delete the light mode's css
+		this.stackPane.getStylesheets().clear();
+		// Add the dark mode's css
+
+		this.stackPane.getStylesheets().add("/css/light_mode/buttonSyle.css");
+		this.stackPane.getStylesheets().add("/css/light_mode/checkBox.css");
+		this.stackPane.getStylesheets().add("/css/light_mode/comboBox.css");
+		this.stackPane.getStylesheets().add("/css/light_mode/pieChart.css");
+		this.stackPane.getStylesheets().add("/css/light_mode/styles.css");
+		this.stackPane.getStylesheets().add("/css/light_mode/styles2.css");
+		this.stackPane.getStylesheets().add("/css/light_mode/tableView.css");
+
+		// change the photo to the sun
+		javafx.scene.image.Image image = new javafx.scene.image.Image("/images/dark-mode.png");
+		this.imageLightDarkMode.setImage(image);
 	}
 
 }

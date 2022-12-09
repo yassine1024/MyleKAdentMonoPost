@@ -32,11 +32,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane fx:id="stackPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="stackPane" styleClass="default" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
 	<children>
-		<BorderPane fx:id="borderPaneParent" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #3B2C35;">
+		<BorderPane fx:id="borderPaneParent" prefHeight="200.0" prefWidth="200.0" styleClass="default">
 			<top>
-				<AnchorPane prefHeight="31.0" prefWidth="1004.0" style="-fx-background-color: #2A1F2D; -fx-border-color: #221924;" BorderPane.alignment="CENTER">
+				<AnchorPane prefHeight="31.0" prefWidth="1004.0" styleClass="header" BorderPane.alignment="CENTER">
 					<children>
 						<HBox layoutX="916.0" layoutY="2.0" prefHeight="37.0" prefWidth="86.0">
 							<children>
@@ -76,15 +76,24 @@
 						</ImageView>
 													
 													<JFXComboBox fx:id="comboBoxSelectUser" layoutX="619.0" layoutY="9.0" onAction="#slelectionnerUser" prefHeight="25.0" prefWidth="142.0" />
+                  <Button layoutX="574.0" mnemonicParsing="false" onMousePressed="#switchModeDarkLight" prefHeight="31.0" prefWidth="31.0" style="-fx-border-radius: 20px;" styleClass="primary-color" AnchorPane.leftAnchor="560.0" AnchorPane.rightAnchor="400.0">
+                     <graphic>
+                        <ImageView fx:id="imageLightDarkMode" fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../assets/light-mode.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
 					</children>
 				</AnchorPane>
 			</top>
 			<left>
-				<VBox prefHeight="457.0" prefWidth="130.0" style="-fx-background-color: #2A1F2D;" BorderPane.alignment="CENTER">
+				<VBox prefHeight="457.0" prefWidth="130.0" styleClass="side" BorderPane.alignment="CENTER">
 					<children>
 						<AnchorPane id="button-selected" fx:id="homeButton" onMousePressed="#showHome" prefHeight="107.0" prefWidth="130.0" styleClass="bigIcone">
 							<children>
-								<FontAwesomeIcon fill="#fff7f7" iconName="HOME" layoutX="53.0" layoutY="42.0" size="2em" />
+								<FontAwesomeIcon fill="#fff7f7" iconName="HOME" layoutX="53.0" layoutY="42.0" size="2em" styleClass="fa-big-icone" />
 								<Label alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="63.0" prefHeight="25.0" prefWidth="131.0" text="Home" textAlignment="CENTER" textFill="WHITE">
 									<font>
 										<Font name="System Bold" size="15.0" />
@@ -94,7 +103,7 @@
 						</AnchorPane>
 						<AnchorPane fx:id="redactionButton" layoutX="10.0" layoutY="10.0" onMousePressed="#showRedaction" prefHeight="107.0" prefWidth="130.0" styleClass="bigIcone">
 							<children>
-								<FontAwesomeIcon fill="#fff7f7" iconName="PENCIL" layoutX="53.0" layoutY="42.0" size="2em" />
+								<FontAwesomeIcon fill="WHITE" iconName="PENCIL" layoutX="53.0" layoutY="42.0" selectionFill="#807d7d" size="2em" styleClass="fa-big-icone" />
 								<Label alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="63.0" prefHeight="25.0" prefWidth="131.0" text="Redaction" textAlignment="CENTER" textFill="WHITE">
 									<font>
 										<Font name="System Bold" size="15.0" />
@@ -104,7 +113,7 @@
 						</AnchorPane>
 						<AnchorPane fx:id="statisticsButton" layoutX="10.0" layoutY="117.0" onMousePressed="#showStatistics" prefHeight="107.0" prefWidth="130.0" styleClass="bigIcone">
 							<children>
-								<FontAwesomeIcon fill="#fff7f7" iconName="BAR_CHART" layoutX="53.0" layoutY="42.0" size="2em" />
+								<FontAwesomeIcon fill="#fff7f7" iconName="BAR_CHART" layoutX="53.0" layoutY="42.0" size="2em" styleClass="fa-big-icone" />
 								<Label alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="63.0" prefHeight="25.0" prefWidth="130.0" text="Statistiques" textAlignment="CENTER" textFill="WHITE">
 									<font>
 										<Font name="System Bold" size="15.0" />
@@ -114,7 +123,7 @@
 						</AnchorPane>
 						<AnchorPane fx:id="prothesistButton" layoutX="10.0" layoutY="224.0" onMousePressed="#showProthesist" prefHeight="107.0" prefWidth="130.0" styleClass="bigIcone">
 							<children>
-								<FontAwesomeIcon fill="#fff7f7" iconName="GROUP" layoutX="53.0" layoutY="42.0" size="2em" />
+								<FontAwesomeIcon fill="#fff7f7" iconName="GROUP" layoutX="53.0" layoutY="42.0" size="2em" styleClass="fa-big-icone" />
 								<Label alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="63.0" prefHeight="25.0" prefWidth="130.0" text="Prothèse" textAlignment="CENTER" textFill="WHITE">
 									<font>
 										<Font name="System Bold" size="15.0" />
@@ -124,7 +133,7 @@
 						</AnchorPane>
 						<AnchorPane fx:id="agendaButton" layoutX="10.0" layoutY="331.0" onMousePressed="#showAgenda" prefHeight="107.0" prefWidth="130.0" styleClass="bigIcone">
 							<children>
-								<FontAwesomeIcon fill="#fff7f7" iconName="CALENDAR" layoutX="53.0" layoutY="42.0" size="2em" />
+								<FontAwesomeIcon fill="#fff7f7" iconName="CALENDAR" layoutX="53.0" layoutY="42.0" size="2em" styleClass="fa-big-icone" />
 								<Label alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="63.0" prefHeight="25.0" prefWidth="130.0" text="Agenda" textAlignment="CENTER" textFill="WHITE">
 									<font>
 										<Font name="System Bold" size="15.0" />
@@ -139,16 +148,16 @@
 										<Font name="System Bold" size="15.0" />
 									</font>
 								</Label>
-								<FontAwesomeIcon fill="#fff7f7" iconName="COGS" layoutX="52.0" layoutY="39.0" size="2em" />
+								<FontAwesomeIcon fill="#fff7f7" iconName="COGS" layoutX="52.0" layoutY="39.0" size="2em" styleClass="fa-big-icone" />
 							</children>
 						</AnchorPane>
 					</children>
 				</VBox>
 			</left>
 			<center>
-				<AnchorPane prefHeight="450.0" prefWidth="488.0" style="-fx-background-color: #2F232A;" BorderPane.alignment="CENTER">
+				<AnchorPane prefHeight="450.0" prefWidth="488.0" styleClass="default-center" BorderPane.alignment="CENTER">
 					<children>
-						<AnchorPane fx:id="homeAnchor" prefHeight="637.0" prefWidth="870.0" style="-fx-background-color: #39293D;">
+						<AnchorPane fx:id="homeAnchor" prefHeight="645.0" prefWidth="879.0" styleClass="center">
 							<children>
 								<Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="40.0" prefHeight="25.0" prefWidth="112.0" text="Home" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="45.0">
 									<font>
@@ -157,7 +166,7 @@
 								</Label>
 								<AnchorPane fx:id="addPatientAnchor" layoutX="50.0" layoutY="100.0" onMouseEntered="#addPatientEvent" onMouseExited="#addPatientExited" onMousePressed="#ajouterMalade" prefHeight="195.0" prefWidth="195.0" styleClass="pageIcone">
 									<children>
-										<FontAwesomeIcon fill="#fff7f7" iconName="PLUS" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
+										<FontAwesomeIcon fill="#fff7f7" iconName="PLUS" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" styleClass="fa-big-icone" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
 										<Label alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="97.0" prefHeight="25.0" prefWidth="162.0" text="Nouveau patient" textAlignment="CENTER" textFill="WHITE">
 											<font>
 												<Font name="System Bold" size="15.0" />
@@ -169,7 +178,7 @@
 									<top>
 										<HBox prefHeight="50.0" prefWidth="542.0" spacing="15.0" BorderPane.alignment="CENTER">
 											<children>
-												<FontAwesomeIcon fill="WHITE" iconName="SEARCH" size="20">
+												<FontAwesomeIcon fill="WHITE" iconName="SEARCH" size="20" styleClass="fa-big-icone">
 													<HBox.margin>
 														<Insets left="2.0" top="22.0" />
 													</HBox.margin>
@@ -200,22 +209,22 @@
 													<children>
 														<Button fx:id="detailed" mnemonicParsing="false" onMousePressed="#getMaladeFile" prefHeight="37.0" style="-fx-background-radius: 5em;" textAlignment="CENTER" textFill="#17cd11" wrapText="true">
 															<graphic>
-																<FontAwesomeIcon id="fontAwesomeHover" fill="WHITE" iconName="MEDKIT" />
+																<FontAwesomeIcon id="fontAwesomeHover" fill="WHITE" iconName="MEDKIT" styleClass="fa-big-icone" />
 															</graphic>
 														</Button>
 														<Button fx:id="delete" mnemonicParsing="false" onMousePressed="#deletePatient" prefHeight="37.0" style="-fx-background-radius: 5em;" textAlignment="CENTER" textFill="#17cd11" wrapText="true">
 															<graphic>
-																<FontAwesomeIcon id="fontAwesomeHover" fill="WHITE" iconName="REMOVE" />
+																<FontAwesomeIcon id="fontAwesomeHover" fill="WHITE" iconName="REMOVE" styleClass="fa-big-icone" />
 															</graphic>
 														</Button>
 														<Button fx:id="addToday" mnemonicParsing="false" onMousePressed="#addPatient" prefHeight="37.0" style="-fx-background-radius: 5em;" textAlignment="CENTER" textFill="#17cd11" wrapText="true">
 															<graphic>
-																<FontAwesomeIcon id="fontAwesomeHover" fill="WHITE" iconName="REFRESH" />
+																<FontAwesomeIcon id="fontAwesomeHover" fill="WHITE" iconName="REFRESH" styleClass="fa-big-icone" />
 															</graphic>
 														</Button>
 														<Button fx:id="buttonUpdatePatient" layoutX="123.0" layoutY="10.0" mnemonicParsing="false" onMousePressed="#updatePatientData" prefHeight="37.0" style="-fx-background-radius: 5em;" textAlignment="CENTER" textFill="#17cd11" wrapText="true">
 															<graphic>
-																<FontAwesomeIcon id="fontAwesomeHover" fill="WHITE" iconName="REPLY" />
+																<FontAwesomeIcon id="fontAwesomeHover" fill="WHITE" iconName="REPLY" styleClass="fa-big-icone" />
 															</graphic>
 														</Button>
 													</children>
@@ -239,7 +248,7 @@
 										</HBox>
 									</bottom>
 									<center>
-										<TableView fx:id="tabPatient" onKeyPressed="#clickOK" onMousePressed="#selectionnerPatientDoubleClick" prefHeight="364.0" prefWidth="542.0" stylesheets="@/css/tableView.css" BorderPane.alignment="CENTER">
+										<TableView fx:id="tabPatient" onKeyPressed="#clickOK" onMousePressed="#selectionnerPatientDoubleClick" prefHeight="364.0" prefWidth="542.0" BorderPane.alignment="CENTER">
 											<cursor>
 												<Cursor fx:constant="HAND" />
 											</cursor>
@@ -251,7 +260,7 @@
 								</BorderPane>
 								<AnchorPane fx:id="negatoscopeAnchor" layoutX="50.0" layoutY="275.0" onMouseEntered="#negatoscopeEntred" onMouseExited="#negatoscopeExited" onMousePressed="#showNegatoscope" prefHeight="195.0" prefWidth="195.0" styleClass="pageIcone">
 									<children>
-										<FontAwesomeIcon fill="#fff7f7" iconName="DESKTOP" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
+										<FontAwesomeIcon fill="#fff7f7" iconName="DESKTOP" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" styleClass="fa-big-icone" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
 										<Label alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="97.0" prefHeight="25.0" prefWidth="162.0" text="Négatoscope" textAlignment="CENTER" textFill="WHITE">
 											<font>
 												<Font name="System Bold" size="15.0" />
@@ -261,7 +270,7 @@
 								</AnchorPane>
                         <AnchorPane fx:id="expanseAnchor" layoutX="50.0" layoutY="450.0" onMouseEntered="#expenseEntred" onMouseExited="#expenseExited" onMousePressed="#showExpense" prefHeight="195.0" prefWidth="195.0" styleClass="pageIcone">
                            <children>
-                              <FontAwesomeIcon fill="#fff7f7" iconName="CREDIT_CARD" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
+                              <FontAwesomeIcon fill="#fff7f7" iconName="CREDIT_CARD" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" styleClass="fa-big-icone" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
                               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="97.0" prefHeight="25.0" prefWidth="162.0" text="Dépenses" textAlignment="CENTER" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
@@ -271,46 +280,46 @@
                         </AnchorPane>
 							</children>
 						</AnchorPane>
-						<AnchorPane fx:id="redactionAnchor" prefHeight="637.0" prefWidth="870.0" style="-fx-background-color: #39293D;" visible="false">
+						<AnchorPane fx:id="redactionAnchor" prefHeight="645.0" prefWidth="879.0" styleClass="center">
 							<children>
 								<Label alignment="CENTER" contentDisplay="CENTER" layoutX="28.0" layoutY="40.0" prefHeight="49.0" prefWidth="159.0" text="Redaction" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="45.0">
 									<font>
 										<Font name="System Bold" size="33.0" />
 									</font>
 								</Label>
-								<TabPane layoutX="48.0" layoutY="107.0" prefHeight="459.0" prefWidth="748.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-tab-min-width: 300;">
+								<TabPane layoutX="48.0" layoutY="107.0" prefHeight="459.0" prefWidth="748.0" styleClass="tab-pane-color">
 									<tabs>
-										<Tab style="-fx-background-color: #39293D; -fx-cursor: hand;" text="Ordonance">
+										<Tab closable="false" styleClass="tb-redaction" text="Ordonance">
 											<content>
 												<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: #221924;" styleClass="headers-region">
 													<children>
 														<HBox layoutX="34.0" layoutY="26.0" prefHeight="46.0" prefWidth="694.0" spacing="12.0">
 															<children>
-																<JFXTextField fx:id="jfxTPatientRedaction" focusColor="#5298fc" labelFloat="true" prefHeight="31.0" prefWidth="461.0" promptText="Le patient" style="-fx-text-inner-color: white;" unFocusColor="#bfe446">
+																<JFXTextField fx:id="jfxTPatientRedaction" focusColor="#5298fc" labelFloat="true" prefHeight="31.0" prefWidth="461.0" promptText="Le patient" unFocusColor="#bfe446">
 																	<HBox.margin>
 																		<Insets right="180.0" />
 																	</HBox.margin>
 																</JFXTextField>
 																<Button fx:id="btnAddMedecine" graphicTextGap="20.0" mnemonicParsing="false" onAction="#addMedication" prefHeight="37.0">
 																	<graphic>
-																		<FontAwesomeIcon fill="WHITE" iconName="PLUS" size="20" />
+																		<FontAwesomeIcon fill="WHITE" iconName="PLUS" size="20" styleClass="fa-big-icone" />
 																	</graphic>
 																</Button>
 																<Button fx:id="btnPrintOrder" graphicTextGap="20.0" mnemonicParsing="false" onAction="#printOrder" prefHeight="37.0">
 																	<graphic>
-																		<FontAwesomeIcon fill="WHITE" iconName="PRINT" size="20" />
+																		<FontAwesomeIcon fill="WHITE" iconName="PRINT" size="20" styleClass="fa-big-icone" />
 																	</graphic>
 																</Button>
 																<Button fx:id="btnRefreshOrder" graphicTextGap="20.0" mnemonicParsing="false" onAction="#refreshOrdonnanceRedaction" prefHeight="37.0">
 																	<graphic>
-																		<FontAwesomeIcon fill="WHITE" iconName="REFRESH" size="20" />
+																		<FontAwesomeIcon fill="WHITE" iconName="REFRESH" size="20" styleClass="fa-big-icone" />
 																	</graphic>
 																</Button>
 															</children>
 														</HBox>
-														<ScrollPane hbarPolicy="NEVER" layoutX="35.0" layoutY="91.0" prefHeight="296.0" prefWidth="693.0" style="-fx-background-color: #39293D;" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="91.0">
+														<ScrollPane hbarPolicy="NEVER" layoutX="35.0" layoutY="91.0" prefHeight="296.0" prefWidth="693.0" styleClass="parameters" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="91.0">
 															<content>
-																<VBox fx:id="vBoxPrincipaleBise" prefHeight="294.0" prefWidth="675.0" spacing="10.0" style="-fx-background-color: #39293D; -fx-border-color: #221924;">
+																<VBox fx:id="vBoxPrincipaleBise" prefHeight="294.0" prefWidth="675.0" spacing="10.0" styleClass="center">
 																	<padding>
 																		<Insets left="40.0" top="10.0" />
 																	</padding>
@@ -321,13 +330,13 @@
 												</AnchorPane>
 											</content>
 										</Tab>
-										<Tab style="-fx-background-color: #39293D; -fx-cursor: hand;" text="Justification">
+										<Tab closable="false" styleClass="tb-redaction" text="Justification">
 											<content>
 												<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="294.0" prefWidth="587.0" style="-fx-border-color: #221924;" styleClass="headers-region">
 													<children>
 														<Button fx:id="btnPrintJustification" alignment="CENTER" contentDisplay="CENTER" layoutX="685.0" layoutY="31.0" mnemonicParsing="false" onAction="#printJustification" prefHeight="37.0" textAlignment="CENTER">
 															<graphic>
-																<FontAwesomeIcon fill="WHITE" iconName="PRINT" size="20" />
+																<FontAwesomeIcon fill="WHITE" iconName="PRINT" size="20" styleClass="fa-big-icone" />
 															</graphic>
 														</Button>
 														<VBox layoutY="70.0" prefHeight="347.0" prefWidth="719.0">
@@ -339,7 +348,7 @@
 																				<Font name="System Bold" size="20.0" />
 																			</font>
 																		</Text>
-																		<JFXTextField fx:id="tfPatientJustification1" focusColor="#498ff2" prefHeight="25.0" prefWidth="206.0" style="-fx-text-inner-color: white;" unFocusColor="#cceb45" />
+																		<JFXTextField fx:id="tfPatientJustification1" focusColor="#498ff2" prefHeight="25.0" prefWidth="206.0" unFocusColor="#cceb45" />
 																	</children>
 																</HBox>
 																<HBox prefHeight="50.0" prefWidth="532.0">
@@ -372,7 +381,7 @@
 																				<Font name="System Bold" size="20.0" />
 																			</font>
 																		</Text>
-																		<JFXTextArea fx:id="taCausesJustification1" focusColor="#328ae8" style="-fx-text-inner-color: white;" unFocusColor="#d2e14e" />
+																		<JFXTextArea fx:id="taCausesJustification1" focusColor="#328ae8" unFocusColor="#d2e14e" />
 																	</children>
 																</HBox>
 																<HBox prefHeight="94.0" prefWidth="532.0">
@@ -396,7 +405,7 @@
 												</AnchorPane>
 											</content>
 										</Tab>
-										<Tab style="-fx-background-color: #39293D; -fx-cursor: hand;" text="Arrêt de travail">
+										<Tab closable="false" styleClass="tb-redaction" text="Arrêt de travail">
 											<content>
 												<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="430.0" prefWidth="755.0" style="-fx-border-color: #221924;" styleClass="headers-region">
 													<children>
@@ -409,7 +418,7 @@
 																				<Font name="System Bold" size="20.0" />
 																			</font>
 																		</Text>
-																		<JFXTextField fx:id="tfPatientStopJob1" focusColor="#398cf2" prefHeight="25.0" prefWidth="172.0" style="-fx-text-inner-color: white;" unFocusColor="#cae447" />
+																		<JFXTextField fx:id="tfPatientStopJob1" focusColor="#398cf2" prefHeight="25.0" prefWidth="172.0" unFocusColor="#cae447" />
 																	</children>
 																</HBox>
 																<HBox prefHeight="43.0" prefWidth="630.0">
@@ -440,7 +449,7 @@
 																				<Font name="System Bold" size="20.0" />
 																			</font>
 																		</Text>
-																		<JFXTextArea fx:id="taCauses1" focusColor="#3c89e8" style="-fx-text-inner-color: white;" unFocusColor="#dbe868" />
+																		<JFXTextArea fx:id="taCauses1" focusColor="#3c89e8" unFocusColor="#dbe868" />
 																	</children>
 																</HBox>
 																<HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
@@ -459,7 +468,7 @@
 																				<Font name="System Bold" size="20.0" />
 																			</font>
 																		</Text>
-																		<JFXTextField fx:id="tfPeriodePatientJob1" focusColor="#5897ee" style="-fx-text-inner-color: white;" unFocusColor="#d1e458" />
+																		<JFXTextField fx:id="tfPeriodePatientJob1" focusColor="#5897ee" unFocusColor="#d1e458" />
 																		<Text layoutX="10.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="redaction" text="  à compter à partir de ce jour même" wrappingWidth="374.2734375">
 																			<font>
 																				<Font name="System Bold" size="20.0" />
@@ -486,29 +495,29 @@
 														</VBox>
 														<Button fx:id="btnStopJobOrder" layoutX="684.0" layoutY="32.0" mnemonicParsing="false" onAction="#printStopingJob" prefHeight="37.0">
 															<graphic>
-																<FontAwesomeIcon fill="WHITE" iconName="PRINT" size="20" />
+																<FontAwesomeIcon fill="WHITE" iconName="PRINT" size="20" styleClass="fa-big-icone" />
 															</graphic>
 														</Button>
 													</children>
 												</AnchorPane>
 											</content>
 										</Tab>
-										<Tab style="-fx-background-color: #39293D; -fx-cursor: hand;" text="Rédaction libre">
+										<Tab closable="false" styleClass="tb-redaction" text="Rédaction libre">
 											<content>
 												<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: #221924;" styleClass="headers-region">
 													<children>
-														<JFXTextArea fx:id="jftTAFreeRedaction" focusColor="#5dabff" labelFloat="true" layoutX="45.0" layoutY="144.0" prefHeight="193.0" prefWidth="656.0" promptText="Entrez votre rédaction libre ici" style="-fx-text-inner-color: white;" unFocusColor="#d3dd45" />
+														<JFXTextArea fx:id="jftTAFreeRedaction" focusColor="#5dabff" labelFloat="true" layoutX="45.0" layoutY="144.0" prefHeight="193.0" prefWidth="656.0" promptText="Entrez votre rédaction libre ici" unFocusColor="#d3dd45" />
 														<Button fx:id="buttonPrintFreeRedaction" graphicTextGap="20.0" layoutX="620.0" layoutY="39.0" mnemonicParsing="false" onAction="#printFreeRedaction" prefHeight="37.0">
 															<graphic>
-																<FontAwesomeIcon fill="WHITE" iconName="PRINT" size="20" />
+																<FontAwesomeIcon fill="WHITE" iconName="PRINT" size="20" styleClass="fa-big-icone" />
 															</graphic>
 														</Button>
 														<Button fx:id="buttonRefreshFreeRedaction" graphicTextGap="20.0" layoutX="683.0" layoutY="39.0" mnemonicParsing="false" onAction="#refreshFreeRedaction" prefHeight="37.0">
 															<graphic>
-																<FontAwesomeIcon fill="WHITE" iconName="REFRESH" size="20" />
+																<FontAwesomeIcon fill="WHITE" iconName="REFRESH" size="20" styleClass="fa-big-icone" />
 															</graphic>
 														</Button>
-														<JFXTextField fx:id="tfTitleFreeRedaction" focusColor="#4a95f2" labelFloat="true" layoutX="47.0" layoutY="88.0" prefHeight="31.0" prefWidth="233.0" promptText="Le Titre" style="-fx-text-inner-color: white;" unFocusColor="#d6e45b" />
+														<JFXTextField fx:id="tfTitleFreeRedaction" focusColor="#4a95f2" labelFloat="true" layoutX="47.0" layoutY="88.0" prefHeight="31.0" prefWidth="233.0" promptText="Le Titre" unFocusColor="#d6e45b" />
 													</children>
 												</AnchorPane>
 											</content>
@@ -517,7 +526,7 @@
 								</TabPane>
 							</children>
 						</AnchorPane>
-						<AnchorPane fx:id="statisticsAnchor" prefHeight="637.0" prefWidth="876.0" style="-fx-background-color: #39293D;">
+						<AnchorPane fx:id="statisticsAnchor" prefHeight="645.0" prefWidth="879.0" styleClass="center" visible="false">
 							<children>
 								<Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="40.0" prefHeight="49.0" prefWidth="193.0" text="Statistiques" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="45.0">
 									<font>
@@ -530,7 +539,7 @@
 											<children>
 												<AnchorPane fx:id="showBenific" onMouseEntered="#showBenificEntred" onMouseExited="#showBenificExited" onMousePressed="#openBenefit" prefHeight="150.0" prefWidth="161.0" styleClass="pageIcone">
 													<children>
-														<FontAwesomeIcon fill="#fff7f7" iconName="USD" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
+														<FontAwesomeIcon fill="#fff7f7" iconName="USD" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" styleClass="fa-big-icone" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
 														<Label alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="97.0" prefHeight="25.0" prefWidth="162.0" text="Bénéfice" textAlignment="CENTER" textFill="WHITE">
 															<font>
 																<Font name="System Bold" size="15.0" />
@@ -540,7 +549,7 @@
 												</AnchorPane>
 												<AnchorPane fx:id="showNbrPatientGenderAnchor" layoutX="10.0" layoutY="10.0" onMouseEntered="#showNbrPatientGenderEntred" onMouseExited="#showNbrPatientGenderExited" onMousePressed="#displayNbrSexePatient" prefHeight="150.0" prefWidth="161.0" styleClass="pageIcone">
 													<children>
-														<FontAwesomeIcon fill="#fff7f7" iconName="BAR_CHART" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
+														<FontAwesomeIcon fill="#fff7f7" iconName="BAR_CHART" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" styleClass="fa-big-icone" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
 														<Label alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="97.0" prefHeight="25.0" prefWidth="162.0" text="Sex/Nbr patient" textAlignment="CENTER" textFill="WHITE">
 															<font>
 																<Font name="System Bold" size="15.0" />
@@ -550,7 +559,7 @@
 												</AnchorPane>
 												<AnchorPane fx:id="showNbrPatientAgeAnchor" layoutX="171.0" layoutY="10.0" onMouseEntered="#showNbrPatientAgeEntred" onMouseExited="#showNbrPatientAgeExited" onMousePressed="#displayNbrPatient" prefHeight="150.0" prefWidth="161.0" styleClass="pageIcone">
 													<children>
-														<FontAwesomeIcon fill="#fff7f7" iconName="PIE_CHART" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
+														<FontAwesomeIcon fill="#fff7f7" iconName="PIE_CHART" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" styleClass="fa-big-icone" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
 														<Label alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="97.0" prefHeight="25.0" prefWidth="162.0" text="Age/Nbr patient" textAlignment="CENTER" textFill="WHITE">
 															<font>
 																<Font name="System Bold" size="15.0" />
@@ -560,7 +569,7 @@
 												</AnchorPane>
                                     <AnchorPane fx:id="expenseProfitAnchor" onMouseEntered="#expenseProfitEntred" onMouseExited="#expenseProfitExited" onMousePressed="#displayExpenseProfit" prefHeight="150.0" prefWidth="161.0" styleClass="pageIcone">
                                        <children>
-                                          <FontAwesomeIcon fill="#fff7f7" iconName="LINE_CHART" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
+                                          <FontAwesomeIcon fill="#fff7f7" iconName="LINE_CHART" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" styleClass="fa-big-icone" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
                                           <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="97.0" prefHeight="25.0" prefWidth="162.0" text="Dépense/Bénifice" textAlignment="CENTER" textFill="WHITE">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
@@ -577,7 +586,7 @@
 								</VBox>
 							</children>
 						</AnchorPane>
-						<AnchorPane fx:id="prothesistAnchor" prefHeight="637.0" prefWidth="870.0" style="-fx-background-color: #39293D;" visible="false">
+						<AnchorPane fx:id="prothesistAnchor" prefHeight="645.0" prefWidth="879.0" styleClass="center" visible="false">
 							<children>
 								<Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="40.0" prefHeight="49.0" prefWidth="159.0" text="Prothèse" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="45.0">
 									<font>
@@ -610,7 +619,7 @@
 											<children>
 												<AnchorPane fx:id="showFicheNavetteAnchor" onMouseEntered="#showFicheNavetteEntred" onMouseExited="#showFicheNavetteExited" onMousePressed="#addRecordShuttle" prefHeight="150.0" prefWidth="161.0" styleClass="pageIcone">
 													<children>
-														<FontAwesomeIcon fill="#fff7f7" iconName="PLANE" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
+														<FontAwesomeIcon fill="#fff7f7" iconName="PLANE" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" styleClass="fa-big-icone" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
 														<Label alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="97.0" prefHeight="25.0" prefWidth="162.0" text="Fiche navette" textAlignment="CENTER" textFill="WHITE">
 															<font>
 																<Font name="System Bold" size="15.0" />
@@ -620,7 +629,7 @@
 												</AnchorPane>
 												<AnchorPane fx:id="showEncourExecutionAnchor" layoutX="10.0" layoutY="10.0" onMouseEntered="#showEncourExecutionEntred" onMouseExited="#showEncourExecutionExited" onMousePressed="#filterRecordShuttle" prefHeight="150.0" prefWidth="161.0" styleClass="pageIcone">
 													<children>
-														<FontAwesomeIcon fill="#fff7f7" iconName="FILTER" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
+														<FontAwesomeIcon fill="#fff7f7" iconName="FILTER" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" styleClass="fa-big-icone" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
 														<Label alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="97.0" prefHeight="25.0" prefWidth="162.0" text="Encours d'éxécution" textAlignment="CENTER" textFill="WHITE">
 															<font>
 																<Font name="System Bold" size="15.0" />
@@ -630,7 +639,7 @@
 												</AnchorPane>
 												<AnchorPane fx:id="showComptabilityAnchor" layoutX="171.0" layoutY="10.0" onMouseEntered="#showComptabilityEntred" onMouseExited="#showComptabilityExited" onMousePressed="#comptabiliterProthese" prefHeight="150.0" prefWidth="161.0" styleClass="pageIcone">
 													<children>
-														<FontAwesomeIcon fill="#fff7f7" iconName="CALCULATOR" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
+														<FontAwesomeIcon fill="#fff7f7" iconName="CALCULATOR" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" styleClass="fa-big-icone" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
 														<Label alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="97.0" prefHeight="25.0" prefWidth="162.0" text="Comptabilité" textAlignment="CENTER" textFill="WHITE">
 															<font>
 																<Font name="System Bold" size="15.0" />
@@ -640,7 +649,7 @@
 												</AnchorPane>
 												<AnchorPane fx:id="newLabAnchor" layoutX="332.0" layoutY="10.0" onMouseEntered="#newLabEntered" onMouseExited="#newLabExited" onMousePressed="#addProthese" prefHeight="150.0" prefWidth="161.0" styleClass="pageIcone">
 													<children>
-														<FontAwesomeIcon fill="#fff7f7" iconName="PLUS" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
+														<FontAwesomeIcon fill="#fff7f7" iconName="PLUS" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" styleClass="fa-big-icone" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
 														<Label alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="97.0" prefHeight="25.0" prefWidth="162.0" text="Nouveau labo" textAlignment="CENTER" textFill="WHITE">
 															<font>
 																<Font name="System Bold" size="15.0" />
@@ -654,7 +663,7 @@
 								</VBox>
 							</children>
 						</AnchorPane>
-						<AnchorPane fx:id="agendaAnchor" prefHeight="637.0" prefWidth="870.0" style="-fx-background-color: #39293D;" visible="false">
+						<AnchorPane fx:id="agendaAnchor" prefHeight="645.0" prefWidth="879.0" styleClass="center" visible="false">
 							<children>
 								<Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="40.0" prefHeight="49.0" prefWidth="159.0" text="Agenda" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="45.0">
 									<font>
@@ -663,7 +672,7 @@
 								</Label>
 								<AnchorPane fx:id="showRDVAnchor" layoutX="50.0" layoutY="107.0" onMouseEntered="#addAppointmentEntred" onMouseExited="#addAppointmentExited" onMousePressed="#addAppointment" prefHeight="150.0" prefWidth="161.0" styleClass="pageIcone">
 									<children>
-										<FontAwesomeIcon fill="#fff7f7" iconName="PLUS" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
+										<FontAwesomeIcon fill="#fff7f7" iconName="PLUS" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" styleClass="fa-big-icone" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
 										<Label alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="97.0" prefHeight="25.0" prefWidth="162.0" text="Ajouter un RDV" textAlignment="CENTER" textFill="WHITE">
 											<font>
 												<Font name="System Bold" size="15.0" />
@@ -673,7 +682,7 @@
 								</AnchorPane>
 								<HBox layoutX="248.0" layoutY="102.0" prefHeight="66.0" prefWidth="605.0">
 									<children>
-										<FontAwesomeIcon fill="WHITE" iconName="SEARCH" size="20">
+										<FontAwesomeIcon fill="WHITE" iconName="SEARCH" size="20" styleClass="fa-big-icone">
 											<HBox.margin>
 												<Insets left="20.0" top="22.0" />
 											</HBox.margin>
@@ -690,7 +699,7 @@
 										</JFXDatePicker>
 									</children>
 								</HBox>
-								<TableView fx:id="tabAppointment" layoutX="258.0" layoutY="164.0" prefHeight="410.0" prefWidth="604.0" stylesheets="@/css/tableView.css">
+								<TableView fx:id="tabAppointment" layoutX="258.0" layoutY="164.0" prefHeight="410.0" prefWidth="604.0">
 									<cursor>
 										<Cursor fx:constant="HAND" />
 									</cursor>
@@ -698,18 +707,18 @@
 								<JFXToggleButton fx:id="toggleButtonWeek" layoutX="645.0" layoutY="565.0" onAction="#visualiseCalendar" prefHeight="58.0" prefWidth="212.0" text="Afficher par semaine" textFill="WHITE" />
 							</children>
 						</AnchorPane>
-						<AnchorPane fx:id="parametersAnchor" prefHeight="637.0" prefWidth="870.0" style="-fx-background-color: #39293D;" visible="false">
+						<AnchorPane fx:id="parametersAnchor" prefHeight="645.0" prefWidth="879.0" styleClass="center" visible="false">
 							<children>
 								<Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="26.0" layoutY="40.0" prefHeight="49.0" prefWidth="193.0" text="Paramètres" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="45.0">
 									<font>
 										<Font name="System Bold" size="33.0" />
 									</font>
 								</Label>
-								<ScrollPane fx:id="scrollPaneParameter" focusTraversable="false" hbarPolicy="NEVER" layoutX="52.0" layoutY="127.0" pannable="true" prefHeight="455.0" prefWidth="739.0" style="-fx-background-color: #39293D;">
+								<ScrollPane fx:id="scrollPaneParameter" focusTraversable="false" hbarPolicy="NEVER" layoutX="52.0" layoutY="127.0" pannable="true" prefHeight="455.0" prefWidth="739.0" styleClass="parameters">
 									<content>
-										<VBox style="-fx-background-color: #39293D;">
+										<VBox styleClass="center">
 											<children>
-												<GridPane hgap="20.0" prefHeight="500.0" prefWidth="730.0" vgap="15.0">
+												<GridPane hgap="20.0" prefHeight="500.0" prefWidth="730.0" styleClass="parameters" vgap="15.0">
 													<columnConstraints>
 														<ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0" minWidth="50.0" prefWidth="198.0" />
 														<ColumnConstraints hgrow="SOMETIMES" maxWidth="291.0" minWidth="10.0" prefWidth="207.0" />
@@ -728,7 +737,7 @@
 													<children>
 														<HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="250.0" GridPane.rowIndex="1">
 															<children>
-																<JFXTextField fx:id="nameL" focusColor="#4294ff" focusTraversable="false" labelFloat="true" promptText="Nom &amp; prénom" style="-fx-text-inner-color: white;" unFocusColor="#d7e74b" />
+																<JFXTextField fx:id="nameL" focusColor="#4294ff" focusTraversable="false" labelFloat="true" promptText="Nom &amp; prénom" unFocusColor="#d7e74b" />
 																<FontAwesomeIcon fill="#888888" iconName="USER">
 																	<HBox.margin>
 																		<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -741,7 +750,7 @@
 														</HBox>
 														<HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
 															<children>
-																<JFXTextField fx:id="nameAR" focusColor="#4294ff" focusTraversable="false" labelFloat="true" promptText="الإسم و اللقب" style="-fx-text-inner-color: white;" unFocusColor="#d7e74b" />
+																<JFXTextField fx:id="nameAR" focusColor="#4294ff" focusTraversable="false" labelFloat="true" promptText="الإسم و اللقب" unFocusColor="#d7e74b" />
 																<FontAwesomeIcon fill="#888888" iconName="USER">
 																	<HBox.margin>
 																		<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -754,7 +763,7 @@
 														</HBox>
 														<HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="250.0" GridPane.rowIndex="2">
 															<children>
-																<JFXTextField fx:id="specialityL" focusColor="#4294ff" focusTraversable="false" labelFloat="true" promptText="Spécialité" style="-fx-text-inner-color: white;" unFocusColor="#d7e74b" />
+																<JFXTextField fx:id="specialityL" focusColor="#4294ff" focusTraversable="false" labelFloat="true" promptText="Spécialité" unFocusColor="#d7e74b" />
 																<FontAwesomeIcon fill="#888888" iconName="BOOK">
 																	<HBox.margin>
 																		<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -767,7 +776,7 @@
 														</HBox>
 														<HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
 															<children>
-																<JFXTextField fx:id="specialityAR" focusColor="#4294ff" focusTraversable="false" labelFloat="true" promptText="التخصص" style="-fx-text-inner-color: white;" unFocusColor="#d7e74b" />
+																<JFXTextField fx:id="specialityAR" focusColor="#4294ff" focusTraversable="false" labelFloat="true" promptText="التخصص" unFocusColor="#d7e74b" />
 																<FontAwesomeIcon fill="#888888" iconName="BOOK">
 																	<HBox.margin>
 																		<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -780,7 +789,7 @@
 														</HBox>
 														<HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="250.0" GridPane.rowIndex="3">
 															<children>
-																<JFXTextField fx:id="address" focusColor="#4294ff" focusTraversable="false" labelFloat="true" promptText="Adresse" style="-fx-text-inner-color: white;" unFocusColor="#d7e74b" />
+																<JFXTextField fx:id="address" focusColor="#4294ff" focusTraversable="false" labelFloat="true" promptText="Adresse" unFocusColor="#d7e74b" />
 																<FontAwesomeIcon fill="#888888" iconName="LOCATION_ARROW">
 																	<HBox.margin>
 																		<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -793,7 +802,7 @@
 														</HBox>
 														<HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="165.0" maxWidth="-Infinity" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
 															<children>
-																<JFXTextField fx:id="municipality" focusColor="#4294ff" focusTraversable="false" labelFloat="true" promptText="Daïra ou baladïa" style="-fx-text-inner-color: white;" unFocusColor="#d7e74b" />
+																<JFXTextField fx:id="municipality" focusColor="#4294ff" focusTraversable="false" labelFloat="true" promptText="Daïra ou baladïa" unFocusColor="#d7e74b" />
 																<FontAwesomeIcon fill="#888888" iconName="LOCATION_ARROW">
 																	<HBox.margin>
 																		<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -806,7 +815,7 @@
 														</HBox>
 														<HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="165.0" maxWidth="-Infinity" prefWidth="250.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
 															<children>
-																<JFXComboBox fx:id="town" focusColor="#59a1ff" focusTraversable="false" labelFloat="true" prefHeight="25.0" prefWidth="180.0" promptText="Wilaya" style="-fx-background-color: #39293D;" stylesheets="@/css/comboBox.css" unFocusColor="#d7e74b" />
+																<JFXComboBox fx:id="town" focusColor="#59a1ff" focusTraversable="false" labelFloat="true" prefHeight="25.0" prefWidth="180.0" promptText="Wilaya" unFocusColor="#d7e74b" />
 																<FontAwesomeIcon fill="#888888" iconName="LOCATION_ARROW">
 																	<HBox.margin>
 																		<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -819,7 +828,7 @@
 														</HBox>
 														<HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="250.0" GridPane.rowIndex="4">
 															<children>
-																<JFXTextField fx:id="phone" focusColor="#4294ff" focusTraversable="false" labelFloat="true" promptText="Tél" style="-fx-text-inner-color: white;" unFocusColor="#d7e74b" />
+																<JFXTextField fx:id="phone" focusColor="#4294ff" focusTraversable="false" labelFloat="true" promptText="Tél" unFocusColor="#d7e74b" />
 																<FontAwesomeIcon fill="#888888" iconName="PHONE">
 																	<HBox.margin>
 																		<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -832,7 +841,7 @@
 														</HBox>
 														<HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="250.0" GridPane.rowIndex="5">
 															<children>
-																<JFXTextField fx:id="mail" focusColor="#4294ff" focusTraversable="false" labelFloat="true" promptText="E-mail" style="-fx-text-inner-color: white;" unFocusColor="#d7e74b" />
+																<JFXTextField fx:id="mail" focusColor="#4294ff" focusTraversable="false" labelFloat="true" promptText="E-mail" unFocusColor="#d7e74b" />
 																<FontAwesomeIcon fill="#888888" iconName="ENVELOPE">
 																	<HBox.margin>
 																		<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -845,7 +854,7 @@
 														</HBox>
 														<HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="250.0" GridPane.rowIndex="6">
 															<children>
-																<JFXPasswordField fx:id="oldPassword" focusColor="#4894ff" focusTraversable="false" labelFloat="true" promptText="Ancien mot de passe" style="-fx-text-inner-color: white;" unFocusColor="#d7e74b" />
+																<JFXPasswordField fx:id="oldPassword" focusColor="#4894ff" focusTraversable="false" labelFloat="true" promptText="Ancien mot de passe" unFocusColor="#d7e74b" />
 																<FontAwesomeIcon fill="#888888" iconName="KEY">
 																	<HBox.margin>
 																		<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -858,7 +867,7 @@
 														</HBox>
 														<HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="250.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
 															<children>
-																<JFXPasswordField fx:id="passwordConfiramation" focusColor="#4894ff" focusTraversable="false" labelFloat="true" promptText="Re-mot de passe" style="-fx-text-inner-color: white;" unFocusColor="#d7e74b" />
+																<JFXPasswordField fx:id="passwordConfiramation" focusColor="#4894ff" focusTraversable="false" labelFloat="true" promptText="Re-mot de passe" unFocusColor="#d7e74b" />
 															</children>
 															<padding>
 																<Insets top="17.0" />
@@ -866,7 +875,7 @@
 														</HBox>
 														<HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
 															<children>
-																<JFXPasswordField fx:id="newPassword" focusColor="#4894ff" focusTraversable="false" labelFloat="true" promptText="Nouveau mot de passe" style="-fx-text-inner-color: white;" unFocusColor="#d7e74b" />
+																<JFXPasswordField fx:id="newPassword" focusColor="#4894ff" focusTraversable="false" labelFloat="true" promptText="Nouveau mot de passe" unFocusColor="#d7e74b" />
 																<FontAwesomeIcon fill="#888888" iconName="KEY">
 																	<HBox.margin>
 																		<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -1038,13 +1047,13 @@
 				</AnchorPane>
 			</center>
 		</BorderPane>
-		<Pane fx:id="sliderTasks" maxWidth="408.0" prefHeight="680.0" prefWidth="408.0" style="-fx-background-color: #39293D;" visible="false">
+		<Pane fx:id="sliderTasks" maxWidth="408.0" prefHeight="680.0" prefWidth="408.0" styleClass="default-center" visible="false" StackPane.alignment="TOP_RIGHT">
 			<children>
 				<BorderPane layoutX="-1.0" prefHeight="683.0" prefWidth="408.0">
 					<top>
-						<HBox prefHeight="41.0" prefWidth="374.0" style="-fx-background-color: #2A1F2D; -fx-border-color: #221924;" BorderPane.alignment="BOTTOM_CENTER">
+						<HBox prefHeight="41.0" prefWidth="374.0" styleClass="header" BorderPane.alignment="BOTTOM_CENTER">
 							<children>
-								<FontAwesomeIcon fill="WHITE" iconName="TIMES" onMousePressed="#cancelSlideTasks" size="2.5em">
+								<FontAwesomeIcon fill="WHITE" iconName="TIMES" onMousePressed="#cancelSlideTasks" size="2.5em" styleClass="fa-big-icone">
 									<HBox.margin>
 										<Insets />
 									</HBox.margin>
@@ -1066,9 +1075,9 @@
 										<Cursor fx:constant="HAND" />
 									</cursor>
 								</JFXButton>
-								<ScrollPane focusTraversable="false" hbarPolicy="NEVER" layoutX="2.0" layoutY="38.0" prefHeight="547.0" prefWidth="353.0" style="-fx-background-color: #39293D;" AnchorPane.bottomAnchor="37.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="38.0">
+								<ScrollPane focusTraversable="false" hbarPolicy="NEVER" layoutX="2.0" layoutY="38.0" prefHeight="547.0" prefWidth="353.0" styleClass="parameters" AnchorPane.bottomAnchor="37.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="38.0">
 									<content>
-										<VBox fx:id="vboxTasksSlider" alignment="TOP_CENTER" fillWidth="false" prefHeight="547.0" prefWidth="338.0" spacing="20.0" style="-fx-background-color: #39293D;">
+										<VBox fx:id="vboxTasksSlider" alignment="TOP_CENTER" fillWidth="false" prefHeight="547.0" prefWidth="338.0" spacing="20.0" styleClass="tasks-side">
 											<padding>
 												<Insets left="5.0" right="15.0" top="20.0" />
 											</padding>
@@ -1082,11 +1091,13 @@
 			</children>
 		</Pane>
 	</children>
-	<stylesheets>
-		<URL value="@/css/styles2.css" />
-		<URL value="@/css/buttonSyle.css" />
-		<URL value="@/css/tableView.css" />
-		<URL value="@/css/comboBox.css" />
-		<URL value="@/css/checkBox.css" />
-	</stylesheets>
+   <stylesheets>
+      <URL value="@../../../css/styles.css" />
+      <URL value="@../../../css/buttonSyle.css" />
+      <URL value="@../../../css/checkBox.css" />
+      <URL value="@../../../css/comboBox.css" />
+      <URL value="@../../../css/pieChart.css" />
+      <URL value="@../../../css/styles2.css" />
+      <URL value="@../../../css/tableView.css" />
+   </stylesheets>
 </StackPane>
