@@ -1,0 +1,63 @@
+FontAwesomeIcon {
+	-fx-cursor: hand ;
+}
+.primary-color {
+	
+	-fx-background-color: white;
+}
+.round-border {
+  	-fx-border-radius: 50%;
+  }
+.header {
+	
+	-fx-background-color:  #F0D0D4;
+	-fx-border-color:  #E2A2A9;
+}
+
+.side {
+	-fx-background-color:  #F0D0D4;
+}
+
+.center{
+	-fx-background-color:  #F3D9DC;
+}
+.default-center{
+	 -fx-background-color: white;
+}
+.default{
+	-fx-background-color:  #ffffff;
+}
+.fa-big-icone{
+	-fx-fill: black;
+}
+
+.parameters{
+	
+	-fx-background-color: #F3D9DC;
+}
+.tasks-side{
+	-fx-background-color:  white;
+}
+.tasks{
+	-fx-background-color:  #F0D0D4;
+	-fx-effect:  dropshadow(three-pass-box, rgba(0.0,0.0,0.0,0.8), 10.0, 0.0, 0.0, 0.0);
+	-fx-text-fill:  black;
+}
+.tasks-text{
+	-fx-background-color:  #F0D0D4;
+	-fx-effect:  dropshadow(three-pass-box, rgba(0.0,0.0,0.0,0.8), 10.0, 0.0, 0.0, 0.0);
+	-fx-text-fill:  black;
+	
+}
+.tasks-icone{
+	
+	-fx-fill:  black;
+	
+}
+.tasks-button{
+	
+	-fx-effect:  dropshadow(three-pass-box, rgba(0.0,0.0,0.0,0.8), 10.0, 0.0, 0.0, 0.0);
+	-fx-background-color:  green;
+	-fx-text-fill:  white;
+	
+}

@@ -1,0 +1,249 @@
+ Button, JFXButton{
+	-fx-font-weight: bold;
+	-fx-background-color:#F2EAE3;
+	-fx-effect: dropshadow(three-pass-box, rgba(0.0,0.0,0.0,0.8), 10.0, 0.0, 0.0, 0.0);
+	-fx-background-radius: 22.0;
+	-fx-font-size: 12.0;
+	-fx-text-fill: black;
+	
+	
+	
+}
+JFXTextField, JFXPasswordField, JFXTextArea, TextField{
+	-fx-background-color:#C8B0A7;
+	-fx-text-inner-color:black;
+}
+Button:hover, JFXButton:hover  {
+	/*-fx-font-weight: bold;
+	-fx-background-color: #F2ED6F;
+	-fx-background-radius: 22.0;
+	-fx-font-size: 16.0;
+	-fx-text-fill:  #84DCCF;
+	
+	*/
+	-fx-cursor: hand;
+	/*-fx-opacity: 0.7;*/
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
+	
+	
+	
+	/*-fx-border-color: #2196f3;
+	-fx-border-radius: 20;
+	-fx-border-width: 3;*/
+	
+}
+
+
+Button:pressed {
+	/*-fx-font-weight: bold;
+	-fx-background-color: white;
+	-fx-background-radius: 22;
+	-fx-font-size: 16;
+	-fx-text-fill: #2196f3;
+	-fx-border-color: #2196f3;
+	-fx-border-radius: 20;
+	-fx-border-width: 3;
+	* */
+	
+	-fx-rotate: 3.0;
+	-fx-opacity:0.6;
+	
+}
+.addPatient:hover{
+	-fx-opacity:0.5;
+	/*-fx-font-size: 60.0px;
+	-fx-text-fill: #84DCCF;
+	-fx-background-color: #F2ED6F;
+	-fx-background-radius: 32.0;
+	* */
+	
+}
+#fontAwesomeHover:hover{
+	/*-fx-fill: black;*/
+}
+.addPatient:pressed{
+	/*-fx-font-size: 60px;
+	-fx-text-fill: #2196f3;
+	-fx-background-color: white;
+	-fx-background-radius: 32;
+	* */
+	
+	-fx-rotate:10.0;
+}
+Label{
+	-fx-text-fill: black;
+}
+.redaction{
+	-fx-fill: black;
+	
+}
+
+#deconnect{
+	-fx-font-size: 10.0;
+	-fx-font-weight:bold;
+}
+#deconnect:hover{
+	-fx-text-fill:#F2ED6F;
+	-fx-background-color: red;
+}
+
+
+/*add to tabpane  */
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0.0;
+}
+
+.tab-pane
+{
+    -fx-tab-min-width:90.0px;
+}
+
+.tab{
+    -fx-background-insets: 0.0 1.0 0.0 1.0,0.0,0.0;
+}
+.tab-pane .tab
+{
+    -fx-background-color: #e6e6e6;
+
+}
+
+.tab-pane .tab:selected
+{
+    -fx-background-color: #E2A2A9;
+}
+
+.tab .tab-label { 
+    -fx-alignment: CENTER;
+   
+    -fx-font-size: 12.0px;
+    -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label { 
+    -fx-alignment: CENTER;
+    -fx-text-fill: black;
+}
+.tab-pane:top *.tab-header-area {
+    -fx-background-insets: 0.0, 0.0 0.0 1.0 0.0;
+ /* -fx-padding: 0.416667em 0.166667em 0.0em 0.833em; /* 5 2 0 10 */
+    -fx-padding: 0.416667em 0.166667em 0.0em 0.0em; /* overridden as 5 2 0 0 */
+}
+.tab-pane Text{
+	-fx-text-fill: black;
+}
+
+/*add style to logo  */
+.logo{
+	/*-fx-font-weight: bold;
+	-fx-text-fill: #016FB9;
+	* */
+	
+	-fx-font-size: 12.0;
+}
+/*add style to textField */
+/* .text-field {
+    -fx-background-color: #a9a9a9 , white , white;
+    -fx-background-insets: 0.0 -1.0 -1.0 -1.0, 0.0 0.0 0.0 0.0, 0.0 -1.0 3.0 -1.0;
+    -fx-font-weight: bold;
+    -fx-font-size: 15.0;
+}
+
+.text-field:focused {
+    
+    -fx-background-insets: 0.0 -1.0 -1.0 -1.0, 0.0 0.0 0.0 0.0, 0.0 -1.0 3.0 -1.0;
+    -fx-effect: dropshadow( gaussian , rgba(0.0,0.0,255.0,0.5) , 0.0,0.0,0.0,1.0 );
+   
+}
+*/
+/*data of fiche malade */
+.data-fiche{
+	-fx-text-fill: black;
+	
+}
+/*font awesome for delete */
+#fa-delete{
+	-fx-fill:#FF6347;
+	-fx-size:  5em;
+		}
+/*fontawesome for add */
+#fa-add{
+	-fx-fill: #026aab;
+}
+.hbox-home{
+	-fx-font-size: 7.0px;
+}
+#totale{
+	-fx-text-fill: black;
+	-fx-font-size: 20px;
+	-fx-font-weight: bold;
+}
+.redaction{
+	-fx-text-fill:  #84DCCF;
+}
+.anchorPR{
+	-fx-text-fill: white;
+}
+
+
+
+.headerTitle{
+	
+	-fx-font-size: 22px;
+	-fx-font-weight:bold;
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+	
+}
+.card-british{
+	-fx-border-radius: 30.0 0.0 30.0 0.0;
+	-fx-background-color:#ECE0D5 ;
+  -fx-background-radius: 30.0 0.0 30.0 0.0;
+  -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+  
+	
+}
+
+.card-France{
+	-fx-border-radius: 30.0 30.0 30.0 30.0;
+	-fx-background-color:#ECE0D5 ;
+  -fx-background-radius: 30.0 30.0 30.0 30.0;
+  -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+  
+	
+}
+
+/*TextArea */
+ /*.text-area {
+    -fx-font-family: Consolas;
+    -fx-font-size: 15;
+    -fx-text-fill: #161032;
+    -fx-display-caret:true;
+}
+ */
+/* .text-area .content {
+    -fx-background-color: white;
+}*/
+  
+  
+  JFXChipView{
+  	-fx-background-color: white;
+  }
+  JFXChipView .button{
+  	-fx-background-color: #744253;
+  	
+  }
+  JFXChipView .label{
+  	-fx-background-color: #5B6C5D;
+  	-fx-max-width: 300px;
+  	
+  }
+  JFXChipView .button:hover{
+  	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+  	-fx-cursor: hand ;
+  }
+  
+  .whiteText{
+  	
+  	-fx-fill:  black;
+  }
+  
+  

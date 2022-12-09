@@ -1,0 +1,171 @@
+FontAwesomeIcon {
+	-fx-cursor: hand ;
+}
+
+.bigIcone{
+	
+	-fx-border-color: #E2A2A9;
+	-fx-pref-width: 130.0px;
+	
+	
+	
+}
+.bigIcone:hover {
+	
+	-fx-cursor: hand ;
+	-fx-background-color: #F3D9DC;
+	
+}
+#button-selected {
+	
+	
+	-fx-background-color: #F3D9DC;
+	
+}
+.bigIcone FontAwesomeIcon{
+	
+	-fx-opacity:0.5;
+	
+
+}
+.bigIcone:hover FontAwesomeIcon{
+	
+	-fx-opacity:1.0;
+	-fx-translate-x: 6.0;
+	 
+
+}
+
+.pageIcone{
+
+	-fx-pref-width:160.5px;
+	-fx-pref-height: 160.5px;
+	-fx-background-color:#F2EAE3;
+		-fx-effect: dropshadow(three-pass-box, rgba(0.0,0.0,0.0,0.8), 10.0, 0.0, 0.0, 0.0);
+	
+	}
+.pageIcone:hover{
+
+-fx-cursor: hand;	
+	-fx-background-color:#ECE0D5;
+	}
+	
+/*for jfoenix tabPane */	
+.jfx-tab-pane
+{
+  -fx-padding: 1px;
+  -fx-background-color:  #F0D0D4, -fx-control-inner-background;
+  -fx-background-insets: 0, 1;
+}
+.jfx-tab-pane .headers-region
+{
+  -fx-background-color:  #F0D0D4;
+}
+.jfx-tab-pane:top .depth-container .tab-header-area .headers-region .tab-selected-line {
+    -fx-background-color: red;
+}
+.jfx-tab-pane .tab-header-area .tab-selected-line {
+    -fx-background-color: #ffffff;
+}
+
+
+.jfx-tab-pane .tab-header-area .jfx-rippler{
+    -jfx-rippler-fill :RED;
+}
+.jfx-tab-pane .tab-selected-line{
+    -fx-stroke : RED;
+}
+/*End for jfoenix tabPane */
+/*for javaFX tabPane */	
+.tab-pane
+{
+  -fx-padding: 1px;
+  -fx-background-color:  #F0D0D4, -fx-control-inner-background;
+  -fx-background-insets: 0, 1;
+}
+.tab-pane .headers-region
+{
+  -fx-background-color:  #F0D0D4;
+}
+.tab-pane:top .depth-container .tab-header-area .headers-region .tab-selected-line {
+    -fx-background-color: red;
+}
+.tab-pane .tab-header-area .tab-selected-line {
+    -fx-background-color: #ffffff;
+}
+
+
+.tab-pane .tab-header-area .jfx-rippler{
+    -jfx-rippler-fill :RED;
+}
+.tab-pane .tab-selected-line{
+    -fx-stroke : RED;
+}
+
+.tb-redaction{
+	-fx-background-color:  #C0A59B;
+	-fx-cursor: hand;
+	-fx-fill: black;
+}
+.tab-pane-color {
+	-fx-background-color: #F3D9DC;
+	-fx-tab-min-width:  300;
+	-fx-effect:  dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
+/*End for javaFX tabPane */
+
+.scroll-pane > .corner {
+    -fx-background-color: white;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical{
+    -fx-background-color:transparent;
+}
+
+.increment-button, .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color: black;
+    -fx-background-radius: 5em;
+}
+
+
+
+/*style listView */
+/* .list-cell:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: linear-gradient(#328BDB 0%, #207BCF 25%, #1973C9 75%, #0A65BF 100%);
+    -fx-text-fill: black;
+}
+*/
+/*.list-cell:even { 
+    -fx-background-color: #59C9A5;
+}
+list-cell:odd { 
+    -fx-background-color: #56E39F;
+}
+*/
+ 
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    /* 3:, 4: */
+    -fx-background-color: linear-gradient(#333 0%, #777 25%, #aaa 75%, #eee 100%);
+    -fx-text-fill: white; /* 5 */
+}
+.list-cell { -fx-text-fill: black; /* 5 */ }
+.list-cell:odd { -fx-background-color: #84EBB9; /* 1 */ }
+.list-cell:even { -fx-background-color: #A7F1CD; /* for information */ }
+.list-cell:filled:hover { 
+    -fx-background-color: #00f; /* 2 */
+    -fx-text-fill: white; /* 5 */
+}
+
