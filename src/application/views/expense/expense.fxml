@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="stackPane" style="-fx-background-color: #39293D; -fx-border-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.expense.ExpenseController">
+<StackPane fx:id="stackPane" styleClass="center" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.expense.ExpenseController">
    <children>
       <GridPane prefHeight="500.0" prefWidth="600.0">
         <columnConstraints>
@@ -32,7 +32,7 @@
          <children>
             <Button fx:id="btnSave" mnemonicParsing="false" onAction="#addExpense" prefHeight="37.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <graphic>
-                  <FontAwesomeIcon fill="WHITE" iconName="SAVE" size="2em" />
+                  <FontAwesomeIcon fill="WHITE" iconName="SAVE" size="2em" styleClass="fa-big-icone" />
                </graphic>
                <GridPane.margin>
                   <Insets left="100.0" />
@@ -66,7 +66,8 @@
       </GridPane>
    </children>
    <stylesheets>
-      <URL value="@/css/buttonSyle.css" />
-      <URL value="@/css/styles2.css" />
+      <URL value="@../../../css/styles.css" />
+      <URL value="@../../../css/buttonSyle.css" />
+      <URL value="@../../../css/styles2.css" />
    </stylesheets>
 </StackPane>

@@ -12,6 +12,7 @@ import com.jfoenix.validation.NumberValidator;
 import com.jfoenix.validation.RequiredFieldValidator;
 
 import application.SQLiteJDBC;
+import application.controllers.login.ActivationController;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -45,6 +46,20 @@ public class ExpenseController implements Initializable {
 			}
 		});
 
+		// Set Light/Dark mode as user chosed
+		this.setLightDarkMode();
+
+	}
+
+	public void setLightDarkMode() {
+
+		if (!ActivationController.getMode()) {
+			this.stackPane.getStylesheets().clear();
+
+			this.stackPane.getStylesheets().add("/css/light_mode/buttonSyle.css");
+			this.stackPane.getStylesheets().add("/css/light_mode/styles.css");
+			this.stackPane.getStylesheets().add("/css/light_mode/styles2.css");
+		}
 	}
 
 	@FXML
