@@ -1027,6 +1027,8 @@ public class FicheMaladeController implements Initializable {
 			initializeChipViewOfMedecine();
 			
 			
+			//Set Light/Dark mode as user chosed
+			this.setLightDarkMode();
 			
 			
 
@@ -1045,6 +1047,18 @@ public class FicheMaladeController implements Initializable {
 			}
 		}
 
+	}
+	
+public void setLightDarkMode() {
+		
+		if(!ActivationController.getMode()) {
+			this.stackPane.getStylesheets().clear();
+			
+			this.stackPane.getStylesheets().add("/css/light_mode/buttonSyle.css");
+			this.stackPane.getStylesheets().add("/css/light_mode/tableView.css");
+			this.stackPane.getStylesheets().add("/css/light_mode/styles.css");
+			this.stackPane.getStylesheets().add("/css/light_mode/styles2.css");
+		}
 	}
 
 	private BounceIn animationForSavingData ;

@@ -23,9 +23,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane fx:id="stackPane" prefHeight="714.0" prefWidth="1336.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.FicheMaladeController">
+<StackPane fx:id="stackPane" prefHeight="714.0" prefWidth="1336.0" styleClass="center" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.FicheMaladeController">
    <children>
-      <AnchorPane prefHeight="703.0" prefWidth="1336.0" style="-fx-background-color: #39293D; -fx-border-color: white;" stylesheets="@/css/buttonSyle.css">
+      <AnchorPane prefHeight="703.0" prefWidth="1336.0" styleClass="c">
          <children>
             <Label layoutX="31.0" layoutY="3.0" prefHeight="48.0" prefWidth="172.0" styleClass="headerTitle" text="FICHE  MALADE" textFill="WHITE">
                <font>
@@ -246,7 +246,7 @@
             <JFXSpinner fx:id="spinerTiming" layoutX="695.0" layoutY="142.0" prefHeight="70.0" prefWidth="68.0" visible="false" />
             <AnchorPane fx:id="addRadioAnchor" layoutX="38.0" layoutY="109.0" onMouseEntered="#addRadioEntered" onMouseExited="#addRadioExited" onMousePressed="#addRadio" prefHeight="195.0" prefWidth="195.0" styleClass="pageIcone">
                <children>
-                  <FontAwesomeIcon fill="#fff7f7" iconName="PLUS" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
+                  <FontAwesomeIcon fill="#fff7f7" iconName="PLUS" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" styleClass="fa-big-icone" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
                   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="97.0" prefHeight="25.0" prefWidth="162.0" text="Ajouter un radio" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
@@ -256,7 +256,7 @@
             </AnchorPane>
             <AnchorPane fx:id="showRadiosAnchor" layoutX="38.0" layoutY="296.0" onMouseEntered="#showRadiosEntred" onMouseExited="#showRadiosExited" onMousePressed="#displayRadios2" prefHeight="195.0" prefWidth="195.0" styleClass="pageIcone">
                <children>
-                  <FontAwesomeIcon fill="#fff7f7" iconName="DESKTOP" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
+                  <FontAwesomeIcon fill="#fff7f7" iconName="DESKTOP" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" styleClass="fa-big-icone" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
                   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="97.0" prefHeight="25.0" prefWidth="162.0" text="Afficher les radios" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
@@ -266,7 +266,7 @@
             </AnchorPane>
             <AnchorPane fx:id="redactionAnchor" layoutX="38.0" layoutY="484.0" onMouseEntered="#redactionEntered" onMouseExited="#redactionExited" onMousePressed="#openRedaction" prefHeight="195.0" prefWidth="195.0" styleClass="pageIcone">
                <children>
-                  <FontAwesomeIcon fill="#fff7f7" iconName="PENCIL" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
+                  <FontAwesomeIcon fill="#fff7f7" iconName="PENCIL" layoutX="58.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" size="3em" styleClass="fa-big-icone" textAlignment="CENTER" wrappingWidth="42.285715103149414" />
                   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="97.0" prefHeight="25.0" prefWidth="162.0" text="Faire une ordonnance" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
@@ -288,8 +288,9 @@
       </AnchorPane>
    </children>
    <stylesheets>
-      <URL value="@/css/styles2.css" />
-      <URL value="@/css/tableView.css" />
-      <URL value="@/css/buttonSyle.css" />
+      <URL value="@../../css/styles2.css" />
+      <URL value="@../../css/buttonSyle.css" />
+      <URL value="@../../css/tableView.css" />
+      <URL value="@../../css/styles.css" />
    </stylesheets>
 </StackPane>
