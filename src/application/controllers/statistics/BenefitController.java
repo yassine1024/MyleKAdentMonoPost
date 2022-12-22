@@ -307,6 +307,18 @@ public class BenefitController implements Initializable {
 
 	private ArrayList<Benefit> arrayRecordShuttles;
 
+	
+public void setLightDarkMode() {
+		
+		if(!ActivationController.getMode()) {
+			System.out.println("Change mode...");
+			this.stackPane.getStylesheets().clear();
+			
+			this.stackPane.getStylesheets().add("/css/light_mode/buttonSyle.css");
+			this.stackPane.getStylesheets().add("/css/light_mode/tableView.css");
+			this.stackPane.getStylesheets().add("/css/light_mode/styles.css");
+		}
+	}
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
@@ -315,6 +327,8 @@ public class BenefitController implements Initializable {
 		this.initializeColumnOfTable();
 		this.intializeRecord();
 		this.initializeComboBoxSelelctUser();
+		
+		this.setLightDarkMode();
 	}
 
 	private void initializeColumnOfTable() {
@@ -338,6 +352,8 @@ public class BenefitController implements Initializable {
 		
 		// ajouter les colones et leur row au tableaux
 		tabComtabilite.getColumns().addAll(dateColumn, benefitColumn);
+		
+		this.setLightDarkMode();
 
 	}
 

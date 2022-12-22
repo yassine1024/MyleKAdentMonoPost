@@ -16,9 +16,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.statistics.BenefitController">
+<StackPane fx:id="stackPane" styleClass="center" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.statistics.BenefitController">
    <children>
-      <AnchorPane fx:id="prothese" prefHeight="600.0" prefWidth="1199.0" style="-fx-background-color: #39293D; -fx-border-color: white;">
+      <AnchorPane fx:id="prothese" prefHeight="600.0" prefWidth="1199.0">
          <children>
             <Label layoutX="30.0" prefHeight="52.0" prefWidth="297.0" styleClass="headerTitle" text="BENEFICE" textFill="WHITE">
                <font>
@@ -26,7 +26,7 @@
                </font>
             </Label>
             <Separator layoutX="24.0" layoutY="51.0" prefHeight="4.0" prefWidth="419.0" />
-            <TableView fx:id="tabComtabilite" layoutX="99.0" layoutY="200.0" prefHeight="365.0" prefWidth="672.0" stylesheets="@/css/tableView.css" />
+            <TableView fx:id="tabComtabilite" layoutX="99.0" layoutY="200.0" prefHeight="365.0" prefWidth="672.0" />
             <HBox layoutX="95.0" layoutY="121.0" prefHeight="77.0" prefWidth="699.0" spacing="10.0" styleClass="card-british">
                <children>
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="whiteText" text="Chercher par période de ">
@@ -55,7 +55,7 @@
             <HBox alignment="TOP_RIGHT" layoutX="1118.0" layoutY="5.0" prefHeight="61.0" prefWidth="75.0">
             
              <children>
-      <fx:include source="/application/views/login/LoginBar.fxml" />
+      <fx:include source="../login/LoginBar.fxml" />
    </children>
             </HBox>
             <VBox alignment="TOP_CENTER" layoutX="916.0" layoutY="111.0" prefHeight="200.0" prefWidth="204.0" styleClass="card-british">
@@ -99,10 +99,11 @@
                </padding>
             </VBox>
          </children>
-         <stylesheets>
-            <URL value="@/css/buttonSyle.css" />
-            <URL value="@/css/tableView.css" />
-         </stylesheets>
       </AnchorPane>
    </children>
+   <stylesheets>
+      <URL value="@../../../css/buttonSyle.css" />
+      <URL value="@../../../css/tableView.css" />
+      <URL value="@../../../css/styles.css" />
+   </stylesheets>
 </StackPane>
