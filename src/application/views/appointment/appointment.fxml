@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="stackPane" style="-fx-background-color: #39293D; -fx-border-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.appointment.AppointmentController">
+<StackPane fx:id="stackPane" styleClass="center" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.appointment.AppointmentController">
    <children>
       <GridPane prefHeight="500.0" prefWidth="600.0">
         <columnConstraints>
@@ -35,15 +35,15 @@
          <children>
             <Button fx:id="btnSave" mnemonicParsing="false" onAction="#addAppointment" prefHeight="37.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <graphic>
-                  <FontAwesomeIcon fill="WHITE" iconName="SAVE" size="2em" />
+                  <FontAwesomeIcon fill="WHITE" iconName="SAVE" size="2em" styleClass="fa-big-icone" />
                </graphic>
                <GridPane.margin>
                   <Insets left="100.0" />
                </GridPane.margin></Button>
-            <JFXTextField fx:id="name" focusColor="#5298da" labelFloat="true" onKeyPressed="#changePositionFullName" promptText="Nom &amp; Prénom" style="-fx-text-inner-color: white;" unFocusColor="#e7ee56" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <JFXTextField fx:id="phone" focusColor="#428dd3" labelFloat="true" onKeyPressed="#changePositionPhone" prefHeight="31.0" prefWidth="185.0" promptText="Téléphone" style="-fx-text-inner-color: white;" unFocusColor="#d4dd4a" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <JFXDatePicker fx:id="date" overLay="true" prefHeight="31.0" prefWidth="332.0" promptText="Date" style="-fx-text-inner-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <JFXTimePicker fx:id="hour" prefHeight="31.0" prefWidth="326.0" promptText="Heure" style="-fx-text-inner-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <JFXTextField fx:id="name" focusColor="#5298da" labelFloat="true" onKeyPressed="#changePositionFullName" promptText="Nom &amp; Prénom" unFocusColor="#e7ee56" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <JFXTextField fx:id="phone" focusColor="#428dd3" labelFloat="true" onKeyPressed="#changePositionPhone" prefHeight="31.0" prefWidth="185.0" promptText="Téléphone" unFocusColor="#d4dd4a" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <JFXDatePicker fx:id="date" overLay="true" prefHeight="31.0" prefWidth="332.0" promptText="Date" style="-fx-text-inner-color: green;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <JFXTimePicker fx:id="hour" prefHeight="31.0" prefWidth="326.0" promptText="Heure" style="-fx-text-inner-color: green;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Label prefHeight="48.0" prefWidth="203.0" text="Ajout d'un rendez-vous" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
@@ -55,7 +55,7 @@
             <Separator prefHeight="4.0" prefWidth="419.0" />
             <HBox alignment="TOP_RIGHT" prefHeight="84.0" prefWidth="117.0" GridPane.columnIndex="2">
                <children>
-                  <fx:include source="/application/views/login/LoginBar.fxml" />
+                  <fx:include source="../login/LoginBar.fxml" />
                </children>
                <padding>
                   <Insets bottom="45.0" left="50.0" />
@@ -71,7 +71,8 @@
       </GridPane>
    </children>
    <stylesheets>
-      <URL value="@/css/buttonSyle.css" />
-      <URL value="@/css/styles2.css" />
+      <URL value="@../../../css/buttonSyle.css" />
+      <URL value="@../../../css/styles2.css" />
+      <URL value="@../../../css/styles.css" />
    </stylesheets>
 </StackPane>

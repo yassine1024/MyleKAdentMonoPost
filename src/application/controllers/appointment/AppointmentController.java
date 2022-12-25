@@ -60,9 +60,22 @@ public class AppointmentController implements Initializable {
 	private SQLiteJDBC sl;
 	public static int switcher = 0;
 
+public void setLightDarkMode() {
+		
+		if(!ActivationController.getMode()) {
+			this.stackPane.getStylesheets().clear();
+			
+			this.stackPane.getStylesheets().add("/css/light_mode/buttonSyle.css");
+			this.stackPane.getStylesheets().add("/css/light_mode/styles2.css");
+			this.stackPane.getStylesheets().add("/css/light_mode/styles.css");
+		}
+	}
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
+		//Set Light/Dark mode as user chosed
+				this.setLightDarkMode();
 		//Initialize patients list in appointement
 		TextFields.bindAutoCompletion(this.name, ActivationController.patientListComplete);
 		
