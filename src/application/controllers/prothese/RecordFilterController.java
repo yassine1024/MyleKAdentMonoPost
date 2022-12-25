@@ -13,6 +13,7 @@ import com.jfoenix.controls.JFXCheckBox;
 import application.FicheNavette;
 import application.Products;
 import application.SQLiteJDBC;
+import application.controllers.login.ActivationController;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,6 +23,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
 
 public class RecordFilterController implements Initializable {
 
@@ -77,7 +79,23 @@ public class RecordFilterController implements Initializable {
 		//this.intializeRecord();
 		
 	}
+	  @FXML
+	    private StackPane stackPane;
 
+	
+public void setLightDarkMode() {
+		
+		if(!ActivationController.getMode()) {
+			this.stackPane.getStylesheets().clear();
+			
+			this.stackPane.getStylesheets().add("/css/light_mode/buttonSyle.css");
+			this.stackPane.getStylesheets().add("/css/light_mode/comboBox.css");
+			this.stackPane.getStylesheets().add("/css/light_mode/styles.css");
+			this.stackPane.getStylesheets().add("/css/light_mode/styles2.css");
+			this.stackPane.getStylesheets().add("/css/light_mode/tableView.css");
+			this.stackPane.getStylesheets().add("/css/light_mode/checkBox.css");
+		}
+	}
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
@@ -85,6 +103,9 @@ public class RecordFilterController implements Initializable {
 		arrayRecordShuttles=new ArrayList<FicheNavette>();
 		this.initializeColumnOfTable();
 		this.intializeRecord();
+		
+		//Set Light/Dark mode as user chosed
+				this.setLightDarkMode();
 	}
 
 	
