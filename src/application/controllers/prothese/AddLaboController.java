@@ -14,6 +14,7 @@ import com.jfoenix.controls.JFXTextField;
 import application.Products;
 import application.SQLiteJDBC;
 import application.controllers.DiagnostiqueDetaille;
+import application.controllers.login.ActivationController;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,15 +25,36 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class AddLaboController implements Initializable {
+
+	@FXML
+    private AnchorPane stackPane;
+	
+public void setLightDarkMode() {
+		
+		if(!ActivationController.getMode()) {
+			this.stackPane.getStylesheets().clear();
+			
+			this.stackPane.getStylesheets().add("/css/light_mode/buttonSyle.css");
+			
+			this.stackPane.getStylesheets().add("/css/light_mode/styles.css");
+			this.stackPane.getStylesheets().add("/css/light_mode/styles2.css");
+			this.stackPane.getStylesheets().add("/css/light_mode/tableView.css");
+			
+		}
+	}
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 		
 		this.initializeProductsTable();
+		
+		//Set Light/Dark mode as user chosed
+				this.setLightDarkMode();
 
 	}
 

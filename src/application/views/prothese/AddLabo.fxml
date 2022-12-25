@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="636.0" prefWidth="505.0" style="-fx-background-color: #39293D; -fx-border-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="stackPane" prefHeight="636.0" prefWidth="505.0" styleClass="center" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
 	<children>
 		<Label layoutX="25.0" layoutY="23.0" prefHeight="48.0" prefWidth="206.0" styleClass="headerTitle" text="AJOUTER UN LABO" textFill="WHITE">
 			<font>
@@ -32,38 +32,39 @@
 				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
 			</rowConstraints>
 			<children>
-            <JFXTextField fx:id="tNom" focusColor="#439df2" labelFloat="true" onKeyPressed="#changerPositionNom" promptText="Nom du labo" style="-fx-text-inner-color: white;" unFocusColor="#d7eb58" />
-            <JFXTextField fx:id="tAddresse" focusColor="#5098fc" labelFloat="true" onKeyPressed="#changerPositionAddresse" promptText="Addresse du labo" style="-fx-text-inner-color: white;" unFocusColor="#dcf24c" GridPane.rowIndex="1" />
-            <JFXTextField fx:id="tPhone" focusColor="#5ca2e8" labelFloat="true" onKeyPressed="#changerPositionPhone" promptText="Téléphone" style="-fx-text-inner-color: white;" unFocusColor="#d8f256" GridPane.rowIndex="2" />
+            <JFXTextField fx:id="tNom" focusColor="#439df2" labelFloat="true" onKeyPressed="#changerPositionNom" promptText="Nom du labo" unFocusColor="#d7eb58" />
+            <JFXTextField fx:id="tAddresse" focusColor="#5098fc" labelFloat="true" onKeyPressed="#changerPositionAddresse" promptText="Addresse du labo" unFocusColor="#dcf24c" GridPane.rowIndex="1" />
+            <JFXTextField fx:id="tPhone" focusColor="#5ca2e8" labelFloat="true" onKeyPressed="#changerPositionPhone" promptText="Téléphone" unFocusColor="#d8f256" GridPane.rowIndex="2" />
 			</children>
 		</GridPane>
 		<HBox layoutX="430.0" layoutY="3.0" prefHeight="48.0" prefWidth="65.0">
 			<children>
-				<fx:include source="/application/views/login/LoginBar.fxml" />
+				<fx:include source="../login/LoginBar.fxml" />
 			</children>
 		</HBox>
 				<Button fx:id="addButton" layoutX="430.0" layoutY="582.0" mnemonicParsing="false" onAction="#addLabo">
          <graphic>
-            <FontAwesomeIcon fill="WHITE" iconName="SAVE" size="1.5em" />
+            <FontAwesomeIcon fill="WHITE" iconName="SAVE" size="1.5em" styleClass="fa-big-icone" />
          </graphic>
 				</Button>
       <TableView fx:id="productsTable" layoutX="58.0" layoutY="403.0" prefHeight="158.0" prefWidth="386.0" />
-      <JFXTextField fx:id="type" focusColor="#5ab3fc" labelFloat="true" layoutX="65.0" layoutY="367.0" onKeyPressed="#changePositionType" promptText="Type" style="-fx-text-inner-color: white;" unFocusColor="#d2ee54" />
-      <JFXTextField fx:id="price" focusColor="#4ca3eb" labelFloat="true" layoutX="262.0" layoutY="361.0" onKeyPressed="#addProducts" prefHeight="31.0" prefWidth="181.0" promptText="Prix" style="-fx-text-inner-color: white;" unFocusColor="#c9e44e" />
+      <JFXTextField fx:id="type" focusColor="#5ab3fc" labelFloat="true" layoutX="65.0" layoutY="367.0" onKeyPressed="#changePositionType" promptText="Type" unFocusColor="#d2ee54" />
+      <JFXTextField fx:id="price" focusColor="#4ca3eb" labelFloat="true" layoutX="262.0" layoutY="361.0" onKeyPressed="#addProducts" prefHeight="31.0" prefWidth="181.0" promptText="Prix" unFocusColor="#c9e44e" />
       <Button layoutX="452.0" layoutY="416.0" mnemonicParsing="false" onAction="#addProduct">
          <graphic>
-            <FontAwesomeIcon fill="WHITE" iconName="PLUS" />
+            <FontAwesomeIcon fill="WHITE" iconName="PLUS" styleClass="fa-big-icone" />
          </graphic>
       </Button>
       <Button layoutX="453.0" layoutY="458.0" mnemonicParsing="false" onAction="#removeProduct">
          <graphic>
-            <FontAwesomeIcon fill="WHITE" iconName="REMOVE" />
+            <FontAwesomeIcon fill="WHITE" iconName="REMOVE" styleClass="fa-big-icone" />
          </graphic>
       </Button>
 	</children>
    <stylesheets>
-      <URL value="@/css/buttonSyle.css" />
-      <URL value="@/css/tableView.css" />
-      <URL value="@/css/styles2.css" />
+      <URL value="@../../../css/styles.css" />
+      <URL value="@../../../css/buttonSyle.css" />
+      <URL value="@../../../css/styles2.css" />
+      <URL value="@../../../css/tableView.css" />
    </stylesheets>
 </AnchorPane>
