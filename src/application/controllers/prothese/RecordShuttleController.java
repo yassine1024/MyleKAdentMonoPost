@@ -42,12 +42,14 @@ import com.jfoenix.validation.RequiredFieldValidator;
 import application.Labo;
 import application.MyQr;
 import application.SQLiteJDBC;
+import application.controllers.login.ActivationController;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class RecordShuttleController implements Initializable {
@@ -141,7 +143,19 @@ public class RecordShuttleController implements Initializable {
 		}
 		
 	}
-
+	 @FXML
+	    private StackPane stackPane;
+public void setLightDarkMode() {
+		
+		if(!ActivationController.getMode()) {
+			this.stackPane.getStylesheets().clear();
+			
+			this.stackPane.getStylesheets().add("/css/light_mode/buttonSyle.css");
+			
+			this.stackPane.getStylesheets().add("/css/light_mode/styles.css");
+		}
+	}
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
@@ -152,6 +166,9 @@ public class RecordShuttleController implements Initializable {
 		initializeType();
 		TextFields.bindAutoCompletion(this.type, Collections.list(this.typeOfJob.keys()));
 		initializeValidators();
+		
+		//Set Light/Dark mode as user chosed
+				this.setLightDarkMode();
 
 	}
 
