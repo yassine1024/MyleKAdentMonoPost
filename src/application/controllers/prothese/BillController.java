@@ -32,6 +32,7 @@ import com.jfoenix.controls.JFXDialogLayout;
 
 import application.FicheNavette;
 import application.SQLiteJDBC;
+import application.controllers.login.ActivationController;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -138,7 +139,7 @@ public class BillController implements Initializable {
 			document.open();
 			/*
 			 * Paragraph para1 = new Paragraph(
-			 * "فاتــــــــــــــــــــــــــــــــــــــــورة الـــــــــــــــــــــــــهـــــــاتــــــــــــــــفــــــــــــ"
+			 * "Ù�Ø§ØªÙ€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€ÙˆØ±Ø© Ø§Ù„Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù‡Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ø§ØªÙ€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù�Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€"
 			 * );
 			 * 
 			 * document.add(para1);
@@ -180,7 +181,7 @@ public class BillController implements Initializable {
 			// preface.addAll({pNameLab,pNumBill,p,pDate})
 			// preface.add(p);
 
-//Paragraph p2=new Paragraph( BaseFont.IDENTITY_H,"فـــاتــــــور", catFont);
+//Paragraph p2=new Paragraph( BaseFont.IDENTITY_H,"Ù�Ù€Ù€Ù€Ø§ØªÙ€Ù€Ù€Ù€Ù€Ù€ÙˆØ±", catFont);
 			addEmptyLine(preface, 3);
 
 			// addEmptyLine(preface, 1);
@@ -189,7 +190,7 @@ public class BillController implements Initializable {
 			PdfPCell cell1 = new PdfPCell(new Phrase("Date",ordinaryFont));
 			PdfPCell cell2 = new PdfPCell(new Phrase("Type",ordinaryFont));
 			PdfPCell cell3 = new PdfPCell(new Phrase("Prix_Unitaire",ordinaryFont));
-			PdfPCell cell4 = new PdfPCell(new Phrase("Quantité",ordinaryFont));
+			PdfPCell cell4 = new PdfPCell(new Phrase("QuantitÃ©",ordinaryFont));
 			PdfPCell cell5 = new PdfPCell(new Phrase("Prix_Totale",ordinaryFont));
 			PdfPCell cell6 = new PdfPCell(new Phrase("Nom",ordinaryFont));
 			PdfPCell cell7 = new PdfPCell(new Phrase("Tente",ordinaryFont));
@@ -240,11 +241,11 @@ public class BillController implements Initializable {
 //413
 			/*
 			 * PdfPTable table = new PdfPTable(5); PdfPCell cell1 = new PdfPCell(new
-			 * Phrase("الزمان")); PdfPCell cell2 = new PdfPCell(new Phrase("النوع"));
+			 * Phrase("Ø§Ù„Ø²Ù…Ø§Ù†")); PdfPCell cell2 = new PdfPCell(new Phrase("Ø§Ù„Ù†ÙˆØ¹"));
 			 * PdfPCell cell3 = new PdfPCell(new
-			 * Phrase("مبـــــــــلغ الــــــــوحـــــدة")); PdfPCell cell4 = new
-			 * PdfPCell(new Phrase("الــــــكــمية")); PdfPCell cell5 = new PdfPCell(new
-			 * Phrase("الــــــــــمـــــــــبـــــلغ الـــــــكــــلـــــي"));
+			 * Phrase("Ù…Ø¨Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù„Øº Ø§Ù„Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€ÙˆØ­Ù€Ù€Ù€Ù€Ù€Ø¯Ø©")); PdfPCell cell4 = new
+			 * PdfPCell(new Phrase("Ø§Ù„Ù€Ù€Ù€Ù€Ù€Ù€ÙƒÙ€Ù€Ù…ÙŠØ©")); PdfPCell cell5 = new PdfPCell(new
+			 * Phrase("Ø§Ù„Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù…Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ù€Ø¨Ù€Ù€Ù€Ù€Ù€Ù„Øº Ø§Ù„Ù€Ù€Ù€Ù€Ù€Ù€Ù€ÙƒÙ€Ù€Ù€Ù€Ù„Ù€Ù€Ù€Ù€Ù€ÙŠ"));
 			 * table.addCell(cell1); table.addCell(cell2); table.addCell(cell3);
 			 * table.addCell(cell4); table.addCell(cell5); table.setHeaderRows(1); for
 			 * (LabDetaille labDetaille : this.reduceLabDetailleArray) {
@@ -269,7 +270,7 @@ public class BillController implements Initializable {
 
 			// ###################End of creating the PDF Document################
 		} else {
-			String content = "La date de début est supérieur de la date de fin!";
+			String content = "La date de dÃ©but est supÃ©rieur de la date de fin!";
 			/*
 			 * Notifications notification =
 			 * Notifications.create().title("Echec").text(content).graphic(null)
@@ -311,7 +312,25 @@ public class BillController implements Initializable {
 		this.intializeRecord();
 	}
 
+	
+	
+public void setLightDarkMode() {
+		
+		if(!ActivationController.getMode()) {
+			this.stackPane.getStylesheets().clear();
+			
+			this.stackPane.getStylesheets().add("/css/light_mode/buttonSyle.css");
+			this.stackPane.getStylesheets().add("/css/light_mode/comboBox.css");
+			this.stackPane.getStylesheets().add("/css/light_mode/styles.css");
+			this.stackPane.getStylesheets().add("/css/light_mode/styles2.css");
+			this.stackPane.getStylesheets().add("/css/light_mode/tableView.css");
+			this.stackPane.getStylesheets().add("/css/light_mode/checkBox.css");
+		}
+	}
 	private void initializeColumnOfTable() {
+		//Set Light/Dark mode as user chosed
+				this.setLightDarkMode();
+		
 		// initialiser tableau diagnostique
 		TableColumn<FicheNavette, String> dateColumn = new TableColumn<FicheNavette, String>("Date");
 		TableColumn<FicheNavette, String> fullNameColumn = new TableColumn<FicheNavette, String>("Nom");

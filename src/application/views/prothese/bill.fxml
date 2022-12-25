@@ -14,9 +14,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane fx:id="stackPane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.prothese.BillController">
+<StackPane fx:id="stackPane" styleClass="center" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.prothese.BillController">
    <children>
-      <AnchorPane fx:id="prothese" prefHeight="600.0" prefWidth="1199.0" style="-fx-background-color: #39293D; -fx-border-color: white;">
+      <AnchorPane fx:id="prothese" prefHeight="600.0" prefWidth="1199.0">
          <children>
             <Label layoutX="30.0" prefHeight="52.0" prefWidth="297.0" styleClass="headerTitle" text="COMPTABILITEE" textFill="WHITE">
                <font>
@@ -41,7 +41,7 @@
                   <JFXDatePicker fx:id="dateFinLab" prefHeight="31.0" prefWidth="260.0" style="-fx-text-inner-color: black; -fx-background-color: white;" />
                   <Button fx:id="btnPrintBell" mnemonicParsing="false" onMousePressed="#facturer" prefHeight="37.0" style="-fx-background-radius: 5em;" textFill="#17cd11">
                      <graphic>
-                        <FontAwesomeIcon fill="WHITE" iconName="BELL" size="1.5em" />
+                        <FontAwesomeIcon fill="WHITE" iconName="BELL" size="1.5em" styleClass="fa-big-icone" />
                      </graphic>
                   </Button>
                </children>
@@ -51,16 +51,18 @@
             </HBox>
             <HBox alignment="TOP_RIGHT" layoutX="1122.0" layoutY="1.0" prefHeight="37.0" prefWidth="73.0">
             <children>
-                  <fx:include source="/application/views/login/LoginBar.fxml" />
+                  <fx:include source="../login/LoginBar.fxml" />
                </children>
             </HBox>
          </children>
-         <stylesheets>
-            <URL value="@/css/styles2.css" />
-            <URL value="@/css/comboBox.css" />
-            <URL value="@/css/buttonSyle.css" />
-            <URL value="@/css/checkBox.css" />
-         </stylesheets>
       </AnchorPane>
    </children>
+   <stylesheets>
+      <URL value="@../../../css/buttonSyle.css" />
+      <URL value="@../../../css/comboBox.css" />
+      <URL value="@../../../css/styles.css" />
+      <URL value="@../../../css/styles2.css" />
+      <URL value="@../../../css/tableView.css" />
+      <URL value="@../../../css/checkBox.css" />
+   </stylesheets>
 </StackPane>
