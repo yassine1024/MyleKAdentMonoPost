@@ -589,7 +589,8 @@ public class ActivationController implements Initializable {
 	private ScrollPane tacheScrollPane;
 
 	// for detect age of Patient
-	private Hashtable<String, Integer> hashTableDetectAgePatient;
+	public static Hashtable<String, Integer> hashTableDetectAgePatient;
+	public static Hashtable<String, String> hashTableDetectPhoneNumberPatient;
 
 	@FXML
 	private Button detailed;
@@ -993,12 +994,15 @@ public class ActivationController implements Initializable {
 
 		this.hashTableDetectAgePatient = new Hashtable<String, Integer>();
 		this.hashTableDetectIDPatient = new Hashtable<String, Integer>();
+		this.hashTableDetectPhoneNumberPatient= new Hashtable<String, String>();
 		// Detect Age Of Patient
 		for (Malade malade : this.fillTable()) {
 			System.out.println(malade.getNom() + " " + malade.getPrenom());
 			this.hashTableDetectAgePatient.put(malade.getNom() + " " + malade.getPrenom(), malade.getAge());
 			this.hashTableDetectIDPatient.put(malade.getNom() + " " + malade.getPrenom(), malade.getId());
-
+			
+			this.hashTableDetectPhoneNumberPatient.put(malade.getNom() + " " + malade.getPrenom(), malade.getPhone());
+			
 		}
 
 		// addListner to change for type of Lab
@@ -1289,7 +1293,7 @@ public class ActivationController implements Initializable {
 
 		try {
 			stm = new SQLiteJDBC().getConnection().createStatement();
-			request = "SELECT nom,prenom FROM malades";
+			request = "SELECT nom,prenom,age FROM malades";
 			rs = stm.executeQuery(request);
 			while (rs.next()) {
 
@@ -2207,7 +2211,8 @@ public class ActivationController implements Initializable {
 			if (!this.hashTableDetectAgePatient.containsKey(malade.getNom() + " " + malade.getPrenom())) {
 				this.hashTableDetectAgePatient.put(malade.getNom() + " " + malade.getPrenom(), malade.getAge());
 				this.hashTableDetectIDPatient.put(malade.getNom() + " " + malade.getPrenom(), malade.getAge());
-
+				this.hashTableDetectPhoneNumberPatient.put(malade.getNom() + " " + malade.getPrenom(), malade.getPhone());
+				
 			}
 		}
 		tabPatient.setItems(FXCollections.observableArrayList(arrayR));

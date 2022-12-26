@@ -41,7 +41,7 @@
                   <Insets left="100.0" />
                </GridPane.margin></Button>
             <JFXTextField fx:id="name" focusColor="#5298da" labelFloat="true" onKeyPressed="#changePositionFullName" promptText="Nom &amp; Prénom" unFocusColor="#e7ee56" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <JFXTextField fx:id="phone" focusColor="#428dd3" labelFloat="true" onKeyPressed="#changePositionPhone" prefHeight="31.0" prefWidth="185.0" promptText="Téléphone" unFocusColor="#d4dd4a" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <JFXTextField fx:id="phone" focusColor="#428dd3" labelFloat="true" onKeyPressed="#changePositionPhone" onMouseEntered="#selectNameFromAutoComplete" prefHeight="31.0" prefWidth="185.0" promptText="Téléphone" unFocusColor="#d4dd4a" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <JFXDatePicker fx:id="date" overLay="true" prefHeight="31.0" prefWidth="332.0" promptText="Date" style="-fx-text-inner-color: green;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <JFXTimePicker fx:id="hour" prefHeight="31.0" prefWidth="326.0" promptText="Heure" style="-fx-text-inner-color: green;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Label prefHeight="48.0" prefWidth="203.0" text="Ajout d'un rendez-vous" textFill="WHITE">

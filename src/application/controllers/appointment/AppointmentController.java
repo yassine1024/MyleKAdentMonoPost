@@ -31,7 +31,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
+import javafx.scene.input.InputMethodEvent;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
@@ -286,5 +288,20 @@ public void setLightDarkMode() {
 		}
 
 	}
+	
+	 @FXML
+	    void selectNameFromAutoComplete(MouseEvent event) {
+
+
+
+		System.out.println("select name from auto complete."+this.name.getText());
+		
+		if(ActivationController.hashTableDetectPhoneNumberPatient.containsKey(this.name.getText())) {
+			this.phone.setText(ActivationController.hashTableDetectPhoneNumberPatient.get(this.name.getText()));
+		}
+		
+    }
+
+
 
 }
