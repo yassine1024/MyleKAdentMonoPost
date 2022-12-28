@@ -271,7 +271,7 @@ public class Main extends Application {
 		String request = "CREATE TABLE IF NOT EXISTS users(" + "user_id INTEGER PRIMARY KEY AUTOINCREMENT,"
 				+ "nom_fr TEXT," + "nom_ar TEXT," + "specialty TEXT," + "specialty_ar TEXT," + "address TEXT,"
 				+ "municipality TEXT," + "town TEXT," + "phone TEXT," + "mail TEXT," + "password TEXT, "
-				+ "if_auth BOOLEAN, " + "type INTEGER, " + "password_clear TEXT)";
+				+ "if_auth BOOLEAN, " + "type INTEGER, " + "password_clear TEXT, path_order_logo TEXT)";
 
 		stm.execute(request);
 		System.out.println("users table created with succes ");

@@ -6,6 +6,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -131,8 +134,10 @@ import com.itextpdf.text.Font;
 
 import javafx.scene.text.Text;
 import javafx.scene.transform.Scale;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.util.Duration;
 
 public class ActivationController implements Initializable {
@@ -516,8 +521,6 @@ public class ActivationController implements Initializable {
 
 					((Label) fff.getChildren().get(1)).setText(rs.getString("task"));
 
-					
-					
 					vboxTasksSlider.getChildren().add(fff);
 					int taskId = rs.getInt(1);
 
@@ -630,6 +633,13 @@ public class ActivationController implements Initializable {
 
 	public void initialize(URL arg0, ResourceBundle arg1) {
 
+		// Initialize order's logo
+		try {
+			this.initializeLogoOrder();
+		} catch (SQLException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 		// check If the user is logged Then Limit access to App
 		if (this.userId != 1) {
 
@@ -994,15 +1004,15 @@ public class ActivationController implements Initializable {
 
 		this.hashTableDetectAgePatient = new Hashtable<String, Integer>();
 		this.hashTableDetectIDPatient = new Hashtable<String, Integer>();
-		this.hashTableDetectPhoneNumberPatient= new Hashtable<String, String>();
+		this.hashTableDetectPhoneNumberPatient = new Hashtable<String, String>();
 		// Detect Age Of Patient
 		for (Malade malade : this.fillTable()) {
 			System.out.println(malade.getNom() + " " + malade.getPrenom());
 			this.hashTableDetectAgePatient.put(malade.getNom() + " " + malade.getPrenom(), malade.getAge());
 			this.hashTableDetectIDPatient.put(malade.getNom() + " " + malade.getPrenom(), malade.getId());
-			
+
 			this.hashTableDetectPhoneNumberPatient.put(malade.getNom() + " " + malade.getPrenom(), malade.getPhone());
-			
+
 		}
 
 		// addListner to change for type of Lab
@@ -1709,7 +1719,7 @@ public class ActivationController implements Initializable {
 
 					refreshList();
 					Notifications notification = Notifications.create().title("Ajout de nouveau patient")
-							.text("le patient Ã  été enrgistrer").graphic(null).hideAfter(Duration.seconds(2))
+							.text("le patient à été enrgistrer").graphic(null).hideAfter(Duration.seconds(2))
 							.position(Pos.BOTTOM_CENTER);
 
 				} catch (SQLException e) {
@@ -2211,8 +2221,9 @@ public class ActivationController implements Initializable {
 			if (!this.hashTableDetectAgePatient.containsKey(malade.getNom() + " " + malade.getPrenom())) {
 				this.hashTableDetectAgePatient.put(malade.getNom() + " " + malade.getPrenom(), malade.getAge());
 				this.hashTableDetectIDPatient.put(malade.getNom() + " " + malade.getPrenom(), malade.getAge());
-				this.hashTableDetectPhoneNumberPatient.put(malade.getNom() + " " + malade.getPrenom(), malade.getPhone());
-				
+				this.hashTableDetectPhoneNumberPatient.put(malade.getNom() + " " + malade.getPrenom(),
+						malade.getPhone());
+
 			}
 		}
 		tabPatient.setItems(FXCollections.observableArrayList(arrayR));
@@ -3124,7 +3135,7 @@ public class ActivationController implements Initializable {
 		 * firstLastName.setAlignment(Element.ALIGN_LEFT);
 		 */
 
-		String IMG = "assets//teeth2.jpg";
+		// String IMG = "assets//teeth2.jpg";
 		// first row
 		// cellNL.setPaddingLeft(50f);
 		cellNL.setBorder(Rectangle.NO_BORDER);
@@ -3144,7 +3155,7 @@ public class ActivationController implements Initializable {
 		cellSpL.setBorder(Rectangle.NO_BORDER);
 		pdfCell.addCell(cellSpL);
 
-		Image img = Image.getInstance(IMG);
+		Image img = Image.getInstance(this.IMG);
 		img.scaleAbsolute(100f, 100f);
 		// img.setWidthPercentage(25);
 		PdfPCell imgCell = new PdfPCell(img);
@@ -3436,7 +3447,7 @@ public class ActivationController implements Initializable {
 			 * firstLastName.setAlignment(Element.ALIGN_LEFT);
 			 */
 
-			String IMG = "assets//teeth2.jpg";
+			// String IMG = "assets//teeth2.jpg";
 			// first row
 			// cellNL.setPaddingLeft(50f);
 			cellNL.setBorder(Rectangle.NO_BORDER);
@@ -3456,7 +3467,7 @@ public class ActivationController implements Initializable {
 			cellSpL.setBorder(Rectangle.NO_BORDER);
 			pdfCell.addCell(cellSpL);
 
-			Image img = Image.getInstance(IMG);
+			Image img = Image.getInstance(this.IMG);
 			img.scaleAbsolute(100f, 100f);
 			// img.setWidthPercentage(25);
 			PdfPCell imgCell = new PdfPCell(img);
@@ -3751,7 +3762,7 @@ public class ActivationController implements Initializable {
 			 * firstLastName.setAlignment(Element.ALIGN_LEFT);
 			 */
 
-			String IMG = "assets//teeth2.jpg";
+			// String IMG = "assets//teeth2.jpg";
 //first row
 			// cellNL.setPaddingLeft(50f);
 			cellNL.setBorder(Rectangle.NO_BORDER);
@@ -3771,7 +3782,7 @@ public class ActivationController implements Initializable {
 			cellSpL.setBorder(Rectangle.NO_BORDER);
 			pdfCell.addCell(cellSpL);
 
-			Image img = Image.getInstance(IMG);
+			Image img = Image.getInstance(this.IMG);
 			img.scaleAbsolute(100f, 100f);
 //img.setWidthPercentage(25);
 			PdfPCell imgCell = new PdfPCell(img);
@@ -4064,7 +4075,7 @@ public class ActivationController implements Initializable {
 			 * firstLastName.setAlignment(Element.ALIGN_LEFT);
 			 */
 
-			String IMG = "assets//teeth2.jpg";
+			// String IMG = "assets//teeth2.jpg";
 
 			// first row
 			// cellNL.setPaddingLeft(50f);
@@ -4085,7 +4096,7 @@ public class ActivationController implements Initializable {
 			cellSpL.setBorder(Rectangle.NO_BORDER);
 			pdfCell.addCell(cellSpL);
 
-			Image img = Image.getInstance(IMG);
+			Image img = Image.getInstance(this.IMG);
 			img.scaleAbsolute(100f, 100f);
 			// img.setWidthPercentage(25);
 			PdfPCell imgCell = new PdfPCell(img);
@@ -6600,4 +6611,84 @@ public class ActivationController implements Initializable {
 		this.imageLightDarkMode.setImage(image);
 	}
 
+	String IMG = "assets//teeth2.jpg";
+	@FXML
+	private ImageView logoOrder;
+
+	// Initialize order's logo
+	private void initializeLogoOrder() throws SQLException {
+
+		Statement stm = null;
+		ResultSet rs = null;
+		stm = new SQLiteJDBC().getConnection().createStatement();
+
+		String request = "SELECT path_order_logo nom FROM users WHERE user_id='" + this.userId + "';";
+		rs = stm.executeQuery(request);
+		while (rs.next()) {
+			this.IMG = rs.getString(1);
+		}
+
+		File file = new File(this.IMG);
+		javafx.scene.image.Image image = new javafx.scene.image.Image(file.toURI().toString());
+		this.logoOrder.setImage(image);
+
+		rs.close();
+		stm.close();
+	}
+
+	// Add order's logo
+	@FXML
+	void addLogo(ActionEvent event) throws IOException {
+
+		// Creating a File chooser
+		FileChooser fileChooser = new FileChooser();
+		fileChooser.setTitle("Open Multiple Files");
+		fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
+		java.util.List<File> selectedFiles = fileChooser
+				.showOpenMultipleDialog((Stage) this.stackPane.getScene().getWindow());
+
+		if (selectedFiles != null) {
+
+			PreparedStatement stmt = null;
+
+			String request;
+
+			for (File file : selectedFiles) {
+
+				Files.copy(Paths.get(file.getAbsolutePath()), Paths.get("assets\\" + file.getName()),
+						StandardCopyOption.REPLACE_EXISTING);
+
+				System.out.println(file.getName() + " file copied");
+
+				// Reintialize order's logo
+				this.IMG = "assets\\" + file.getName();
+
+				request = "UPDATE  users SET path_order_logo=? " + "WHERE user_id=?";
+
+				try {
+					stmt = new SQLiteJDBC().getConnection().prepareStatement(request);
+
+					stmt.setString(1, this.IMG);
+					stmt.setInt(2, this.userId);
+
+					stmt.executeUpdate();
+					stmt.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block e.printStackTrace();
+					System.out.println(e.getMessage());
+				}
+
+				try {
+					this.initializeLogoOrder();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+
+		} else {
+			System.out.println("PDF file selection cancelled.");
+		}
+
+	}
 }

@@ -258,6 +258,7 @@ public class SignInController implements Initializable {
 		String phone = this.phone.getText();
 		String mail = this.mail.getText();
 		String password = "";
+		String pathOrderLogo= "assets//teeth2.jpg";
 
 		try {
 			password = Cryptage.cryptageSha(this.password.getText());
@@ -373,7 +374,7 @@ public class SignInController implements Initializable {
 				ResultSet rs = null;
 				PreparedStatement stm = null;
 				try {
-					String request = "INSERT INTO users(nom_fr,nom_ar,specialty,specialty_ar,address,phone,mail,password,if_auth,password_clear) VALUES(?,?,?,?,?,?,?,?,?,?)";
+					String request = "INSERT INTO users(nom_fr,nom_ar,specialty,specialty_ar,address,phone,mail,password,if_auth,password_clear,path_order_logo) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 
 					stm = sl.getConnection().prepareStatement(request, Statement.RETURN_GENERATED_KEYS);
 
@@ -387,6 +388,7 @@ public class SignInController implements Initializable {
 					stm.setString(8, password);
 					stm.setBoolean(9, false);
 					stm.setString(10, this.password.getText());
+					stm.setString(11, pathOrderLogo);
 
 					stm.executeUpdate();
 					rs = stm.getGeneratedKeys();
