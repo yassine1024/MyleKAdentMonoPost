@@ -716,7 +716,7 @@
 								</Label>
 								<ScrollPane fx:id="scrollPaneParameter" focusTraversable="false" hbarPolicy="NEVER" layoutX="52.0" layoutY="127.0" pannable="true" prefHeight="455.0" prefWidth="739.0" styleClass="parameters">
 									<content>
-										<VBox styleClass="center">
+										<VBox spacing="20.0" styleClass="center">
 											<children>
 												<GridPane hgap="20.0" prefHeight="500.0" prefWidth="730.0" styleClass="parameters" vgap="15.0">
 													<columnConstraints>
@@ -954,6 +954,24 @@
                                        <VBox.margin>
                                           <Insets left="15.0" />
                                        </VBox.margin>
+                                    </HBox>
+                                    <Label focusTraversable="false" layoutX="10.0" layoutY="752.0" prefHeight="52.0" prefWidth="297.0" styleClass="headerTitle" text="Importation B.D" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox alignment="CENTER_LEFT" layoutX="25.0" layoutY="804.0" prefHeight="36.0" prefWidth="461.0" spacing="15.0">
+                                       <children>
+                                          <Text fx:id="checkActivationMessage1" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="redaction" text="Lancer ce traitement si n' y a aucune donnée.">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Text>
+                                          <JFXButton onAction="#loadImportDataBase" text="Séléctionner une B.D" />
+                                       </children>
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
                                     </HBox>
 												<Label focusTraversable="false" prefHeight="52.0" prefWidth="297.0" styleClass="headerTitle" text="Raccourcis" textFill="WHITE" AnchorPane.topAnchor="10.0">
 													<font>

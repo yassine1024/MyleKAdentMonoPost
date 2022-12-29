@@ -53,6 +53,7 @@ import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
 import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXProgressBar;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXToggleButton;
@@ -633,8 +634,7 @@ public class ActivationController implements Initializable {
 
 	public void initialize(URL arg0, ResourceBundle arg1) {
 
-		
-		//Verify if user's software is activate or not
+		// Verify if user's software is activate or not
 		try {
 			this.checkSerialActivationSimple();
 		} catch (SQLException e3) {
@@ -4901,8 +4901,8 @@ public class ActivationController implements Initializable {
 
 					System.out.println("3");
 					JFXDialogLayout layout = new JFXDialogLayout();
-					layout.setHeading(new Text("Enregistrement des paramÃ¨tres"));
-					layout.setBody(new Text("Vos paramÃ¨tres sont enregistrées avec succés"));
+					layout.setHeading(new Text("Enregistrement des paramètres"));
+					layout.setBody(new Text("Vos paramètres sont enregistrées avec succés"));
 
 					JFXDialog dialog = new JFXDialog(stackPane, layout, JFXDialog.DialogTransition.CENTER);
 
@@ -6729,35 +6729,321 @@ public class ActivationController implements Initializable {
 		}
 	}
 
-	
 	@FXML
 	private Text checkActivationMessage;
-	private void checkSerialActivationSimple() throws SQLException{
-			Statement stm = null;
-			ResultSet rs = null;
 
-			String request = "SELECT mac_address,COUNT(*)  FROM activations";
-			rs = new SQLiteJDBC().getConnection().createStatement().executeQuery(request);
+	private void checkSerialActivationSimple() throws SQLException {
+		Statement stm = null;
+		ResultSet rs = null;
 
-			int size = 0;
+		String request = "SELECT mac_address,COUNT(*)  FROM activations";
+		rs = new SQLiteJDBC().getConnection().createStatement().executeQuery(request);
 
-			if (rs != null)
+		int size = 0;
 
-			{
+		if (rs != null)
 
-				// moves cursor to the last row
+		{
 
-				size = rs.getInt(2); // get row id
+			// moves cursor to the last row
 
-			}
-			System.out.println(size);
-			if (size > 0) {
-				
-				this.checkActivationMessage.getStyleClass().clear();
-				this.checkActivationMessage.getStyleClass().add("enable-license");
-				this.checkActivationMessage.setText("Kadent mono poste est activé.");
-				this.jfxBtnActivateLicense.setVisible(false);
+			size = rs.getInt(2); // get row id
+
+		}
+		System.out.println(size);
+		if (size > 0) {
+
+			this.checkActivationMessage.getStyleClass().clear();
+			this.checkActivationMessage.getStyleClass().add("enable-license");
+			this.checkActivationMessage.setText("Kadent mono poste est activé.");
+			this.jfxBtnActivateLicense.setVisible(false);
+		}
+	}
+
+	private JFXProgressBar loadImportDataBase;
+
+	@FXML
+	void loadImportDataBase(ActionEvent event) {
+
+		// Creating a File chooser
+		FileChooser fileChooser = new FileChooser();
+		fileChooser.setTitle("Open Multiple Files");
+		fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Data base Files", "cabinet_dentaire_patient.db"));
+		java.util.List<File> selectedFiles = fileChooser
+				.showOpenMultipleDialog((Stage) this.stackPane.getScene().getWindow());
+
+		if (selectedFiles != null) {
+
+			for (File file : selectedFiles) {
+
+				System.out.println(file.getName());
+
+				switch (file.getName()) {
+
+				case "appointment.db":
+					this.uploadAppointmentDataBase(file.getAbsolutePath());
+					break;
+				case "cabinet_dentaire_patient.db":
+					this.uploadPatientDataBase(file.getAbsolutePath());
+					break;
+				case "cabinet_dentaire_prothese.db":
+					this.uploadProtheseDataBase(file.getAbsolutePath());
+					break;
+
+				}
 			}
 		}
+
+	}
+
+	private void uploadPatientDataBase(String pathDB) {
+		System.out.println(pathDB);
+
+		Statement stm;
+		PreparedStatement stmt;
+		try {
+
+			// begin import malades table
+			stm = new SQLiteJDBC().getConnection(pathDB).createStatement();
+			String uploadRequest = "INSERT INTO malades(malade_id, nom, prenom, age, sexe, adresse, telephone, fonction, date_creation) "
+					+ " VALUES (?,?,?,?,?,?,?,?,?); ";
+			stmt = new SQLiteJDBC().getConnection().prepareStatement(uploadRequest);
+			String request = "SELECT * FROM malades ;";
+
+			ResultSet rs;
+			rs = stm.executeQuery(request);
+
+			System.out.println("Malades: ");
+			while (rs.next()) {
+
+				stmt.setInt(1, rs.getInt("malade_id"));
+				stmt.setString(2, rs.getString("nom"));
+				stmt.setString(3, rs.getString("prenom"));
+				stmt.setInt(4, rs.getInt("age"));
+				stmt.setString(5, rs.getString("sexe"));
+				stmt.setString(6, rs.getString("adresse"));
+				stmt.setString(7, rs.getString("telephone"));
+				stmt.setString(8, rs.getString("fonction"));
+				stmt.setString(9, rs.getString("date_creation"));
+
+				stmt.execute();
+
+				System.out.println("ID: " + rs.getInt(1) + " Nom: " + rs.getString(2) + " Prénom: " + rs.getString(3)
+						+ " Ajouter avec succée.");
+
+			}
+
+			// then import historic_malades table
+
+			
+			uploadRequest = "INSERT INTO historic_malades(historic_malade_id, malade_id, user_id, date_arriver,"
+					+ " paye) " + " VALUES (?,?,?,?,?); ";
+			stmt = new SQLiteJDBC().getConnection().prepareStatement(uploadRequest);
+			request = "SELECT * FROM historic_malades ;";
+
+			rs = stm.executeQuery(request);
+
+			while (rs.next()) {
+
+				stmt.setInt(1, rs.getInt("historic_malade_id"));
+				stmt.setInt(2, rs.getInt("malade_id"));
+				stmt.setInt(3, this.userId);
+
+				stmt.setString(4, rs.getString("date_arriver"));
+				stmt.setString(5, rs.getString("paye"));
+
+				stmt.execute();
+
+				System.out.println("Import historic_malades table with succses.");
+
+			}
+			
+			// Then import motifs table
+			uploadRequest = "INSERT INTO motifs(motif_id, nom)  VALUES (?,?);  ";
+
+			stmt = new SQLiteJDBC().getConnection().prepareStatement(uploadRequest);
+			request = "SELECT * FROM motifs ;";
+
+			rs = stm.executeQuery(request);
+
+			while (rs.next()) {
+
+				stmt.setInt(1, rs.getInt("motif_id"));
+				stmt.setString(2, rs.getString("nom"));
+
+				stmt.execute();
+
+				System.out.println("Import motifs table with succses.");
+			}
+
+			// Then import etat_generets table
+			uploadRequest = "INSERT INTO etat_generets(etat_generet_id, nom)  VALUES (?,?);  ";
+
+			stmt = new SQLiteJDBC().getConnection().prepareStatement(uploadRequest);
+			request = "SELECT * FROM etat_generets ;";
+
+			rs = stm.executeQuery(request);
+
+			while (rs.next()) {
+
+				stmt.setInt(1, rs.getInt("etat_generet_id"));
+				stmt.setString(2, rs.getString("nom"));
+
+				stmt.execute();
+
+				System.out.println("Import etat_generets table with succses.");
+			}
+			// then import consultations table
+
+			uploadRequest = "INSERT INTO consultations(consultation_id, malade_id, etat_generet_id, date_consultation,"
+					+ " motif_id ) " + " VALUES (?,?,?,?,?); ";
+			stmt = new SQLiteJDBC().getConnection().prepareStatement(uploadRequest);
+			request = "SELECT * FROM consultations ;";
+
+			rs = stm.executeQuery(request);
+
+			while (rs.next()) {
+
+				stmt.setInt(1, rs.getInt("consultation_id"));
+				stmt.setInt(2, rs.getInt("malade_id"));
+				stmt.setInt(3, rs.getInt("etat_generet_id"));
+
+				stmt.setString(4, rs.getString("date_consultation"));
+				stmt.setInt(5, rs.getInt("motif_id"));
+
+				stmt.execute();
+
+				System.out.println("Import consultations table with succses.");
+
+			}
+
+			// then import diagnostics table
+
+			uploadRequest = "INSERT INTO diagnostics(diagnostic_id, consultation_id, diagnostique, traitement,"
+					+ " devis, num_diagnostique ) " + " VALUES (?,?,?,?,?,?); ";
+			stmt = new SQLiteJDBC().getConnection().prepareStatement(uploadRequest);
+			request = "SELECT * FROM diagnostics ;";
+
+			rs = stm.executeQuery(request);
+
+			while (rs.next()) {
+
+				stmt.setInt(1, rs.getInt("diagnostic_id"));
+				stmt.setInt(2, rs.getInt("consultation_id"));
+				stmt.setString(3, rs.getString("diagnostique"));
+
+				stmt.setString(4, rs.getString("traitement"));
+				stmt.setFloat(5, rs.getFloat("devis"));
+				stmt.setInt(6, rs.getInt("num_diagnostique"));
+
+				stmt.execute();
+
+				System.out.println("Import diagnostics table with succses.");
+
+			}
+
+			// then import diagnostics_detaille table
+
+			uploadRequest = "INSERT INTO diagnostics_detaille(diagnostic_detaille_id, diagnostic_id, acte,"
+					+ " paye, date_payement ) " + " VALUES (?,?,?,?,?); ";
+			stmt = new SQLiteJDBC().getConnection().prepareStatement(uploadRequest);
+			request = "SELECT * FROM diagnostics_detaille ;";
+
+			rs = stm.executeQuery(request);
+
+			while (rs.next()) {
+
+				stmt.setInt(1, rs.getInt("diagnostic_detaille_id"));
+				stmt.setInt(2, rs.getInt("diagnostic_id"));
+				stmt.setString(3, rs.getString("acte"));
+
+				stmt.setFloat(4, rs.getFloat("paye"));
+				stmt.setString(5, rs.getString("date_payement"));
+
+				stmt.execute();
+
+				System.out.println("Import diagnostics_detaille table with succses.");
+
+			}
+
+			// Then import medications table
+			uploadRequest = "INSERT INTO medications(medication_id, nom)  VALUES (?,?);  ";
+
+			stmt = new SQLiteJDBC().getConnection().prepareStatement(uploadRequest);
+			request = "SELECT * FROM medications ;";
+
+			rs = stm.executeQuery(request);
+
+			while (rs.next()) {
+
+				stmt.setInt(1, rs.getInt("medication_id"));
+				stmt.setString(2, rs.getString("nom"));
+
+				stmt.execute();
+
+				System.out.println("Import medications table with succses.");
+			}
+
+			// then import comporte_medications table
+
+			uploadRequest = "INSERT INTO comporte_medications(comporte_medication_id, medication_id, consultation_id )  VALUES (?,?,?); ";
+			stmt = new SQLiteJDBC().getConnection().prepareStatement(uploadRequest);
+			request = "SELECT * FROM comporte_medications ;";
+
+			rs = stm.executeQuery(request);
+
+			while (rs.next()) {
+
+				stmt.setInt(1, rs.getInt("comporte_medication_id"));
+				stmt.setInt(2, rs.getInt("medication_id"));
+				stmt.setInt(3, rs.getInt("consultation_id"));
+
+				
+
+				stmt.execute();
+
+				System.out.println("Import comporte_medications table with succses.");
+
+			}
+			
+			
+			//refresh all data that we imported in our app 1144
+			refreshList();
+			this.refreshRedactionByPatientList();
+			//Show message for user that importation finish with success
+			JFXDialogLayout layout = new JFXDialogLayout();
+			layout.setHeading(new Text("Info"));
+			layout.setBody(new Text("Importation des données avec succés."));
+
+			JFXDialog dialog = new JFXDialog(stackPane, layout, JFXDialog.DialogTransition.CENTER);
+
+			JFXButton ok = new JFXButton("OK");
+			ok.setOnAction(new EventHandler<ActionEvent>() {
+
+				@Override
+				public void handle(ActionEvent event) {
+					dialog.close();
+
+				}
+			});
+
+			layout.setActions(ok);
+			dialog.show();
+			
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	private void uploadAppointmentDataBase(String pathDB) {
+
+	}
+
+	private void uploadProtheseDataBase(String pathDB) {
+
+	}
 
 }

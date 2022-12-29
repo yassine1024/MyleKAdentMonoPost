@@ -49,4 +49,20 @@ public class SQLiteJDBC {
 	      System.out.println("Opened database appointment successfully");
 	      return c;
 	   }
+	  
+	  
+	//Can get any connection from three data bases
+	  public Connection getConnection(String url) {
+	      Connection c = null;
+	      
+	      try {
+	         Class.forName("org.sqlite.JDBC");
+	         c = DriverManager.getConnection("jdbc:sqlite:"+url);
+	      } catch ( Exception e ) {
+	         System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	         System.exit(0);
+	      }
+	      System.out.println("Opened database to be imported successfully.");
+	      return c;
+	   }
 	}
