@@ -633,6 +633,14 @@ public class ActivationController implements Initializable {
 
 	public void initialize(URL arg0, ResourceBundle arg1) {
 
+		
+		//Verify if user's software is activate or not
+		try {
+			this.checkSerialActivationSimple();
+		} catch (SQLException e3) {
+			// TODO Auto-generated catch block
+			e3.printStackTrace();
+		}
 		// Initialize order's logo
 		try {
 			this.initializeLogoOrder();
@@ -6691,4 +6699,65 @@ public class ActivationController implements Initializable {
 		}
 
 	}
+
+	@FXML
+	private JFXButton jfxBtnActivateLicense;
+
+	// Activate license as user want that not an obligation
+	@FXML
+	void activateLicense(ActionEvent event) throws IOException {
+
+		Stage stage = (Stage) jfxBtnActivateLicense.getScene().getWindow();
+		stage.close();
+
+		Stage primaryStage = new Stage();
+		primaryStage.initStyle(StageStyle.TRANSPARENT);
+		Parent root;
+
+		try {
+
+			root = FXMLLoader.load(getClass().getResource("../../views/login/licenseMachine.fxml"));
+
+			Scene scene = new Scene(root);
+			scene.setFill(javafx.scene.paint.Color.TRANSPARENT);
+			// scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	
+	@FXML
+	private Text checkActivationMessage;
+	private void checkSerialActivationSimple() throws SQLException{
+			Statement stm = null;
+			ResultSet rs = null;
+
+			String request = "SELECT mac_address,COUNT(*)  FROM activations";
+			rs = new SQLiteJDBC().getConnection().createStatement().executeQuery(request);
+
+			int size = 0;
+
+			if (rs != null)
+
+			{
+
+				// moves cursor to the last row
+
+				size = rs.getInt(2); // get row id
+
+			}
+			System.out.println(size);
+			if (size > 0) {
+				
+				this.checkActivationMessage.getStyleClass().clear();
+				this.checkActivationMessage.getStyleClass().add("enable-license");
+				this.checkActivationMessage.setText("Kadent mono poste est activé.");
+				this.jfxBtnActivateLicense.setVisible(false);
+			}
+		}
+
 }

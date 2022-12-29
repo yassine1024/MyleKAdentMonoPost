@@ -61,3 +61,12 @@ FontAwesomeIcon {
 	-fx-text-fill:  white;
 	
 }
+.disable-license{
+	
+	-fx-fill: red;
+}
+
+.enable-license{
+	
+	-fx-fill: green;
+}

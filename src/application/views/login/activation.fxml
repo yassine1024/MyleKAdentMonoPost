@@ -934,6 +934,27 @@
                                           <Insets />
                                        </VBox.margin>
                                     </HBox>
+                                    <Label focusTraversable="false" layoutX="25.0" layoutY="808.0" prefHeight="52.0" prefWidth="297.0" styleClass="headerTitle" text="Activation" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="824.0" prefHeight="36.0" prefWidth="461.0" spacing="15.0">
+                                       <children>
+                                          <Text fx:id="checkActivationMessage" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="disable-license" text="Kadent mono post n'est pas activer.">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Text>
+                                          <JFXButton fx:id="jfxBtnActivateLicense" onAction="#activateLicense" text="Activer le" />
+                                       </children>
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                       <VBox.margin>
+                                          <Insets left="15.0" />
+                                       </VBox.margin>
+                                    </HBox>
 												<Label focusTraversable="false" prefHeight="52.0" prefWidth="297.0" styleClass="headerTitle" text="Raccourcis" textFill="WHITE" AnchorPane.topAnchor="10.0">
 													<font>
 														<Font name="System Bold" size="15.0" />
