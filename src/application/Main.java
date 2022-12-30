@@ -31,6 +31,7 @@ import javafx.stage.StageStyle;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
@@ -50,6 +51,8 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
+
+			primaryStage.getIcons().add(new Image(this.getClass().getResourceAsStream("/application/Logo.jpg")));
 
 			/*
 			 * Parent root = FXMLLoader.load(getClass().getResource("views/Home.fxml"));
