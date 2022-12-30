@@ -48,6 +48,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
@@ -182,6 +183,8 @@ public class LoginController implements Initializable {
 				stage.close();
 
 				Stage primaryStage = new Stage();
+				primaryStage.getIcons().add(new Image(this.getClass().getResourceAsStream("/application/Logo.jpg")));
+
 				primaryStage.initStyle(StageStyle.TRANSPARENT);
 				Parent root;
 
@@ -238,155 +241,108 @@ public class LoginController implements Initializable {
 //Agenda
 					final BooleanProperty aPressed = new SimpleBooleanProperty(false);
 
-					
-					
 					// Wire up properties to key events:
 					scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
 
-						
 						@Override
 						public void handle(KeyEvent ke) {
 							// TODO Auto-generated method stub
 							if (new KeyCodeCombination(KeyCode.M, KeyCombination.CONTROL_ANY).match(ke)) {
-							       System.out.println("Work for me");
-							       homeController.showHome(null);
-							    }
+								System.out.println("Work for me");
+								homeController.showHome(null);
+							}
 							if (new KeyCodeCombination(KeyCode.R, KeyCombination.CONTROL_ANY).match(ke)) {
-							       System.out.println("Work for me");
-							       homeController.showRedaction(null);
-							    }
+								System.out.println("Work for me");
+								homeController.showRedaction(null);
+							}
 							if (new KeyCodeCombination(KeyCode.P, KeyCombination.CONTROL_ANY).match(ke)) {
-							       System.out.println("Work for me");
-							       homeController.showProthesist(null);
-							    }
+								System.out.println("Work for me");
+								homeController.showProthesist(null);
+							}
 							if (new KeyCodeCombination(KeyCode.S, KeyCombination.CONTROL_ANY).match(ke)) {
-							       System.out.println("Work for me");
-							       homeController.showStatistics(null);
-							    }
+								System.out.println("Work for me");
+								homeController.showStatistics(null);
+							}
 							if (new KeyCodeCombination(KeyCode.N, KeyCombination.CONTROL_ANY).match(ke)) {
-							       System.out.println("Work for me");
-							       homeController.ajouterMalade(null);
-							    }
+								System.out.println("Work for me");
+								homeController.ajouterMalade(null);
+							}
 							if (new KeyCodeCombination(KeyCode.L, KeyCombination.CONTROL_ANY).match(ke)) {
-							       System.out.println("Work for me");
-							       homeController.addProthese(null);
-							    }
+								System.out.println("Work for me");
+								homeController.addProthese(null);
+							}
 							if (new KeyCodeCombination(KeyCode.T, KeyCombination.CONTROL_ANY).match(ke)) {
-							       System.out.println("Work for me");
-							       homeController.createNTask();
-							    }
+								System.out.println("Work for me");
+								homeController.createNTask();
+							}
 							if (new KeyCodeCombination(KeyCode.C, KeyCombination.CONTROL_ANY).match(ke)) {
-							       System.out.println("Work for me");
-							       homeController.showParameters(null);
-							    }
+								System.out.println("Work for me");
+								homeController.showParameters(null);
+							}
 							if (new KeyCodeCombination(KeyCode.A, KeyCombination.CONTROL_ANY).match(ke)) {
-							       System.out.println("Work for me");
-							       homeController.showAgenda(null);
-							    }
-							
-						/*	if (ke.getCode() == KeyCode.ALT_GRAPH) {
-								ctrlPressed.set(true);
-								System.out.println("PRESS ENTER");
-
-							} else if (ke.getCode() == KeyCode.O) {
-								oPressed.set(true);
-								System.out.println("PRESS O");
-								if (ctrlPressed.get()) {
-									System.out.println("Control And D Clicked 2...................");
-									homeController.deconnect(null);
-									ctrlPressed.set(false);
-								}
-							} else if (ke.getCode() == KeyCode.M) {
-								mPressed.set(true);
-								System.out.println("PRESS M");
-								if (ctrlPressed.get()) {
-									System.out.println("Control And D Clicked 2...................");
-									homeController.showHome(null);
-									ctrlPressed.set(false);
-								}
-							} else if (ke.getCode() == KeyCode.R) {
-								rPressed.set(true);
-								System.out.println("PRESS R");
-								if (ctrlPressed.get()) {
-									System.out.println("Control And D Clicked 2...................");
-									homeController.showRedaction(null);
-									ctrlPressed.set(false);
-								}
-							} else if (ke.getCode() == KeyCode.P) {
-								pPressed.set(true);
-								System.out.println("PRESS P");
-								if (ctrlPressed.get()) {
-									System.out.println("Control And D Clicked 2...................");
-									homeController.showProthesist(null);
-									ctrlPressed.set(false);
-								}
-							} else if (ke.getCode() == KeyCode.S) { 
-								hPressed.set(true);
-								System.out.println("PRESS H");
-								if (ctrlPressed.get()) {
-									System.out.println("Control And D Clicked 2...................");
-									homeController.showStatistics(null);
-									ctrlPressed.set(false);
-								}
-							} else if (ke.getCode() == KeyCode.N) {
-								nPressed.set(true);
-								System.out.println("PRESS N");
-								if (ctrlPressed.get()) {
-									System.out.println("Control And D Clicked 2...................");
-									homeController.ajouterMalade(null);
-									ctrlPressed.set(false);
-								}
-							} else if (ke.getCode() == KeyCode.L) {
-								lPressed.set(true);
-								System.out.println("PRESS N");
-								if (ctrlPressed.get()) {
-									System.out.println("Control And D Clicked 2...................");
-									homeController.addProthese(null);
-									ctrlPressed.set(false);
-								}
-							} else if (ke.getCode() == KeyCode.T) {
-								tPressed.set(true);
-								System.out.println("PRESS N");
-								if (ctrlPressed.get()) {
-									System.out.println("Control And D Clicked 2...................");
-									homeController.createNTask();
-									ctrlPressed.set(false);
-								}
-							} else if (ke.getCode() == KeyCode.C) {
-								cPressed.set(true);
-								System.out.println("PRESS N");
-								if (ctrlPressed.get()) {
-									System.out.println("Control And D Clicked 2...................");
-									homeController.showParameters(null);
-									ctrlPressed.set(false);
-								}
-							} else if (ke.getCode() == KeyCode.A) {
-								aPressed.set(true);
-								System.out.println("PRESS A");
-								if (ctrlPressed.get()) {
-									System.out.println("Control And D Clicked 2...................");
-									homeController.showAgenda(null);
-									ctrlPressed.set(false);
-								}
+								System.out.println("Work for me");
+								homeController.showAgenda(null);
 							}
 
-							else if (ke.getCode() == KeyCode.D) {
-
-								
-								 * Stage sb=(Stage) homeController.dec.getScene().getWindow(); sb.close();
-								
-
-								tPressed.set(true);
-								System.out.println("PRESS N");
-
-								if (ctrlPressed.get()) {
-
-									homeController.deconnect(null);
-									ctrlPressed.set(false);
-								}
-
-							}
-							*/
+							/*
+							 * if (ke.getCode() == KeyCode.ALT_GRAPH) { ctrlPressed.set(true);
+							 * System.out.println("PRESS ENTER");
+							 * 
+							 * } else if (ke.getCode() == KeyCode.O) { oPressed.set(true);
+							 * System.out.println("PRESS O"); if (ctrlPressed.get()) {
+							 * System.out.println("Control And D Clicked 2...................");
+							 * homeController.deconnect(null); ctrlPressed.set(false); } } else if
+							 * (ke.getCode() == KeyCode.M) { mPressed.set(true);
+							 * System.out.println("PRESS M"); if (ctrlPressed.get()) {
+							 * System.out.println("Control And D Clicked 2...................");
+							 * homeController.showHome(null); ctrlPressed.set(false); } } else if
+							 * (ke.getCode() == KeyCode.R) { rPressed.set(true);
+							 * System.out.println("PRESS R"); if (ctrlPressed.get()) {
+							 * System.out.println("Control And D Clicked 2...................");
+							 * homeController.showRedaction(null); ctrlPressed.set(false); } } else if
+							 * (ke.getCode() == KeyCode.P) { pPressed.set(true);
+							 * System.out.println("PRESS P"); if (ctrlPressed.get()) {
+							 * System.out.println("Control And D Clicked 2...................");
+							 * homeController.showProthesist(null); ctrlPressed.set(false); } } else if
+							 * (ke.getCode() == KeyCode.S) { hPressed.set(true);
+							 * System.out.println("PRESS H"); if (ctrlPressed.get()) {
+							 * System.out.println("Control And D Clicked 2...................");
+							 * homeController.showStatistics(null); ctrlPressed.set(false); } } else if
+							 * (ke.getCode() == KeyCode.N) { nPressed.set(true);
+							 * System.out.println("PRESS N"); if (ctrlPressed.get()) {
+							 * System.out.println("Control And D Clicked 2...................");
+							 * homeController.ajouterMalade(null); ctrlPressed.set(false); } } else if
+							 * (ke.getCode() == KeyCode.L) { lPressed.set(true);
+							 * System.out.println("PRESS N"); if (ctrlPressed.get()) {
+							 * System.out.println("Control And D Clicked 2...................");
+							 * homeController.addProthese(null); ctrlPressed.set(false); } } else if
+							 * (ke.getCode() == KeyCode.T) { tPressed.set(true);
+							 * System.out.println("PRESS N"); if (ctrlPressed.get()) {
+							 * System.out.println("Control And D Clicked 2...................");
+							 * homeController.createNTask(); ctrlPressed.set(false); } } else if
+							 * (ke.getCode() == KeyCode.C) { cPressed.set(true);
+							 * System.out.println("PRESS N"); if (ctrlPressed.get()) {
+							 * System.out.println("Control And D Clicked 2...................");
+							 * homeController.showParameters(null); ctrlPressed.set(false); } } else if
+							 * (ke.getCode() == KeyCode.A) { aPressed.set(true);
+							 * System.out.println("PRESS A"); if (ctrlPressed.get()) {
+							 * System.out.println("Control And D Clicked 2...................");
+							 * homeController.showAgenda(null); ctrlPressed.set(false); } }
+							 * 
+							 * else if (ke.getCode() == KeyCode.D) {
+							 * 
+							 * 
+							 * Stage sb=(Stage) homeController.dec.getScene().getWindow(); sb.close();
+							 * 
+							 * 
+							 * tPressed.set(true); System.out.println("PRESS N");
+							 * 
+							 * if (ctrlPressed.get()) {
+							 * 
+							 * homeController.deconnect(null); ctrlPressed.set(false); }
+							 * 
+							 * }
+							 */
 						}
 
 					});
@@ -517,14 +473,14 @@ public class LoginController implements Initializable {
 		this.forgetPasswdVBox.setVisible(true);
 		this.loginVBox.setVisible(false);
 	}
-	
+
 	@FXML
 	void createAccount(MouseEvent event) throws IOException {
 
 		System.out.println("Create Account");
 		Stage stage = (Stage) signInIcone.getScene().getWindow();
 		stage.close();
-		
+
 		Parent root = FXMLLoader.load(getClass().getResource("/application/views/login/Signup.fxml"));
 		Stage primaryStage = new Stage();
 		primaryStage.initStyle(StageStyle.TRANSPARENT);
@@ -637,12 +593,12 @@ public class LoginController implements Initializable {
 
 			} catch (AddressException e) {
 				// TODO Auto-generated catch block
-				this.showDialog("Error 1 "+e.getMessage(), "Echec");
+				this.showDialog("Error 1 " + e.getMessage(), "Echec");
 
 				e.printStackTrace();
 			} catch (MessagingException e) {
 				// TODO Auto-generated catch block
-				this.showDialog("Error 2 "+e.getMessage(), "Echec");
+				this.showDialog("Error 2 " + e.getMessage(), "Echec");
 				e.printStackTrace();
 			}
 		}
@@ -666,7 +622,7 @@ public class LoginController implements Initializable {
 			rs = stm.executeQuery(request);
 			while (rs.next()) {
 
-				if(rs.getBoolean("if_auth")) {
+				if (rs.getBoolean("if_auth")) {
 					this.user.setText(rs.getString("mail"));
 					this.password.setText(rs.getString("password_clear"));
 				}

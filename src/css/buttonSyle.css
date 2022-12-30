@@ -251,4 +251,7 @@ Label{
   	-fx-fill:  white;
   }
   
-  
+  JFXDatePicker{
+	-fx-background-color:#2A1F2D;
+	-fx-text-inner-color:green;
+}

@@ -38,20 +38,23 @@
 			<top>
 				<AnchorPane prefHeight="31.0" prefWidth="1004.0" styleClass="header" BorderPane.alignment="CENTER">
 					<children>
-						<HBox layoutX="916.0" layoutY="2.0" prefHeight="37.0" prefWidth="86.0">
+						<HBox layoutX="916.0" layoutY="2.0" prefHeight="37.0" prefWidth="91.0">
 							<children>
 								<fx:include source="LoginBar.fxml" />
 							</children>
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
 						</HBox>
 						<AnchorPane layoutX="709.0" layoutY="2.0" onMousePressed="#showSliderTasks" prefHeight="37.0" prefWidth="174.0">
 							<children>
-								<FontAwesomeIcon fill="WHITE" iconName="BELL" layoutX="72.0" layoutY="23.0" selectionFill="#fcfcfc" size="1.6em" />
+								<FontAwesomeIcon fill="WHITE" iconName="BELL" layoutX="72.0" layoutY="23.0" selectionFill="#fcfcfc" size="1.6em" AnchorPane.topAnchor="12.0" />
 								<Label fx:id="tasksLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="84.0" layoutY="4.0" prefHeight="17.0" prefWidth="25.0" style="-fx-background-color: red; -fx-background-radius: 50;" text="1" textAlignment="CENTER" textFill="#070707">
 									<font>
 										<Font name="System Bold" size="12.0" />
 									</font>
 								</Label>
-								<Label layoutX="113.0" layoutY="6.0" prefHeight="27.0" prefWidth="60.0" text="Tâches" textAlignment="CENTER" textFill="WHITE">
+								<Label layoutX="113.0" layoutY="6.0" prefHeight="27.0" prefWidth="60.0" text="Tâches" textAlignment="CENTER" textFill="WHITE" AnchorPane.topAnchor="12.0">
 									<font>
 										<Font size="14.0" />
 									</font>
@@ -69,14 +72,14 @@
 								<Insets left="10.0" />
 							</padding>
 						</Label>
-						<ImageView fitHeight="55.0" fitWidth="80.0" layoutX="2.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+						<ImageView fitHeight="55.0" fitWidth="63.0" layoutX="2.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="8.0">
 							<image>
 								<Image url="@../../Logo.jpg" />
 							</image>
 						</ImageView>
 													
-													<JFXComboBox fx:id="comboBoxSelectUser" layoutX="619.0" layoutY="9.0" onAction="#slelectionnerUser" prefHeight="25.0" prefWidth="142.0" />
-                  <Button layoutX="574.0" mnemonicParsing="false" onMousePressed="#switchModeDarkLight" prefHeight="31.0" prefWidth="31.0" style="-fx-border-radius: 20px;" styleClass="primary-color" AnchorPane.leftAnchor="560.0" AnchorPane.rightAnchor="400.0">
+													<JFXComboBox fx:id="comboBoxSelectUser" layoutX="619.0" layoutY="9.0" onAction="#slelectionnerUser" prefHeight="25.0" prefWidth="142.0" AnchorPane.topAnchor="12.0" />
+                  <Button layoutX="574.0" mnemonicParsing="false" onMousePressed="#switchModeDarkLight" prefHeight="31.0" prefWidth="31.0" style="-fx-border-radius: 20px;" styleClass="primary-color" AnchorPane.leftAnchor="560.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="8.0">
                      <graphic>
                         <ImageView fx:id="imageLightDarkMode" fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -191,7 +194,7 @@
 														<Cursor fx:constant="TEXT" />
 													</cursor>
 												</TextField>
-												<JFXDatePicker fx:id="dateListe" focusTraversable="false" onAction="#slelectionnerDate" prefHeight="31.0" prefWidth="166.0" style="-fx-text-inner-color: white;">
+												<JFXDatePicker fx:id="dateListe" focusTraversable="false" onAction="#slelectionnerDate" prefHeight="31.0" prefWidth="166.0">
                                        <HBox.margin>
                                           <Insets left="20.0" top="5.0" />
                                        </HBox.margin></JFXDatePicker>
@@ -287,11 +290,11 @@
 										<Font name="System Bold" size="33.0" />
 									</font>
 								</Label>
-								<TabPane layoutX="48.0" layoutY="107.0" prefHeight="459.0" prefWidth="748.0" styleClass="tab-pane-color">
+								<TabPane layoutX="48.0" layoutY="107.0" prefHeight="505.0" prefWidth="748.0" styleClass="tab-pane-color">
 									<tabs>
 										<Tab closable="false" styleClass="tb-redaction" text="Ordonance">
 											<content>
-												<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: #221924;" styleClass="headers-region">
+												<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="445.0" prefWidth="746.0" style="-fx-border-color: #221924;" styleClass="headers-region">
 													<children>
 														<HBox layoutX="34.0" layoutY="26.0" prefHeight="46.0" prefWidth="694.0" spacing="12.0">
 															<children>
@@ -317,9 +320,9 @@
 																</Button>
 															</children>
 														</HBox>
-														<ScrollPane hbarPolicy="NEVER" layoutX="35.0" layoutY="91.0" prefHeight="296.0" prefWidth="693.0" styleClass="parameters" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="91.0">
+														<ScrollPane hbarPolicy="NEVER" layoutX="37.0" layoutY="93.0" prefHeight="381.0" prefWidth="692.0" styleClass="parameters" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="92.0">
 															<content>
-																<VBox fx:id="vBoxPrincipaleBise" prefHeight="294.0" prefWidth="675.0" spacing="10.0" styleClass="center">
+																<VBox fx:id="vBoxPrincipaleBise" prefHeight="377.0" prefWidth="675.0" spacing="10.0" styleClass="center">
 																	<padding>
 																		<Insets left="40.0" top="10.0" />
 																	</padding>
@@ -687,12 +690,12 @@
 												<Insets left="20.0" top="22.0" />
 											</HBox.margin>
 										</FontAwesomeIcon>
-										<JFXTextField fx:id="tJFAppointment" focusColor="#50a4f8" focusTraversable="false" labelFloat="true" onKeyReleased="#filterAppointment" prefHeight="31.0" prefWidth="190.0" promptText="Entrer nom ou prénom " style="-fx-text-inner-color: white;" unFocusColor="#e3f571">
+										<JFXTextField fx:id="tJFAppointment" focusColor="#50a4f8" focusTraversable="false" labelFloat="true" onKeyReleased="#filterAppointment" prefHeight="31.0" prefWidth="190.0" promptText="Entrer nom ou prénom " unFocusColor="#e3f571">
 											<HBox.margin>
 												<Insets left="7.0" top="12.0" />
 											</HBox.margin>
 										</JFXTextField>
-										<JFXDatePicker fx:id="dLAppointment" focusTraversable="false" onAction="#selectDateAppointment" prefHeight="31.0" prefWidth="240.0" style="-fx-text-inner-color: white;">
+										<JFXDatePicker fx:id="dLAppointment" focusTraversable="false" onAction="#selectDateAppointment" prefHeight="31.0" prefWidth="240.0">
 											<HBox.margin>
 												<Insets left="90.0" top="12.0" />
 											</HBox.margin>
@@ -704,7 +707,10 @@
 										<Cursor fx:constant="HAND" />
 									</cursor>
 								</TableView>
-								<JFXToggleButton fx:id="toggleButtonWeek" layoutX="645.0" layoutY="565.0" onAction="#visualiseCalendar" prefHeight="58.0" prefWidth="212.0" text="Afficher par semaine" textFill="WHITE" />
+								<JFXToggleButton fx:id="toggleButtonWeek" layoutX="645.0" layoutY="565.0" onAction="#visualiseCalendar" prefHeight="58.0" prefWidth="212.0" style="-fx-text-fill: green;" text="Afficher par semaine" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></JFXToggleButton>
 							</children>
 						</AnchorPane>
 						<AnchorPane fx:id="parametersAnchor" prefHeight="645.0" prefWidth="879.0" styleClass="center" visible="false">

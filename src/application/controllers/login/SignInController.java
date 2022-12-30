@@ -31,6 +31,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
@@ -239,17 +240,17 @@ public class SignInController implements Initializable {
 		/*
 		 * *********************Begin snapSound attributes
 		 *******************************/
-		/*String ssound = "assets//snapSound.mp3";
-		Media sound = new Media(new File(ssound).toURI().toString());
-		MediaPlayer mediaPlayer = new MediaPlayer(sound);
-		/**********************
-		 * End snapSound a ,, <qsxde'tgfrezdfgy-ttributes
+		/*
+		 * String ssound = "assets//snapSound.mp3"; Media sound = new Media(new
+		 * File(ssound).toURI().toString()); MediaPlayer mediaPlayer = new
+		 * MediaPlayer(sound); /********************** End snapSound a ,,
+		 * <qsxde'tgfrezdfgy-ttributes
 		 * 
 		 * +*96398520
 		 **********************************/
 
-		//mediaPlayer.play();
-		
+		// mediaPlayer.play();
+
 		String user = this.user.getText();
 		String userAR = this.userAR.getText();
 		String spec = this.specialty.getText();
@@ -258,7 +259,7 @@ public class SignInController implements Initializable {
 		String phone = this.phone.getText();
 		String mail = this.mail.getText();
 		String password = "";
-		String pathOrderLogo= "assets//teeth2.jpg";
+		String pathOrderLogo = "assets//teeth2.jpg";
 
 		try {
 			password = Cryptage.cryptageSha(this.password.getText());
@@ -399,13 +400,17 @@ public class SignInController implements Initializable {
 					stage.close();
 
 					Stage primaryStage = new Stage();
+					primaryStage.getIcons()
+							.add(new Image(this.getClass().getResourceAsStream("/application/Logo.jpg")));
+
 					primaryStage.initStyle(StageStyle.TRANSPARENT);
 					Parent root;
 
 					try {
 						ActivationController homeController = new ActivationController(user, rs.getInt(1));
 
-						FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/application/views/login/activation.fxml"));
+						FXMLLoader fxmlLoader = new FXMLLoader(
+								getClass().getResource("/application/views/login/activation.fxml"));
 
 						// HomeController homeController = new HomeController(user, rs.getInt(1));
 						// HomeController.initLogo(user);

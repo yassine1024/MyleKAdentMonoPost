@@ -2,27 +2,32 @@
 
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="128.0" prefWidth="594.0" style="-fx-background-color: #39293D; -fx-effect: dropshadow(three-pass-box, rgba(0.0,0.0,0.0,0.8), 10.0, 0.0, 0.0, 0.0);" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.SecondaryController">
+<VBox fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="128.0" prefWidth="594.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0.0,0.0,0.0,0.8), 10.0, 0.0, 0.0, 0.0);" styleClass="center" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.SecondaryController">
    <children>
       <HBox prefHeight="60.0" prefWidth="860.0" spacing="10.0">
          <children>
-            <JFXTextField fx:id="orderMedicament" focusColor="#4881d7" labelFloat="true" prefHeight="34.0" prefWidth="217.0" promptText="Entrer médicament" style="-fx-text-inner-color: white;" unFocusColor="#e1e869" />
-            <JFXTextField fx:id="quantity" focusColor="#4881d7" labelFloat="true" prefHeight="31.0" prefWidth="98.0" promptText="Ex: 1g" style="-fx-text-inner-color: white;" unFocusColor="#e1e869" />
-            <JFXTextField fx:id="orderType" focusColor="#4881d7" labelFloat="true" prefHeight="25.0" prefWidth="132.0" promptText="Forme galénique" style="-fx-text-inner-color: white;" unFocusColor="#e1e869" />
-            <JFXTextField fx:id="OrderNumber" focusColor="#4881d7" labelFloat="true" prefHeight="31.0" prefWidth="64.0" promptText="Ex: 7j" style="-fx-text-inner-color: white;" unFocusColor="#e1e869" />
+            <JFXTextField fx:id="orderMedicament" focusColor="#4881d7" labelFloat="true" prefHeight="34.0" prefWidth="217.0" promptText="Entrer médicament" unFocusColor="#e1e869" />
+            <JFXTextField fx:id="quantity" focusColor="#4881d7" labelFloat="true" prefHeight="31.0" prefWidth="98.0" promptText="Ex: 1g" unFocusColor="#e1e869" />
+            <JFXTextField fx:id="orderType" focusColor="#4881d7" labelFloat="true" prefHeight="25.0" prefWidth="132.0" promptText="Forme galénique" unFocusColor="#e1e869" />
+            <JFXTextField fx:id="OrderNumber" focusColor="#4881d7" labelFloat="true" prefHeight="31.0" prefWidth="64.0" promptText="Ex: 7j" unFocusColor="#e1e869" />
          </children>
          <VBox.margin>
             <Insets left="30.0" top="20.0" />
          </VBox.margin>
       </HBox>
-      <JFXTextArea fx:id="orderHow" focusColor="#446af2" labelFloat="true" prefHeight="83.0" prefWidth="565.0" promptText="Ex: 1 comprimé le matin " style="-fx-text-inner-color: white;" unFocusColor="#cedd5c">
+      <JFXTextArea fx:id="orderHow" focusColor="#446af2" labelFloat="true" prefHeight="83.0" prefWidth="554.0" promptText="Ex: 1 comprimé le matin " unFocusColor="#cedd5c">
          <VBox.margin>
             <Insets left="20.0" right="20.0" top="10.0" />
          </VBox.margin>
       </JFXTextArea>
    </children>
+   <stylesheets>
+      <URL value="@../../css/styles.css" />
+      <URL value="@../../css/buttonSyle.css" />
+   </stylesheets>
 </VBox>

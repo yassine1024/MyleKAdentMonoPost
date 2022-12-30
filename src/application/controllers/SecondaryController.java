@@ -14,6 +14,7 @@ import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 
 import application.SQLiteJDBC;
+import application.controllers.login.ActivationController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -21,6 +22,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 
 public class SecondaryController implements Initializable {
 
@@ -75,9 +77,24 @@ public class SecondaryController implements Initializable {
 	}
 	
 	
+	@FXML
+	private VBox stackPane;
+	
+public void setLightDarkMode() {
+		
+		if(!ActivationController.getMode()) {
+			this.stackPane.getStylesheets().clear();
+			
+			this.stackPane.getStylesheets().add("/css/light_mode/buttonSyle.css");
+		
+			this.stackPane.getStylesheets().add("/css/light_mode/styles.css");
+		}
+	}
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
+		this.setLightDarkMode();
 
 	this.autoCompleteOrderMedication();
 	}
