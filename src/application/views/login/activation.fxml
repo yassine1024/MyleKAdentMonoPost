@@ -586,7 +586,7 @@
 								</VBox>
 							</children>
 						</AnchorPane>
-						<AnchorPane fx:id="prothesistAnchor" prefHeight="645.0" prefWidth="879.0" styleClass="center" visible="false">
+						<AnchorPane fx:id="prothesistAnchor" prefHeight="645.0" prefWidth="879.0" styleClass="center">
 							<children>
 								<Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="40.0" prefHeight="49.0" prefWidth="159.0" text="Prothèse" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="45.0">
 									<font>
@@ -597,7 +597,7 @@
 									<children>
 										<HBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="189.0" prefWidth="745.0" spacing="10.0">
 											<children>
-												<Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Lab :" wrappingWidth="48.830078125">
+												<Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="redaction" text="Lab :" wrappingWidth="48.830078125">
 													<font>
 														<Font name="Arial Bold" size="15.0" />
 													</font>
@@ -707,7 +707,7 @@
 								<JFXToggleButton fx:id="toggleButtonWeek" layoutX="645.0" layoutY="565.0" onAction="#visualiseCalendar" prefHeight="58.0" prefWidth="212.0" text="Afficher par semaine" textFill="WHITE" />
 							</children>
 						</AnchorPane>
-						<AnchorPane fx:id="parametersAnchor" prefHeight="645.0" prefWidth="879.0" styleClass="center">
+						<AnchorPane fx:id="parametersAnchor" prefHeight="645.0" prefWidth="879.0" styleClass="center" visible="false">
 							<children>
 								<Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="26.0" layoutY="40.0" prefHeight="49.0" prefWidth="193.0" text="Paramètres" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="45.0">
 									<font>
@@ -893,7 +893,7 @@
 														</Label>
 														<Button focusTraversable="false" mnemonicParsing="false" onAction="#saveParameters" GridPane.columnIndex="2" GridPane.rowIndex="7">
 															<graphic>
-																<FontAwesomeIcon fill="WHITE" iconName="SAVE" size="1.7em" textAlignment="CENTER">
+																<FontAwesomeIcon fill="WHITE" iconName="SAVE" size="1.7em" styleClass="fa-big-icone" textAlignment="CENTER">
 																	<cursor>
 																		<Cursor fx:constant="HAND" />
 																	</cursor>
@@ -903,7 +903,10 @@
 																<Insets left="140.0" />
 															</GridPane.margin>
 														</Button>
-														<JFXToggleButton fx:id="saveAuthToggleButton" prefHeight="58.0" prefWidth="261.0" text="Enregistrer authentification" textFill="#fffbfb" toggleColor="#4691f2" toggleLineColor="#61c65a" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+														<JFXToggleButton fx:id="saveAuthToggleButton" prefHeight="58.0" prefWidth="261.0" style="-fx-text-fill: green;" text="Enregistrer authentification" textFill="#fffbfb" toggleColor="#4691f2" toggleLineColor="#61c65a" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></JFXToggleButton>
 													</children>
 													<padding>
 														<Insets bottom="5.0" left="5.0" right="10.0" />
