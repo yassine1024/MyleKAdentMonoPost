@@ -42,7 +42,8 @@ public class NbrSexeController implements Initializable {
 
 		XYChart.Series set1 = new XYChart.Series<>();
 
-		set1.getData().add(new XYChart.Data("FÃ©minin", this.sexeNumberHashTable.get("FÃ©minin")));
+		
+		set1.getData().add(new XYChart.Data("Féminin", this.sexeNumberHashTable.get("Féminin")));
 		set1.getData().add(new XYChart.Data("Masculin", this.sexeNumberHashTable.get("Masculin")));
 
 		sexeBarChart.getData().addAll(set1);

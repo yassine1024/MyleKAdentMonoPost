@@ -77,7 +77,7 @@ public class ageStatisticController implements Initializable {
 			e.printStackTrace();
 		}
 
-		String status[] = { "[0-15["+category1, "[15-30["+category2, "[30-45["+category3, "[45-60["+category4, "[60-InfÃ©nie["+category5 };
+		String status[] = { "[0-15["+category1, "[15-30["+category2, "[30-45["+category3, "[45-60["+category4, "[60-Infénie["+category5 };
 		 int values[] = {category1, category2, category3, category4, category5};
 		//int values[] = { 20, 30, 10, 4, 2 };
 		for (int i = 0; i < 5; i++) {
