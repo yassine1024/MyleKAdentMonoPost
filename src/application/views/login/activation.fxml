@@ -69,9 +69,9 @@
 								<Insets left="10.0" />
 							</padding>
 						</Label>
-						<ImageView fitHeight="38.0" fitWidth="68.0" layoutX="2.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+						<ImageView fitHeight="55.0" fitWidth="80.0" layoutX="2.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
 							<image>
-								<Image url="@../../../images/logofinale.png" />
+								<Image url="@../../Logo.jpg" />
 							</image>
 						</ImageView>
 													
@@ -586,7 +586,7 @@
 								</VBox>
 							</children>
 						</AnchorPane>
-						<AnchorPane fx:id="prothesistAnchor" prefHeight="645.0" prefWidth="879.0" styleClass="center">
+						<AnchorPane fx:id="prothesistAnchor" prefHeight="645.0" prefWidth="879.0" styleClass="center" visible="false">
 							<children>
 								<Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="40.0" prefHeight="49.0" prefWidth="159.0" text="Prothèse" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="45.0">
 									<font>
