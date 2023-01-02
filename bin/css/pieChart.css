@@ -16,3 +16,9 @@
 .data1.chart-bar { -fx-bar-fill: #56E39F; }
 .default-color1.chart-bar { -fx-bar-fill: red; }
 
+.default-color0.chart-series-line{ -fx-stroke: green;}
+.default-color1.chart-series-line{ -fx-stroke: red;}
+
+.default-color0.chart-series-line-symbol{ -fx-background-color: green,green;}
+.default-color1.chart-series-line-symbol{ -fx-background-color: red,red;}
+

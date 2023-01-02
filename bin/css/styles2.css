@@ -74,7 +74,43 @@ FontAwesomeIcon {
 .jfx-tab-pane .tab-selected-line{
     -fx-stroke : RED;
 }
+/*for javaFX tabPane */	
+.tab-pane
+{
+  -fx-padding: 1px;
+  -fx-background-color:  #39293D, -fx-control-inner-background;
+  -fx-background-insets: 0, 1;
+}
+.tab-pane .headers-region
+{
+  -fx-background-color:  #39293D;
+}
+.tab-pane:top .depth-container .tab-header-area .headers-region .tab-selected-line {
+    -fx-background-color: red;
+}
+.tab-pane .tab-header-area .tab-selected-line {
+    -fx-background-color: blue;
+}
 
+
+.tab-pane .tab-header-area .jfx-rippler{
+    -jfx-rippler-fill :RED;
+}
+.tab-pane .tab-selected-line{
+    -fx-stroke : RED;
+}
+
+
+.tb-redaction {
+	-fx-background-color:   #39293D;
+	-fx-cursor: hand;
+}
+.tab-pane-color {
+	-fx-background-color: #39293D;
+	-fx-tab-min-width:  300;
+	-fx-effect:  dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
+/*End for javaFX tabPane */
 
 .scroll-pane > .corner {
     -fx-background-color: black;
@@ -129,4 +165,9 @@ list-cell:odd {
 .list-cell:filled:hover { 
     -fx-background-color: #00f; /* 2 */
     -fx-text-fill: white; /* 5 */
+}
+
+.primary-color {
+	
+	-fx-fill: #221924;
 }

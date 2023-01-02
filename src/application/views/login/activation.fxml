@@ -283,7 +283,7 @@
                         </AnchorPane>
 							</children>
 						</AnchorPane>
-						<AnchorPane fx:id="redactionAnchor" prefHeight="645.0" prefWidth="879.0" styleClass="center">
+						<AnchorPane fx:id="redactionAnchor" prefHeight="645.0" prefWidth="879.0" styleClass="center" visible="false">
 							<children>
 								<Label alignment="CENTER" contentDisplay="CENTER" layoutX="28.0" layoutY="40.0" prefHeight="49.0" prefWidth="159.0" text="Redaction" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="45.0">
 									<font>
@@ -964,14 +964,14 @@
                                           <Insets left="15.0" />
                                        </VBox.margin>
                                     </HBox>
-                                    <Label focusTraversable="false" layoutX="10.0" layoutY="752.0" prefHeight="52.0" prefWidth="297.0" styleClass="headerTitle" text="Importation de la base de données" textFill="WHITE">
+                                    <Label focusTraversable="false" layoutX="10.0" layoutY="752.0" prefHeight="52.0" prefWidth="297.0" styleClass="headerTitle" text="Importation B.D" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                     </Label>
                                     <HBox alignment="CENTER_LEFT" layoutX="25.0" layoutY="804.0" prefHeight="36.0" prefWidth="461.0" spacing="15.0">
                                        <children>
-                                          <Text fx:id="loadDataBase" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="redaction" text="Lancer ce traitement si n' y a aucune donnée.">
+                                          <Text fx:id="checkActivationMessage1" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="redaction" text="Lancer ce traitement si n' y a aucune donnée.">
                                              <font>
                                                 <Font name="System Bold" size="16.0" />
                                              </font>

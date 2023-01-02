@@ -1,3 +1,77 @@
 FontAwesomeIcon {
 	-fx-cursor: hand ;
 }
+.primary-color {
+	
+	-fx-background-color: #221924;
+}
+.round-border {
+  	-fx-border-radius: 50%;
+  }
+  
+
+.header {
+	
+	-fx-background-color:  #2A1F2D;
+	-fx-border-color:  #221924;
+}
+
+.side {
+	-fx-background-color:  #2A1F2D;
+}
+
+.center{
+	-fx-background-color:  #39293D;
+}
+.default-center{
+	 -fx-background-color: #2F232A;
+}
+
+.default{
+	-fx-background-color:  #3B2C35;
+}
+.fa-big-icone{
+	-fx-fill: white;
+}
+
+.parameters{
+	
+	-fx-background-color: #39293D;
+}
+
+.tasks-side{
+	-fx-background-color:  #39293D;
+}
+
+.tasks{
+	-fx-background-color:  #39293D;
+	-fx-effect:  dropshadow(three-pass-box, rgba(0.0,0.0,0.0,0.8), 10.0, 0.0, 0.0, 0.0);
+	-fx-text-fill:  blue;
+}
+.tasks-text{
+	-fx-background-color:  #39293D;
+	-fx-effect:  dropshadow(three-pass-box, rgba(0.0,0.0,0.0,0.8), 10.0, 0.0, 0.0, 0.0);
+	-fx-text-fill:  white;
+	
+}
+.tasks-icone{
+	
+	-fx-fill:  white;
+	
+}
+.tasks-button{
+	
+	-fx-effect:  dropshadow(three-pass-box, rgba(0.0,0.0,0.0,0.8), 10.0, 0.0, 0.0, 0.0);
+	-fx-background-color:  green;
+	-fx-text-fill:  white;
+	
+}
+.disable-license{
+	
+	-fx-fill: red;
+}
+
+.enable-license{
+	
+	-fx-fill: green;
+}

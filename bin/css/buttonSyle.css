@@ -8,6 +8,16 @@
 	
 	
 }
+JFXTextField, JFXPasswordField, JFXTextArea, TextField{
+	-fx-background-color:#2A1F2D;
+	-fx-text-inner-color:white;
+}
+/*JFXTextField:focused{
+	
+	-fx-border-color:black;
+}
+* */
+
 Button:hover, JFXButton:hover  {
 	/*-fx-font-weight: bold;
 	-fx-background-color: #F2ED6F;
@@ -98,7 +108,7 @@ Label{
 }
 .tab-pane .tab
 {
-    -fx-background-color: #e6e6e6;
+    -fx-background-color: #39293D;
 
 }
 
@@ -241,3 +251,7 @@ Label{
   	-fx-fill:  white;
   }
   
+  JFXDatePicker{
+	-fx-background-color:#2A1F2D;
+	-fx-text-inner-color:green;
+}
