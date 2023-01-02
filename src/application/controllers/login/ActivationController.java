@@ -4574,9 +4574,11 @@ public class ActivationController implements Initializable {
 		try {
 			VBox toor = FXMLLoader.load(getClass().getResource("/application/views/Secondary.fxml"));
 			JFXButton btn1 = new JFXButton("SUPPRIMR");
+			
 			btn1.setStyle("-fx-background-color: red");
-
-			this.vBoxPrincipaleBise.getChildren().addAll(btn1, toor);
+			toor.getChildren().add(btn1);
+			
+			this.vBoxPrincipaleBise.getChildren().add(0, toor);
 			new BounceIn(btn1).play();
 			new BounceIn(toor).play();
 			btn1.setOnAction(evt -> {
@@ -6762,6 +6764,9 @@ public class ActivationController implements Initializable {
 
 	private JFXProgressBar loadImportDataBase;
 
+	
+	@FXML
+	private Text loadDataBase;
 	@FXML
 	void loadImportDataBase(ActionEvent event) {
 
@@ -6799,6 +6804,9 @@ public class ActivationController implements Initializable {
 	private void uploadPatientDataBase(String pathDB) {
 		System.out.println(pathDB);
 
+		//launch message download for user
+		loadDataBase.setText("Le téléchargement peut prendre quelques minutes...");
+		
 		Statement stm;
 		PreparedStatement stmt;
 		try {
@@ -7010,6 +7018,8 @@ public class ActivationController implements Initializable {
 			//refresh all data that we imported in our app 1144
 			refreshList();
 			this.refreshRedactionByPatientList();
+			
+			this.loadDataBase.setText("Lancer ce traitement si n' y a aucune donnée.");
 			//Show message for user that importation finish with success
 			JFXDialogLayout layout = new JFXDialogLayout();
 			layout.setHeading(new Text("Info"));
