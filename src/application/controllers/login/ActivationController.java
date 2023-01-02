@@ -4576,7 +4576,8 @@ public class ActivationController implements Initializable {
 			JFXButton btn1 = new JFXButton("SUPPRIMR");
 			btn1.setStyle("-fx-background-color: red");
 
-			this.vBoxPrincipaleBise.getChildren().addAll(btn1, toor);
+			toor.getChildren().add(btn1);
+			this.vBoxPrincipaleBise.getChildren().add(0, toor);
 			new BounceIn(btn1).play();
 			new BounceIn(toor).play();
 			btn1.setOnAction(evt -> {
@@ -6630,7 +6631,7 @@ public class ActivationController implements Initializable {
 		ResultSet rs = null;
 		stm = new SQLiteJDBC().getConnection().createStatement();
 
-		String request = "SELECT path_order_logo,nom FROM users WHERE user_id='" + this.userId + "';";
+		String request = "SELECT path_order_logo FROM users WHERE user_id='" + this.userId + "';";
 		rs = stm.executeQuery(request);
 		while (rs.next()) {
 			this.IMG = rs.getString(1);
@@ -6795,9 +6796,12 @@ public class ActivationController implements Initializable {
 		}
 
 	}
-
+	 @FXML
+	       private Text loadDataBase;
 	private void uploadPatientDataBase(String pathDB) {
 		System.out.println(pathDB);
+		 //launch message download for user
+		               loadDataBase.setText("Le téléchargement peut prendre quelques minutes...");
 
 		Statement stm;
 		PreparedStatement stmt;
@@ -6835,7 +6839,6 @@ public class ActivationController implements Initializable {
 
 			// then import historic_malades table
 
-			
 			uploadRequest = "INSERT INTO historic_malades(historic_malade_id, malade_id, user_id, date_arriver,"
 					+ " paye) " + " VALUES (?,?,?,?,?); ";
 			stmt = new SQLiteJDBC().getConnection().prepareStatement(uploadRequest);
@@ -6857,7 +6860,7 @@ public class ActivationController implements Initializable {
 				System.out.println("Import historic_malades table with succses.");
 
 			}
-			
+
 			// Then import motifs table
 			uploadRequest = "INSERT INTO motifs(motif_id, nom)  VALUES (?,?);  ";
 
@@ -6998,19 +7001,18 @@ public class ActivationController implements Initializable {
 				stmt.setInt(2, rs.getInt("medication_id"));
 				stmt.setInt(3, rs.getInt("consultation_id"));
 
-				
-
 				stmt.execute();
 
 				System.out.println("Import comporte_medications table with succses.");
 
 			}
-			
-			
-			//refresh all data that we imported in our app 1144
+
+			// refresh all data that we imported in our app 1144
 			refreshList();
 			this.refreshRedactionByPatientList();
-			//Show message for user that importation finish with success
+			// Show message for user that importation finish with success
+			
+			this.loadDataBase.setText("Lancer ce traitement si n' y a aucune donnée.");
 			JFXDialogLayout layout = new JFXDialogLayout();
 			layout.setHeading(new Text("Info"));
 			layout.setBody(new Text("Importation des données avec succés."));
@@ -7029,7 +7031,6 @@ public class ActivationController implements Initializable {
 
 			layout.setActions(ok);
 			dialog.show();
-			
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

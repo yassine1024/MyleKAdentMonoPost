@@ -113,9 +113,9 @@
                   </GridPane>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="364.0" layoutY="376.0" maxHeight="-Infinity" maxWidth="653.0" prefHeight="272.0" prefWidth="570.0" style="-fx-border-color: white;">
+            <AnchorPane layoutX="364.0" layoutY="376.0" maxHeight="-Infinity" maxWidth="653.0" prefHeight="272.0" prefWidth="570.0">
                <children>
-                  <TableView fx:id="tableDiagnostique" layoutX="14.0" layoutY="6.0" onMousePressed="#doubleClickDiagnostique" prefHeight="204.0" prefWidth="502.0" stylesheets="@/css/tableView.css">
+                  <TableView fx:id="tableDiagnostique" layoutX="14.0" layoutY="6.0" onMousePressed="#doubleClickDiagnostique" prefHeight="204.0" prefWidth="502.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></TableView>
